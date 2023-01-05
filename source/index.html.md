@@ -1,14 +1,10 @@
 ---
-title: API Reference
+title: Documentation API EVANERD
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -20,226 +16,350 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the Evanerd API
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Ceci est la documentation de l'api ...
 
 # Authentication
 
-> To authorize, use this code:
+> TODO
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+# Users
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
+## Lister les utilisateurs
 
 ```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
+// TODO CODE AJAX
+
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> La requête renvoie un JSON sous la forme:
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "users:"
+    [
+      {
+        "id": 1,
+        "firstName": "Maurice",
+        "lastName": "Monticule",
+        "mail":"momo@gmail.com",
+        "tel":"",
+        "sex": 0,
+        "age": 19,
+        "studies":"Centrale Lille IG2I",
+        "photo":"www.example/users/1.png"
+      },
+      {
+        "id": 2,
+        "firstName": "Fluffums",
+        "lastName": "calico",
+        "mail":"fufu@gmail.com",
+        "tel":"",
+        "sex": 1,
+        "age": 69,
+        "studies":"Ecole du rire",
+        "photo":"www.example/users/2.png"
+      }
+    ]
+}
+```
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Cette route permet de récuperer une liste d'utilisateur
 
-`Authorization: meowmeowmeow`
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+idRole *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de lister tous les utilisateurs possédant le role indiqué
+
+## Récupérer un utilisateur
+
+```javascript
+
+//TODO
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "user:"
+    {
+      "id": 1,
+      "firstName": "Maurice",
+      "lastName": "Monticule",
+      "mail":"momo@gmail.com",
+      "tel":"",
+      "sex": 0,
+      "age": 19,
+      "studies":"Centrale Lille IG2I",
+      "photo":"www.example/users/1.png"
+    },
+}
+```
+
+Cette route permet de récupérer un utilisateur selon son id
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}**
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+uid | L'identifiant de l'utilisateur
+
+## Modifier un utilisateur
+
+```javascript
+
+//TODO
+
+```
+
+> La requête renvoie un JSON de l'utilisateur modifié sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "user:"
+    {
+      "id": 1,
+      "firstName": "Maurice",
+      "lastName": "Monticule",
+      "mail":"momo@gmail.com",
+      "tel":"",
+      "sex": 0,
+      "age": 19,
+      "studies":"Centrale Lille IG2I",
+      "photo":"www.example/users/1.png"
+    },
+}
+```
+
+Cette route permet de modifier les informations d'un utilisateur présent dans la base de donnée
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> /users/{uid}**
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+uid | L'identifiant de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+mail <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son adresse mail
+tel <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifer son numéro de téléphone
+age <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son age
+studies <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier ses études
+password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son mot de passe
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+
+   Les membres du CA peuvent modifier les informations de tous les utilisateurs. Un utilisateur ne peut modifier que ses propres informations.
 </aside>
 
-# Kittens
+<aside class="warning">
+  Si l'utilisateur n'a pas les permissions pour modifier un utilisateur alors la route enverra un JSON d'erreur avec un status code 403.
+</aside>
 
-## Get All Kittens
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
+## Supprimer un utilisateur
 
 ```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+//TODO
+
 ```
 
-> The above command returns JSON structured like this:
+> La requête renvoie un JSON de l'utilisateur supprimé sous la forme:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "user:"
+    {
+      "id": 1,
+      "firstName": "Maurice",
+      "lastName": "Monticule",
+      "mail":"momo@gmail.com",
+      "tel":"",
+      "sex": 0,
+      "age": 19,
+      "studies":"Centrale Lille IG2I",
+      "photo":"www.example/users/1.png"
+    },
+}
 ```
 
-This endpoint retrieves all kittens.
+Cette route permet de supprimer un utilisateur
 
-### HTTP Request
+### Requête HTTP
 
-`GET http://example.com/api/kittens`
+**<span style="rgb(235, 32, 19)">DEL</span> /users/{uid}**
 
-### Query Parameters
+### Paramètres d'URL
 
-Parameter | Default | Description
+Parameter | Description
+--------- | -----------
+uid | L'identifiant de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+authToken |  | Token d'identification de l'utilisateur
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+
+   Les membres du CA peuvent supprimer tous les utilisateurs. Un utilisateur ne peut supprimer que son propre compte.
 </aside>
 
-## Get a Specific Kitten
+<aside class="warning">
+  Si l'utilisateur n'a pas les permissions pour supprimer un utilisateur alors la route enverra un JSON d'erreur avec un status code 403.
+</aside>
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
+## Ajout un instrument à l'utilisateur
 
 ```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+//TODO
+
 ```
 
-> The above command returns JSON structured like this:
+> La requête renvoie un JSON avec l'id de l'utilisateur et l'instrument ajouté
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+
 }
 ```
 
-This endpoint retrieves a specific kitten.
+Cette route permet d'ajouter un instrument à l'utilisateur connecté
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+### Requête HTTP
 
-### HTTP Request
+**<span style="rgb(255, 180, 0)">POST</span> /users/instruments**
 
-`GET http://example.com/kittens/<ID>`
 
-### URL Parameters
+### Paramètres de requête
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+iid |  | l'id de l'instrument à ajouter
 
-## Delete a Specific Kitten
+<aside class="notice">
+   Un instrument ne peut être rajouté qu'une seul fois
+</aside>
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
+## Ajout d'un achievement à l'utilisateur
 
 ```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+//TODO
+
 ```
 
-> The above command returns JSON structured like this:
+> La requête renvoie un JSON avec l'id de l'utilisateur et l'achievement ajouté
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+
 }
 ```
 
-This endpoint deletes a specific kitten.
+Cette route permet d'ajouter un achievement à l'utilisateur connecté
 
-### HTTP Request
+### Requête HTTP
 
-`DELETE http://example.com/kittens/<ID>`
+**<span style="rgb(255, 180, 0)">POST</span> /users/achievements**
 
-### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+aid |  | l'id de l'achievements
+
+<aside class="notice">
+   Un utilisateur ne peut avoir plusieurs fois le même achievements
+</aside>
+
+<aside class="warning">
+   Il faut que l'utilisateur sastifait les conditions d'obtention de l'achievement pour le recevoir. Sinon la route renvoie
+   un JSON d'erreur avec comme code de status 403
+</aside>
+
+## Ajout d'un role à un utilisateur
+
+```javascript
+
+//TODO
+
+```
+
+> La requête renvoie un JSON avec l'id de l'utilisateur et l'achievement ajouté
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+
+}
+```
+
+Cette route permet d'ajouter un achievement à l'utilisateur connecté
+
+### Requête HTTP
+
+**<span style="rgb(255, 180, 0)">POST</span> /users/{uid}/roles**
+
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+rid |  | l'id de l'achievements
+
+<aside class="notice">
+   Un instrument ne peut être rajouté qu'une seul fois
+</aside>
 

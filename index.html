@@ -316,7 +316,12 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#authentification" class="toc-h1 toc-link" data-title="Authentification">Authentification</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#requete-http" class="toc-h2 toc-link" data-title="Requête HTTP">Requête HTTP</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
@@ -345,6 +350,14 @@
               </ul>
           </li>
           <li>
+            <a href="#groups" class="toc-h1 toc-link" data-title="Groups">Groups</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lister-les-groupes-de-l-39-utilisateur-connecte" class="toc-h2 toc-link" data-title="Lister les groupes de l'utilisateur connecté">Lister les groupes de l'utilisateur connecté</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -357,10 +370,12 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Ceci est la documentation de l&#39;api ...</p>
-<h1 id='authentication'>Authentication</h1>
+<h1 id='authentification'>Authentification</h1>
 <blockquote>
-<p>TODO</p>
+<p>Lors de l&#39;authentification</p>
 </blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code></code></pre></div><h3 id='requete-http'>Requête HTTP</h3>
+<p><strong><span style="rgb(255, 180, 0)">POST</span> /auth/</strong></p>
 <h1 id='users'>Users</h1><h2 id='lister-les-utilisateurs'>Lister les utilisateurs</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -400,7 +415,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer une liste d&#39;utilisateur</p>
-<h3 id='requete-http'>Requête HTTP</h3>
+<h3 id='requete-http-2'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users</strong></p>
 <h3 id='parametres-de-requete'>Paramètres de requête</h3>
 <table><thead>
@@ -442,7 +457,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer un utilisateur selon son id</p>
-<h3 id='requete-http-2'>Requête HTTP</h3>
+<h3 id='requete-http-3'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}</strong></p>
 <h3 id='parametres-d-39-url'>Paramètres d&#39;URL</h3>
 <table><thead>
@@ -482,7 +497,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de modifier les informations d&#39;un utilisateur présent dans la base de donnée</p>
-<h3 id='requete-http-3'>Requête HTTP</h3>
+<h3 id='requete-http-4'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /users/{uid}</strong></p>
 <h3 id='parametres-d-39-url-2'>Paramètres d&#39;URL</h3>
 <table><thead>
@@ -496,7 +511,7 @@
 <td>L&#39;identifiant de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-2'>Paramètres de requête</h3>
+<h3 id='headers'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -509,6 +524,15 @@
 <td></td>
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
+</tbody></table>
+<h3 id='parametres-de-requete-2'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>mail <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
@@ -564,13 +588,13 @@
       </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2Ix"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1.png"</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de supprimer un utilisateur</p>
-<h3 id='requete-http-4'>Requête HTTP</h3>
+<h3 id='requete-http-5'>Requête HTTP</h3>
 <p><strong><span style="rgb(235, 32, 19)">DEL</span> /users/{uid}</strong></p>
 <h3 id='parametres-d-39-url-3'>Paramètres d&#39;URL</h3>
 <table><thead>
@@ -584,7 +608,7 @@
 <td>L&#39;identifiant de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-3'>Paramètres de requête</h3>
+<h3 id='headers-2'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -622,9 +646,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un instrument à l&#39;utilisateur connecté</p>
-<h3 id='requete-http-5'>Requête HTTP</h3>
+<h3 id='requete-http-6'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/instruments</strong></p>
-<h3 id='parametres-de-requete-4'>Paramètres de requête</h3>
+<h3 id='headers-3'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -637,6 +661,15 @@
 <td></td>
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
+</tbody></table>
+<h3 id='parametres-de-requete-3'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>iid</td>
 <td></td>
@@ -662,9 +695,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un achievement à l&#39;utilisateur connecté</p>
-<h3 id='requete-http-6'>Requête HTTP</h3>
+<h3 id='requete-http-7'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/achievements</strong></p>
-<h3 id='parametres-de-requete-5'>Paramètres de requête</h3>
+<h3 id='headers-4'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -677,6 +710,15 @@
 <td></td>
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
+</tbody></table>
+<h3 id='parametres-de-requete-4'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>aid</td>
 <td></td>
@@ -697,7 +739,7 @@
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et l&#39;achievement ajouté</p>
+<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et le role ajouté</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -706,10 +748,10 @@
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;ajouter un achievement à l&#39;utilisateur connecté</p>
-<h3 id='requete-http-7'>Requête HTTP</h3>
+<p>Cette route permet d&#39;ajouter un role à l&#39;utilisateur</p>
+<h3 id='requete-http-8'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/{uid}/roles</strong></p>
-<h3 id='parametres-de-requete-6'>Paramètres de requête</h3>
+<h3 id='headers-5'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -722,6 +764,15 @@
 <td></td>
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
+</tbody></table>
+<h3 id='parametres-de-requete-5'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>rid</td>
 <td></td>
@@ -730,8 +781,48 @@
 </tbody></table>
 
 <aside class="notice">
-   Un instrument ne peut être rajouté qu'une seul fois
+   Seuls les membres du CA peuvent ajouter un role, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
 </aside>
+<h1 id='groups'>Groups</h1><h2 id='lister-les-groupes-de-l-39-utilisateur-connecte'>Lister les groupes de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"users:"</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer une liste d&#39;utilisateur</p>
+<h3 id='requete-http-9'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
+<h3 id='headers-6'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.

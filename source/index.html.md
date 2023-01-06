@@ -23,10 +23,15 @@ meta:
 
 Ceci est la documentation de l'api ...
 
-# Authentication
+# Authentification
 
-> TODO
+> Lors de l'authentification
 
+```javascript
+```
+### Requête HTTP
+
+**<span style="rgb(255, 180, 0)">POST</span> /auth/**
 
 # Users
 
@@ -169,11 +174,16 @@ Parameter | Description
 --------- | -----------
 uid | L'identifiant de l'utilisateur
 
-### Paramètres de requête
+### Headers
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
 mail <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son adresse mail
 tel <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifer son numéro de téléphone
 age <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son age
@@ -214,7 +224,7 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
       "tel":"",
       "sex": 0,
       "age": 19,
-      "studies":"Centrale Lille IG2I",
+      "studies":"Centrale Lille IG2Ix",
       "photo":"www.example/users/1.png"
     },
 }
@@ -232,7 +242,7 @@ Parameter | Description
 --------- | -----------
 uid | L'identifiant de l'utilisateur
 
-### Paramètres de requête
+### Headers
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -272,12 +282,16 @@ Cette route permet d'ajouter un instrument à l'utilisateur connecté
 
 **<span style="rgb(255, 180, 0)">POST</span> /users/instruments**
 
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
 iid |  | l'id de l'instrument à ajouter
 
 <aside class="notice">
@@ -309,12 +323,16 @@ Cette route permet d'ajouter un achievement à l'utilisateur connecté
 
 **<span style="rgb(255, 180, 0)">POST</span> /users/achievements**
 
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
 aid |  | l'id de l'achievements
 
 <aside class="notice">
@@ -334,7 +352,7 @@ aid |  | l'id de l'achievements
 
 ```
 
-> La requête renvoie un JSON avec l'id de l'utilisateur et l'achievement ajouté
+> La requête renvoie un JSON avec l'id de l'utilisateur et le role ajouté
 
 ```json
 {
@@ -345,21 +363,67 @@ aid |  | l'id de l'achievements
 }
 ```
 
-Cette route permet d'ajouter un achievement à l'utilisateur connecté
+Cette route permet d'ajouter un role à l'utilisateur
 
 ### Requête HTTP
 
 **<span style="rgb(255, 180, 0)">POST</span> /users/{uid}/roles**
 
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
 rid |  | l'id de l'achievements
 
 <aside class="notice">
-   Un instrument ne peut être rajouté qu'une seul fois
+   Seuls les membres du CA peuvent ajouter un role, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
 </aside>
 
+
+# Groups
+
+## Lister les groupes de l'utilisateur connecté
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "users:"
+    [
+      {
+        "id": 1,
+
+      },
+      {
+        "id": 2,
+      }
+    ]
+}
+```
+
+Cette route permet de récuperer une liste d'utilisateur
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /groups**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur

@@ -563,7 +563,6 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-# Messages
 
 ## Lister Les messages d'un groupe de l'utilisateur connecté
 
@@ -621,6 +620,66 @@ Parameter | Description
 --------- | -----------
 gid | L'identifiant du groupe
 
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /groups**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+## Lister Les reactions d'un message de groupe
+
+```javascript
+// TODO CODE AJAX
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "groupeId":3,
+  "messageId":1,
+  "reactions:"
+    [
+      {
+        "id":,
+        "mid":,
+        "gid":,
+        "uid":,
+        "emoji":
+      },
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des reactions d'un message de le groupe
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+gid | L'identifiant du groupe
+mid | L'identifiant du message
+
 # Posts
 
 ## Lister Les postes
@@ -674,6 +733,62 @@ authToken |  | Token d'identification de l'utilisateur
 <aside class="notice">
   La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
 </aside>
+
+## Lister Les messages d'un poste
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "postId":3,
+  "messages:"
+    [
+      {
+        "id": 1,
+        "uid":2,
+        "pid":3,
+        "pinned":1,
+        "content":"La basse c'est super cool",
+      },
+      {
+        "id": 2,
+        "uid":1,
+        "pid":3,
+        "pinned":0,
+        "content":"ratio",
+        "answerTo":1
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des messages envoyé sur un post
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/messages**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+pid | L'identifiant du post
 
 # Agendas
 

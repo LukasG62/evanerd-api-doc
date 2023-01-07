@@ -464,6 +464,63 @@ rid |  | l'id de l'achievements
 </aside>
 
 
+
+# Roles
+
+## Lister Les roles
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "role:"
+    [
+      {
+        "id":1,
+        "label":0,
+        "active":0,
+      },
+      {
+        "id":1,
+        "content":,
+        "banner":,
+        "banner":,
+        "pinned":,
+        "visible":,
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des postes 
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /posts/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+gid | L'identifiant du groupe
+
 # Groups
 
 ## Lister les groupes de l'utilisateur connecté
@@ -547,6 +604,7 @@ authToken |  | Token d'identification de l'utilisateur
 ```
 
 Cette route permet de récuperer la listes des messages envoyés dans le groupe
+
 ### Requête HTTP
 
 **<span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages**
@@ -563,3 +621,150 @@ authToken |  | Token d'identification de l'utilisateur
 Parameter | Description
 --------- | -----------
 gid | L'identifiant du groupe
+
+# Posts
+
+## Lister Les postes
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "posts":
+    [
+      {
+        "id":1,
+        "content":"",
+        "banner":"",
+        "pinned":0,
+        "visible":1:
+
+      },
+      {
+        "id":2,
+        "content":"",
+        "banner":"www.example.com/posts/2/image.png",
+        "pinned":1,
+        "visible":0,
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des postes 
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /posts/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+<aside class="notice">
+  La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
+</aside>
+
+# Agendas
+
+## Lister Les calendriers
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "agendas":
+    [
+      {
+      },
+
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des calendriers
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+<aside class="notice">
+  La réponses dépends des permissions de lecture de l'utilisateur
+</aside>
+
+## Lister Les évenements d'un calendrier
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "agendas":1,
+  "events":
+    [
+      {
+      },
+      
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer les événements d'un calendrier
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/[aid}/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+aid | L'identifiant du calendrier
+
+<aside class="notice">
+  La réponses dépends des permissions de lecture de l'utilisateur sur le calendrier
+</aside>

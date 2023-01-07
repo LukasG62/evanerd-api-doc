@@ -453,11 +453,17 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+uid | L'identifiant de l'utilisateur
+
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-rid |  | l'id de l'achievements
+rid |  | l'id du role
 
 <aside class="notice">
    Seuls les membres du CA peuvent ajouter un role, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
@@ -502,7 +508,7 @@ rid |  | l'id de l'achievements
 }
 ```
 
-Cette route permet de récuperer la listes des postes 
+Cette route permet de récuperer la listes des roles
 
 ### Requête HTTP
 
@@ -513,13 +519,6 @@ Cette route permet de récuperer la listes des postes
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
-
-
-### Paramètres d'URL
-
-Parameter | Description
---------- | -----------
-gid | L'identifiant du groupe
 
 # Groups
 

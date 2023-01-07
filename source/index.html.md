@@ -229,86 +229,6 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
   Si l'utilisateur n'a pas les permissions pour modifier un utilisateur alors la route enverra un JSON d'erreur avec un status code 403.
 </aside>
 
-
-## Supprimer un utilisateur
-
-```javascript
-
-//TODO
-
-```
-
-> La requête renvoie un JSON de l'utilisateur supprimé sous la forme:
-
-```json
-{
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "user:"
-    {
-      "id": 1,
-      "firstName": "Maurice",
-      "lastName": "Monticule",
-      "mail":"momo@gmail.com",
-      "tel":"",
-      "sex": 0,
-      "age": 19,
-      "studies":"Centrale Lille IG2I",
-      "photo":"www.example/users/1/image.png"
-    },
-}
-```
-
-Cette route permet de supprimer un utilisateur
-
-### Requête HTTP
-
-**<span style="rgb(235, 32, 19)">DEL</span> /users/{uid}**
-
-### Paramètres d'URL
-
-Parameter | Description
---------- | -----------
-uid | L'identifiant de l'utilisateur
-
-### Headers
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-<aside class="notice">
-
-   Les membres du CA peuvent supprimer tous les utilisateurs. Un utilisateur ne peut supprimer que son propre compte.
-</aside>
-
-<aside class="warning">
-  Si l'utilisateur n'a pas les permissions pour supprimer un utilisateur alors la route enverra un JSON d'erreur avec un status code 403.
-</aside>
-
-## Ajout un instrument à l'utilisateur
-
-```javascript
-
-//TODO
-
-```
-
-> La requête renvoie un JSON avec l'id de l'utilisateur et l'instrument ajouté
-
-```json
-{
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":201,
-
-}
-```
-
-Cette route permet d'ajouter un instrument à l'utilisateur connecté
-
-
 ## Créer un utilisateur
 
 ```javascript
@@ -356,9 +276,30 @@ sex <span style="color:red">[OPTIONNEL]</span> |  | le genre de l'utilisateur
 image <span style="color:red">[OPTIONNEL]</span> |  | l'image de profil sous format base64
 
 
+## Ajouter un instrument à l'utilisateur
+
+```javascript
+
+//TODO
+
+```
+
+> La requête renvoie un JSON avec l'id de l'utilisateur et l'instrument ajouté
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":201,
+
+}
+```
+
+Cette route permet d'ajouter un instrument à l'utilisateur connecté
+
 ### Requête HTTP
 
-**<span style="rgb(255, 180, 0)">POST</span> /users/instruments**
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/instruments**
 
 ### Headers
 
@@ -613,22 +554,11 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-
 ### Paramètres d'URL
 
 Parameter | Description
 --------- | -----------
 gid | L'identifiant du groupe
-
-### Requête HTTP
-
-**<span style="color:rgb(12, 187, 82)">GET</span> /groups**
-
-### Headers
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
 
 ## Lister Les reactions d'un message de groupe
 
@@ -733,6 +663,43 @@ authToken |  | Token d'identification de l'utilisateur
 <aside class="notice">
   La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
 </aside>
+
+## Lister Les reactions d'un post
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "posts":
+    [
+      {
+      },
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des postes 
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
 
 ## Lister Les messages d'un poste
 
@@ -882,3 +849,55 @@ aid | L'identifiant du calendrier
 <aside class="notice">
   La réponses dépends des permissions de lecture de l'utilisateur sur le calendrier
 </aside>
+
+## Lister les membres de l'appel
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "agendas":1,
+  "event":2,
+  "calls":
+    [
+      {
+      },
+      
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer les informations concernant l'appel
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/event/{eid}/calls**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+aid | L'identifiant du calendrier
+eid | L'identifiant de l'event
+
+<aside class="notice">
+  Seuls les membres du CA peuvent faire l'appel
+</aside>
+

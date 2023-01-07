@@ -366,13 +366,11 @@
                   <li>
                     <a href="#lister-les-groupes-de-l-39-utilisateur-connecte" class="toc-h2 toc-link" data-title="Lister les groupes de l'utilisateur connecté">Lister les groupes de l'utilisateur connecté</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#messages" class="toc-h1 toc-link" data-title="Messages">Messages</a>
-              <ul class="toc-list-h2">
                   <li>
                     <a href="#lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte" class="toc-h2 toc-link" data-title="Lister Les messages d'un groupe de l'utilisateur connecté">Lister Les messages d'un groupe de l'utilisateur connecté</a>
+                  </li>
+                  <li>
+                    <a href="#lister-les-reactions-d-39-un-message-de-groupe" class="toc-h2 toc-link" data-title="Lister Les reactions d'un message de groupe">Lister Les reactions d'un message de groupe</a>
                   </li>
               </ul>
           </li>
@@ -381,6 +379,9 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#lister-les-postes" class="toc-h2 toc-link" data-title="Lister Les postes">Lister Les postes</a>
+                  </li>
+                  <li>
+                    <a href="#lister-les-messages-d-39-un-poste" class="toc-h2 toc-link" data-title="Lister Les messages d'un poste">Lister Les messages d'un poste</a>
                   </li>
               </ul>
           </li>
@@ -1029,7 +1030,7 @@ Lors de la connexion, un nouveau token est généré.
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h1 id='messages'>Messages</h1><h2 id='lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte'>Lister Les messages d&#39;un groupe de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<h2 id='lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte'>Lister Les messages d&#39;un groupe de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
 </code></pre></div>
@@ -1090,6 +1091,80 @@ Lors de la connexion, un nouveau token est généré.
 <td>L&#39;identifiant du groupe</td>
 </tr>
 </tbody></table>
+<h3 id='requete-http-13'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
+<h3 id='headers-9'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h2 id='lister-les-reactions-d-39-un-message-de-groupe'>Lister Les reactions d&#39;un message de groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// TODO CODE AJAX</span>
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groupeId"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"messageId"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reactions:"</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:,</span><span class="w">
+        </span><span class="nl">"mid"</span><span class="p">:,</span><span class="w">
+        </span><span class="nl">"gid"</span><span class="p">:,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:,</span><span class="w">
+        </span><span class="nl">"emoji"</span><span class="p">:</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer la listes des reactions d&#39;un message de le groupe</p>
+<h3 id='requete-http-14'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}</strong></p>
+<h3 id='headers-10'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gid</td>
+<td>L&#39;identifiant du groupe</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>L&#39;identifiant du message</td>
+</tr>
+</tbody></table>
 <h1 id='posts'>Posts</h1><h2 id='lister-les-postes'>Lister Les postes</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -1122,9 +1197,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des postes </p>
-<h3 id='requete-http-13'>Requête HTTP</h3>
+<h3 id='requete-http-15'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/</strong></p>
-<h3 id='headers-9'>Headers</h3>
+<h3 id='headers-11'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1142,6 +1217,67 @@ Lors de la connexion, un nouveau token est généré.
 <aside class="notice">
   La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
 </aside>
+<h2 id='lister-les-messages-d-39-un-poste'>Lister Les messages d&#39;un poste</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"postId"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"messages:"</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pid"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="s2">"La basse c'est super cool"</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pid"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="s2">"ratio"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"answerTo"</span><span class="p">:</span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer la listes des messages envoyé sur un post</p>
+<h3 id='requete-http-16'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/messages</strong></p>
+<h3 id='headers-12'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h3 id='parametres-d-39-url-7'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pid</td>
+<td>L&#39;identifiant du post</td>
+</tr>
+</tbody></table>
 <h1 id='agendas'>Agendas</h1><h2 id='lister-les-calendriers'>Lister Les calendriers</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -1164,9 +1300,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des calendriers</p>
-<h3 id='requete-http-14'>Requête HTTP</h3>
+<h3 id='requete-http-17'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/</strong></p>
-<h3 id='headers-10'>Headers</h3>
+<h3 id='headers-13'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1207,9 +1343,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer les événements d&#39;un calendrier</p>
-<h3 id='requete-http-15'>Requête HTTP</h3>
+<h3 id='requete-http-18'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/[aid}/</strong></p>
-<h3 id='headers-11'>Headers</h3>
+<h3 id='headers-14'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1223,7 +1359,7 @@ Lors de la connexion, un nouveau token est généré.
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-8'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>

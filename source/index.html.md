@@ -25,13 +25,42 @@ Ceci est la documentation de l'api ...
 
 # Authentification
 
-> Lors de l'authentification
+## Récupèrer le token d'authentification
 
 ```javascript
 ```
+
+> Lors de l'authentification, la réponses JSON fournira un token permettant d'utiliser certaines fonctionalités de l'API
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":202,
+  "authToken":"f7c4464eed5ba3ae5a40bb6b3e40d2a5"
+  "user:"
+    {
+      "id": 1,
+      "firstName": "Maurice",
+      "lastName": "Monticule",
+      "mail":"momo@gmail.com",
+      "tel":"",
+      "sex": 0,
+      "age": 19,
+      "studies":"Centrale Lille IG2I",
+      "photo":"www.example/users/1/image.png"
+    },
+
+
+}
+```
 ### Requête HTTP
 
-**<span style="rgb(255, 180, 0)">POST</span> /auth/**
+**<span style="color:rgb(255, 180, 0)">POST</span> /auth/**
+
+<aside class="notice">
+Lors de la connexion, un nouveau token est généré.
+</aside>
 
 # Users
 
@@ -61,7 +90,7 @@ Ceci est la documentation de l'api ...
         "sex": 0,
         "age": 19,
         "studies":"Centrale Lille IG2I",
-        "photo":"www.example/users/1.png"
+        "photo":"www.example/users/1/image.png"
       },
       {
         "id": 2,
@@ -72,7 +101,7 @@ Ceci est la documentation de l'api ...
         "sex": 1,
         "age": 69,
         "studies":"Ecole du rire",
-        "photo":"www.example/users/2.png"
+        "photo":"www.example/users/2/image.png"
       }
     ]
 }
@@ -115,7 +144,7 @@ idRole *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de lister tous l
       "sex": 0,
       "age": 19,
       "studies":"Centrale Lille IG2I",
-      "photo":"www.example/users/1.png"
+      "photo":"www.example/users/1/image.png"
     },
 }
 ```
@@ -157,7 +186,7 @@ uid | L'identifiant de l'utilisateur
       "sex": 0,
       "age": 19,
       "studies":"Centrale Lille IG2I",
-      "photo":"www.example/users/1.png"
+      "photo":"www.example/users/1/image.png"
     },
 }
 ```
@@ -188,6 +217,7 @@ mail <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son adre
 tel <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifer son numéro de téléphone
 age <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son age
 studies <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier ses études
+image <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier l'image sous le format base64
 password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son mot de passe
 
 <aside class="notice">
@@ -224,8 +254,8 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
       "tel":"",
       "sex": 0,
       "age": 19,
-      "studies":"Centrale Lille IG2Ix",
-      "photo":"www.example/users/1.png"
+      "studies":"Centrale Lille IG2I",
+      "photo":"www.example/users/1/image.png"
     },
 }
 ```
@@ -271,12 +301,60 @@ authToken |  | Token d'identification de l'utilisateur
 {
   "apiname":"EVANERD API",
   "version":"1.0",
-  "status":200,
+  "status":201,
 
 }
 ```
 
 Cette route permet d'ajouter un instrument à l'utilisateur connecté
+
+
+## Créer un utilisateur
+
+```javascript
+//TODO
+```
+
+> La requête renvoie un JSON avec le nouveau utilisateur créé
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":201,
+  "user:"
+    {
+      "id": 3,
+      "firstName": "Toto",
+      "lastName": "Basse",
+      "mail":"totobasse@gmail.com",
+      "tel":"0102030405",
+      "sex": 1,
+      "age": 29,
+      "studies":"Ecole de la vie",
+      "photo":"www.example/users/2/image.png"
+    },
+
+}
+```
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">POST</span> /users/**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+firstname |  | Prénom de l'utilisateur
+lastname |  | Nom de l'utilisateur
+mail |  | Adresse email de l'utilisateur
+tel |  | Numéro de téléphone de l'utilisateur
+password |  | Mot de passe de l'utilisateur
+age |  | l'age de l'utilisateur
+studies <span style="color:red">[OPTIONNEL]</span> |  | Les etudes de l'utilisateur
+sex <span style="color:red">[OPTIONNEL]</span> |  | le genre de l'utilisateur
+image <span style="color:red">[OPTIONNEL]</span> |  | l'image de profil sous format base64
+
 
 ### Requête HTTP
 
@@ -312,7 +390,7 @@ iid |  | l'id de l'instrument à ajouter
 {
   "apiname":"EVANERD API",
   "version":"1.0",
-  "status":200,
+  "status":201,
 
 }
 ```
@@ -358,7 +436,7 @@ aid |  | l'id de l'achievements
 {
   "apiname":"EVANERD API",
   "version":"1.0",
-  "status":200,
+  "status":201,
 
 }
 ```
@@ -403,20 +481,21 @@ rid |  | l'id de l'achievements
   "apiname":"EVANERD API",
   "version":"1.0",
   "status":200,
-  "users:"
+  "groups:"
     [
       {
         "id": 1,
-
+        "titre":"La conv des bgs"
       },
       {
         "id": 2,
+        "titre":"Maurice, Jean-Pierre"
       }
     ]
 }
 ```
 
-Cette route permet de récuperer une liste d'utilisateur
+Cette route permet de récuperer la listes des conversations d'un utilisateur
 
 ### Requête HTTP
 
@@ -427,3 +506,60 @@ Cette route permet de récuperer une liste d'utilisateur
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
+
+# Messages
+
+## Lister Les messages d'un groupe de l'utilisateur connecté
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "groupeId":3,
+  "messages:"
+    [
+      {
+        "id": 1,
+        "uid":2,
+        "gid":3,
+        "pinned":1,
+        "content":"La basse c'est super cool",
+      },
+      {
+        "id": 2,
+        "uid":1,
+        "gid":3,
+        "pinned":0,
+        "content":"ratio",
+        "answerTo":1
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des messages envoyés dans le groupe
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+gid | L'identifiant du groupe

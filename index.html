@@ -319,7 +319,7 @@
             <a href="#authentification" class="toc-h1 toc-link" data-title="Authentification">Authentification</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#requete-http" class="toc-h2 toc-link" data-title="Requête HTTP">Requête HTTP</a>
+                    <a href="#recuperer-le-token-d-39-authentification" class="toc-h2 toc-link" data-title="Récupèrer le token d'authentification">Récupèrer le token d'authentification</a>
                   </li>
               </ul>
           </li>
@@ -342,6 +342,9 @@
                     <a href="#ajout-un-instrument-a-l-39-utilisateur" class="toc-h2 toc-link" data-title="Ajout un instrument à l'utilisateur">Ajout un instrument à l'utilisateur</a>
                   </li>
                   <li>
+                    <a href="#creer-un-utilisateur" class="toc-h2 toc-link" data-title="Créer un utilisateur">Créer un utilisateur</a>
+                  </li>
+                  <li>
                     <a href="#ajout-d-39-un-achievement-a-l-39-utilisateur" class="toc-h2 toc-link" data-title="Ajout d'un achievement à l'utilisateur">Ajout d'un achievement à l'utilisateur</a>
                   </li>
                   <li>
@@ -358,6 +361,14 @@
               </ul>
           </li>
           <li>
+            <a href="#messages" class="toc-h1 toc-link" data-title="Messages">Messages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte" class="toc-h2 toc-link" data-title="Lister Les messages d'un groupe de l'utilisateur connecté">Lister Les messages d'un groupe de l'utilisateur connecté</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -370,12 +381,36 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Ceci est la documentation de l&#39;api ...</p>
-<h1 id='authentification'>Authentification</h1>
+<h1 id='authentification'>Authentification</h1><h2 id='recuperer-le-token-d-39-authentification'>Récupèrer le token d&#39;authentification</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code></code></pre></div>
 <blockquote>
-<p>Lors de l&#39;authentification</p>
+<p>Lors de l&#39;authentification, la réponses JSON fournira un token permettant d&#39;utiliser certaines fonctionalités de l&#39;API</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code></code></pre></div><h3 id='requete-http'>Requête HTTP</h3>
-<p><strong><span style="rgb(255, 180, 0)">POST</span> /auth/</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">202</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"authToken"</span><span class="p">:</span><span class="s2">"f7c4464eed5ba3ae5a40bb6b3e40d2a5"</span><span class="w">
+  </span><span class="s2">"user:"</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maurice"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monticule"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mail"</span><span class="p">:</span><span class="s2">"momo@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='requete-http'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /auth/</strong></p>
+
+<aside class="notice">
+Lors de la connexion, un nouveau token est généré.
+</aside>
 <h1 id='users'>Users</h1><h2 id='lister-les-utilisateurs'>Lister les utilisateurs</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -398,7 +433,7 @@
         </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
         </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1.png"</span><span class="w">
+        </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -409,7 +444,7 @@
         </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="p">,</span><span class="w">
         </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Ecole du rire"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/2.png"</span><span class="w">
+        </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/2/image.png"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -452,7 +487,7 @@
       </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
       </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1.png"</span><span class="w">
+      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -492,7 +527,7 @@
       </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
       </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1.png"</span><span class="w">
+      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -554,6 +589,11 @@
 <td>Permet de modifier ses études</td>
 </tr>
 <tr>
+<td>image <span style="color:red">[OPTIONNEL]</span></td>
+<td></td>
+<td>Permet de modifier l&#39;image sous le format base64</td>
+</tr>
+<tr>
 <td>password <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
 <td>Permet de modifier son mot de passe</td>
@@ -588,8 +628,8 @@
       </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2Ix"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1.png"</span><span class="w">
+      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -641,12 +681,91 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un instrument à l&#39;utilisateur connecté</p>
-<h3 id='requete-http-6'>Requête HTTP</h3>
+<h2 id='creer-un-utilisateur'>Créer un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//TODO</span>
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON avec le nouveau utilisateur créé</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user:"</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toto"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basse"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mail"</span><span class="p">:</span><span class="s2">"totobasse@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">"0102030405"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Ecole de la vie"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/2/image.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='requete-http-6'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(9, 123, 237)">POST</span> /users/</strong></p>
+<h3 id='parametres-de-requete-3'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>firstname</td>
+<td></td>
+<td>Prénom de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>lastname</td>
+<td></td>
+<td>Nom de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>mail</td>
+<td></td>
+<td>Adresse email de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>tel</td>
+<td></td>
+<td>Numéro de téléphone de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>password</td>
+<td></td>
+<td>Mot de passe de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>age</td>
+<td></td>
+<td>l&#39;age de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>studies <span style="color:red">[OPTIONNEL]</span></td>
+<td></td>
+<td>Les etudes de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>sex <span style="color:red">[OPTIONNEL]</span></td>
+<td></td>
+<td>le genre de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>image <span style="color:red">[OPTIONNEL]</span></td>
+<td></td>
+<td>l&#39;image de profil sous format base64</td>
+</tr>
+</tbody></table>
+<h3 id='requete-http-7'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/instruments</strong></p>
 <h3 id='headers-3'>Headers</h3>
 <table><thead>
@@ -662,7 +781,7 @@
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-3'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-4'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -690,12 +809,12 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un achievement à l&#39;utilisateur connecté</p>
-<h3 id='requete-http-7'>Requête HTTP</h3>
+<h3 id='requete-http-8'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/achievements</strong></p>
 <h3 id='headers-4'>Headers</h3>
 <table><thead>
@@ -711,7 +830,7 @@
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-4'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-5'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -744,12 +863,12 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un role à l&#39;utilisateur</p>
-<h3 id='requete-http-8'>Requête HTTP</h3>
+<h3 id='requete-http-9'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/{uid}/roles</strong></p>
 <h3 id='headers-5'>Headers</h3>
 <table><thead>
@@ -765,7 +884,7 @@
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-5'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-6'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -794,20 +913,21 @@
   </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"users:"</span><span class="w">
+  </span><span class="s2">"groups:"</span><span class="w">
     </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-
+        </span><span class="nl">"titre"</span><span class="p">:</span><span class="s2">"La conv des bgs"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"titre"</span><span class="p">:</span><span class="s2">"Maurice, Jean-Pierre"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer une liste d&#39;utilisateur</p>
-<h3 id='requete-http-9'>Requête HTTP</h3>
+<p>Cette route permet de récuperer la listes des conversations d&#39;un utilisateur</p>
+<h3 id='requete-http-10'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
 <h3 id='headers-6'>Headers</h3>
 <table><thead>
@@ -821,6 +941,67 @@
 <td>authToken</td>
 <td></td>
 <td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h1 id='messages'>Messages</h1><h2 id='lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte'>Lister Les messages d&#39;un groupe de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groupeId"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"messages:"</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gid"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="s2">"La basse c'est super cool"</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gid"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="s2">"ratio"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"answerTo"</span><span class="p">:</span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer la listes des messages envoyés dans le groupe</p>
+<h3 id='requete-http-11'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages</strong></p>
+<h3 id='headers-7'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h3 id='parametres-d-39-url-4'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gid</td>
+<td>L&#39;identifiant du groupe</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>

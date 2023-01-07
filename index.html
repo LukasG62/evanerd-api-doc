@@ -336,13 +336,10 @@
                     <a href="#modifier-un-utilisateur" class="toc-h2 toc-link" data-title="Modifier un utilisateur">Modifier un utilisateur</a>
                   </li>
                   <li>
-                    <a href="#supprimer-un-utilisateur" class="toc-h2 toc-link" data-title="Supprimer un utilisateur">Supprimer un utilisateur</a>
-                  </li>
-                  <li>
-                    <a href="#ajout-un-instrument-a-l-39-utilisateur" class="toc-h2 toc-link" data-title="Ajout un instrument à l'utilisateur">Ajout un instrument à l'utilisateur</a>
-                  </li>
-                  <li>
                     <a href="#creer-un-utilisateur" class="toc-h2 toc-link" data-title="Créer un utilisateur">Créer un utilisateur</a>
+                  </li>
+                  <li>
+                    <a href="#ajouter-un-instrument-a-l-39-utilisateur" class="toc-h2 toc-link" data-title="Ajouter un instrument à l'utilisateur">Ajouter un instrument à l'utilisateur</a>
                   </li>
                   <li>
                     <a href="#ajout-d-39-un-achievement-a-l-39-utilisateur" class="toc-h2 toc-link" data-title="Ajout d'un achievement à l'utilisateur">Ajout d'un achievement à l'utilisateur</a>
@@ -381,6 +378,9 @@
                     <a href="#lister-les-postes" class="toc-h2 toc-link" data-title="Lister Les postes">Lister Les postes</a>
                   </li>
                   <li>
+                    <a href="#lister-les-reactions-d-39-un-post" class="toc-h2 toc-link" data-title="Lister Les reactions d'un post">Lister Les reactions d'un post</a>
+                  </li>
+                  <li>
                     <a href="#lister-les-messages-d-39-un-poste" class="toc-h2 toc-link" data-title="Lister Les messages d'un poste">Lister Les messages d'un poste</a>
                   </li>
               </ul>
@@ -393,6 +393,9 @@
                   </li>
                   <li>
                     <a href="#lister-les-evenements-d-39-un-calendrier" class="toc-h2 toc-link" data-title="Lister Les évenements d'un calendrier">Lister Les évenements d'un calendrier</a>
+                  </li>
+                  <li>
+                    <a href="#lister-les-membres-de-l-39-appel" class="toc-h2 toc-link" data-title="Lister les membres de l'appel">Lister les membres de l'appel</a>
                   </li>
               </ul>
           </li>
@@ -636,84 +639,6 @@ Lors de la connexion, un nouveau token est généré.
 <aside class="warning">
   Si l'utilisateur n'a pas les permissions pour modifier un utilisateur alors la route enverra un JSON d'erreur avec un status code 403.
 </aside>
-<h2 id='supprimer-un-utilisateur'>Supprimer un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">//TODO</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON de l&#39;utilisateur supprimé sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user:"</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maurice"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monticule"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"mail"</span><span class="p">:</span><span class="s2">"momo@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Cette route permet de supprimer un utilisateur</p>
-<h3 id='requete-http-5'>Requête HTTP</h3>
-<p><strong><span style="rgb(235, 32, 19)">DEL</span> /users/{uid}</strong></p>
-<h3 id='parametres-d-39-url-3'>Paramètres d&#39;URL</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>uid</td>
-<td>L&#39;identifiant de l&#39;utilisateur</td>
-</tr>
-</tbody></table>
-<h3 id='headers-2'>Headers</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>authToken</td>
-<td></td>
-<td>Token d&#39;identification de l&#39;utilisateur</td>
-</tr>
-</tbody></table>
-
-<aside class="notice">
-
-   Les membres du CA peuvent supprimer tous les utilisateurs. Un utilisateur ne peut supprimer que son propre compte.
-</aside>
-
-<aside class="warning">
-  Si l'utilisateur n'a pas les permissions pour supprimer un utilisateur alors la route enverra un JSON d'erreur avec un status code 403.
-</aside>
-<h2 id='ajout-un-instrument-a-l-39-utilisateur'>Ajout un instrument à l&#39;utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">//TODO</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et l&#39;instrument ajouté</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
-
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Cette route permet d&#39;ajouter un instrument à l&#39;utilisateur connecté</p>
 <h2 id='creer-un-utilisateur'>Créer un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//TODO</span>
 </code></pre></div>
 <blockquote>
@@ -737,7 +662,7 @@ Lors de la connexion, un nouveau token est généré.
     </span><span class="p">},</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='requete-http-6'>Requête HTTP</h3>
+</span></code></pre></div><h3 id='requete-http-5'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">POST</span> /users/</strong></p>
 <h3 id='parametres-de-requete-3'>Paramètres de requête</h3>
 <table><thead>
@@ -793,9 +718,24 @@ Lors de la connexion, un nouveau token est généré.
 <td>l&#39;image de profil sous format base64</td>
 </tr>
 </tbody></table>
-<h3 id='requete-http-7'>Requête HTTP</h3>
-<p><strong><span style="rgb(255, 180, 0)">POST</span> /users/instruments</strong></p>
-<h3 id='headers-3'>Headers</h3>
+<h2 id='ajouter-un-instrument-a-l-39-utilisateur'>Ajouter un instrument à l&#39;utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">//TODO</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et l&#39;instrument ajouté</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">201</span><span class="p">,</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet d&#39;ajouter un instrument à l&#39;utilisateur connecté</p>
+<h3 id='requete-http-6'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /users/instruments</strong></p>
+<h3 id='headers-2'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -842,9 +782,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un achievement à l&#39;utilisateur connecté</p>
-<h3 id='requete-http-8'>Requête HTTP</h3>
+<h3 id='requete-http-7'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/achievements</strong></p>
-<h3 id='headers-4'>Headers</h3>
+<h3 id='headers-3'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -896,9 +836,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un role à l&#39;utilisateur</p>
-<h3 id='requete-http-9'>Requête HTTP</h3>
+<h3 id='requete-http-8'>Requête HTTP</h3>
 <p><strong><span style="rgb(255, 180, 0)">POST</span> /users/{uid}/roles</strong></p>
-<h3 id='headers-5'>Headers</h3>
+<h3 id='headers-4'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -912,7 +852,7 @@ Lors de la connexion, un nouveau token est généré.
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-4'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-3'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -973,9 +913,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des roles</p>
-<h3 id='requete-http-10'>Requête HTTP</h3>
+<h3 id='requete-http-9'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/</strong></p>
-<h3 id='headers-6'>Headers</h3>
+<h3 id='headers-5'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1014,9 +954,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des conversations d&#39;un utilisateur</p>
-<h3 id='requete-http-11'>Requête HTTP</h3>
+<h3 id='requete-http-10'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
-<h3 id='headers-7'>Headers</h3>
+<h3 id='headers-6'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1063,9 +1003,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des messages envoyés dans le groupe</p>
-<h3 id='requete-http-12'>Requête HTTP</h3>
+<h3 id='requete-http-11'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages</strong></p>
-<h3 id='headers-8'>Headers</h3>
+<h3 id='headers-7'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1079,7 +1019,7 @@ Lors de la connexion, un nouveau token est généré.
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-5'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-4'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1089,22 +1029,6 @@ Lors de la connexion, un nouveau token est généré.
 <tr>
 <td>gid</td>
 <td>L&#39;identifiant du groupe</td>
-</tr>
-</tbody></table>
-<h3 id='requete-http-13'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
-<h3 id='headers-9'>Headers</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>authToken</td>
-<td></td>
-<td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
 <h2 id='lister-les-reactions-d-39-un-message-de-groupe'>Lister Les reactions d&#39;un message de groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// TODO CODE AJAX</span>
@@ -1133,9 +1057,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des reactions d&#39;un message de le groupe</p>
-<h3 id='requete-http-14'>Requête HTTP</h3>
+<h3 id='requete-http-12'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}</strong></p>
-<h3 id='headers-10'>Headers</h3>
+<h3 id='headers-8'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1149,7 +1073,7 @@ Lors de la connexion, un nouveau token est généré.
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-5'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1197,9 +1121,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des postes </p>
-<h3 id='requete-http-15'>Requête HTTP</h3>
+<h3 id='requete-http-13'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/</strong></p>
-<h3 id='headers-11'>Headers</h3>
+<h3 id='headers-9'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1217,6 +1141,43 @@ Lors de la connexion, un nouveau token est généré.
 <aside class="notice">
   La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
 </aside>
+<h2 id='lister-les-reactions-d-39-un-post'>Lister Les reactions d&#39;un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"posts"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer la listes des postes </p>
+<h3 id='requete-http-14'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions</strong></p>
+<h3 id='headers-10'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
 <h2 id='lister-les-messages-d-39-un-poste'>Lister Les messages d&#39;un poste</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -1250,9 +1211,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des messages envoyé sur un post</p>
-<h3 id='requete-http-16'>Requête HTTP</h3>
+<h3 id='requete-http-15'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/messages</strong></p>
-<h3 id='headers-12'>Headers</h3>
+<h3 id='headers-11'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1266,7 +1227,7 @@ Lors de la connexion, un nouveau token est généré.
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-7'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1300,9 +1261,9 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la listes des calendriers</p>
-<h3 id='requete-http-17'>Requête HTTP</h3>
+<h3 id='requete-http-16'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/</strong></p>
-<h3 id='headers-13'>Headers</h3>
+<h3 id='headers-12'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1343,8 +1304,64 @@ Lors de la connexion, un nouveau token est généré.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer les événements d&#39;un calendrier</p>
-<h3 id='requete-http-18'>Requête HTTP</h3>
+<h3 id='requete-http-17'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/[aid}/</strong></p>
+<h3 id='headers-13'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h3 id='parametres-d-39-url-7'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>aid</td>
+<td>L&#39;identifiant du calendrier</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  La réponses dépends des permissions de lecture de l'utilisateur sur le calendrier
+</aside>
+<h2 id='lister-les-membres-de-l-39-appel'>Lister les membres de l&#39;appel</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"calls"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer les informations concernant l&#39;appel</p>
+<h3 id='requete-http-18'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/event/{eid}/calls</strong></p>
 <h3 id='headers-14'>Headers</h3>
 <table><thead>
 <tr>
@@ -1370,10 +1387,14 @@ Lors de la connexion, un nouveau token est généré.
 <td>aid</td>
 <td>L&#39;identifiant du calendrier</td>
 </tr>
+<tr>
+<td>eid</td>
+<td>L&#39;identifiant de l&#39;event</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
-  La réponses dépends des permissions de lecture de l'utilisateur sur le calendrier
+  Seuls les membres du CA peuvent faire l'appel
 </aside>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">

@@ -753,6 +753,54 @@ uid | | L'identifiant du l'utilisateur
 L'utilisateur connécté doit appartenir au groupe pour pouvoir ajouter un utilisateur
 </aside>
 
+## Envoyé un message dans le groupe
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "groupe":
+    {
+    }
+}
+```
+
+Cette route permet d'envoyer un message dans le groupe
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/messages**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+gid | | L'identifiant du groupe
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+content | | Contenu du message
+answerTo <span style="color:red">[OPTIONNEL] |  | L'id du message cible
+
+<aside class="notice">
+L'utilisateur connécté doit appartenir au groupe pour envoyer un message
+</aside>
 
 # Posts
 

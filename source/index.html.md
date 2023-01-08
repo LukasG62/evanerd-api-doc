@@ -681,13 +681,9 @@ mid | L'identifiant du message
   "apiname":"EVANERD API",
   "version":"1.0",
   "status":200,
-  "groups:"
-    [
-      {
-      },
-      {
-      }
-    ]
+  "groupe":
+    {
+    }
 }
 ```
 
@@ -715,7 +711,47 @@ L'utilisateur connecté est directement ajouté au groupe créé
 </aside>
 
 ## Ajouter un utilisateur au groupe
+```javascript
 
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "groupe":
+    {
+    }
+}
+```
+
+Cette route permet d'ajouter un utilisateur au groupe
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/users/{uid}**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+gid | | L'identifiant du groupe
+uid | | L'identifiant du l'utilisateur
+
+<aside class="notice">
+L'utilisateur connécté doit appartenir au groupe pour pouvoir ajouter un utilisateur
+</aside>
 
 
 # Posts

@@ -58,8 +58,19 @@ Ceci est la documentation de l'api ...
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /auth/**
 
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+tel |  | Numéro de téléphone de l'utilisateur
+password | Mot de passe de l'utilisateur
+
 <aside class="notice">
-Lors de la connexion, un nouveau token est généré.
+Lors de la connexion, un nouveau token est généré, rendant l'ancien inutilisable
+</aside>
+
+<aside class="warning">
+L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </aside>
 
 # Users
@@ -259,7 +270,7 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
 ```
 ### Requête HTTP
 
-**<span style="color:rgb(9, 123, 237)">POST</span> /users/**
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/**
 
 ### Paramètres de requête
 
@@ -461,6 +472,11 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+active | "both" | Permet de préciser : 0=les roles inactifs, 1=les roles actifs "both"=Les deux
 # Groups
 
 ## Lister les groupes de l'utilisateur connecté
@@ -504,6 +520,47 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
+## Lister Les permissions d'un groupe
+
+```javascript
+// TODO CODE AJAX
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "groupeId":3,
+  "permissions:"
+    [
+      {
+
+      },
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de récuperer la listes des permissions d'un groupe
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/permissions/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+<aside class="notice">
+  Si un groupe n'a pas de permissions affecté, alors il n'y a aucune restrictions de role sur le groupe. 
+  Par conséquent tout utilisateur membre peut y être ajouté.
+</aside>
 
 ## Lister Les messages d'un groupe de l'utilisateur connecté
 
@@ -609,6 +666,57 @@ Parameter | Description
 --------- | -----------
 gid | L'identifiant du groupe
 mid | L'identifiant du message
+
+## Créer un groupe pour l'utilisateur connecté
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "groups:"
+    [
+      {
+      },
+      {
+      }
+    ]
+}
+```
+
+Cette route permet de créer un groupe pour l'utilisateur connecté
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /groups**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+image *<span style="color:red">[OPTIONNEL]</span>* |  | donnée de l'image sous le format base64
+title *<span style="color:red">[OPTIONNEL]</span>*  |  | titre de la discussion
+
+<aside class="notice">
+L'utilisateur connecté est directement ajouté au groupe créé
+</aside>
+
+## Ajouter un utilisateur au groupe
+
+
 
 # Posts
 

@@ -21,7 +21,7 @@ meta:
 
 # Introduction
 
-Ceci est la documentation de l'api ...
+Documentation de l'API utilisé lors de la réalisation du développement du Projet PINF : 2022-2023, Groupe Evanerd
 
 # Authentification
 
@@ -243,10 +243,12 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
 ## Créer un utilisateur
 
 ```javascript
+
 //TODO
+
 ```
 
-> La requête renvoie un JSON avec le nouveau utilisateur créé
+> La requête renvoie un JSON de l'utilisateur modifié sous la forme:
 
 ```json
 {
@@ -267,7 +269,12 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
     },
 
 }
+
+
 ```
+
+Cette route permet de créer un utilisateur.
+
 ### Requête HTTP
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /users/**
@@ -425,7 +432,7 @@ rid |  | l'id du role
 
 # Roles
 
-## Lister Les roles
+## Lister les rôles
 
 ```javascript
 
@@ -440,7 +447,7 @@ rid |  | l'id du role
   "apiname":"EVANERD API",
   "version":"1.0",
   "status":200,
-  "role:"
+  "roles":
     [
       {
         "id":1,
@@ -477,6 +484,222 @@ authToken |  | Token d'identification de l'utilisateur
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 active | "both" | Permet de préciser : 0=les roles inactifs, 1=les roles actifs "both"=Les deux
+
+## Modifier un rôle
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route permet de récuperer une liste de rôle
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+rid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
+
+## Créer un rôle
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route permet de créer un rôle
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+rid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
+# Instruments 
+
+## Retourner tous les instruments
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route de retourner tous les instruments.
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
+## Modifier un instrument
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route permet de modifier un instrument.
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
+
+## Créer un instrument
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route permet de créer un instrument.
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
+# Achievements 
+
+## Retourner tous les achievements
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route de retourner tous les achievements.
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
+## Modifier un achievement
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route permet de modifier un achievement.
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
+
+## Créer un achievement
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+// TODO
+```
+
+Cette route permet de créer un achievement.
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /users**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+
 # Groups
 
 ## Lister les groupes de l'utilisateur connecté

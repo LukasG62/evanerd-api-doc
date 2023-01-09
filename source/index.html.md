@@ -358,7 +358,7 @@ Cette route permet d'ajouter un achievement à l'utilisateur connecté
 
 ### Requête HTTP
 
-**<span style="rgb(255, 180, 0)">POST</span> /users/achievements**
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/achievements**
 
 ### Headers
 
@@ -404,7 +404,7 @@ Cette route permet d'ajouter un role à l'utilisateur
 
 ### Requête HTTP
 
-**<span style="rgb(255, 180, 0)">POST</span> /users/{uid}/roles**
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/{uid}/roles**
 
 ### Headers
 
@@ -428,7 +428,27 @@ rid |  | l'id du role
    Seuls les membres du CA peuvent ajouter un role, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
 </aside>
 
+## Vérifier l'émail d'un utilisateur
 
+```javascript
+  //TODO
+```
+
+> Cette route renvoie un JSON sous la forme 
+
+```json
+//TODO
+```
+
+### Requête HTTP
+
+**<span style="rgb(255, 180, 0)">POST</span> /users/verify**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+token |  | token d'activation du compte
 
 # Roles
 
@@ -642,7 +662,7 @@ label |  | Nom de l'instrument
 
 # Achievements 
 
-## Retourner tous les achievements
+## Lister tous les achievements
 
 ```javascript
 
@@ -661,12 +681,6 @@ Cette route de retourner tous les achievements.
 ### Requête HTTP
 
 **<span style="color:rgb(12, 187, 82)">GET</span> /achievements**
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
 
 ## Modifier un achievement
 
@@ -720,17 +734,23 @@ label |  | Titre de l'achievement
 // TODO
 ```
 
-Cette route permet de créer un achievement.
-
 ### Requête HTTP
 
-**<span style="color:rgb(255, 180, 0)">POST</span> /users**
+**<span style="color:rgb(255, 180, 0)">POST</span> /achievements**
+
+### Headers
+
+Cette route permet de créer un achievement.
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+label |  | Nom de l'achievements
 
 # Groups
 

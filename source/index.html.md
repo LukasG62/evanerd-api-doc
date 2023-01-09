@@ -503,13 +503,27 @@ Cette route permet de récuperer une liste de rôle
 
 ### Requête HTTP
 
-**<span style="color:rgb(9, 123, 237)">PUT</span> /users**
+**<span style="color:rgb(9, 123, 237)">PUT</span> /roles/{rid}**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+rid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-rid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+label *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le nom du role
+acitve *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
+
 
 
 ## Créer un rôle
@@ -530,13 +544,21 @@ Cette route permet de créer un rôle
 
 ### Requête HTTP
 
-**<span style="color:rgb(255, 180, 0)">POST</span> /users**
+**<span style="color:rgb(255, 180, 0)">POST</span> /roles**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-rid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+label |  | Permet de modifier le nom du role
+acitve *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
+
 
 # Instruments 
 

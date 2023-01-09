@@ -471,7 +471,7 @@ Cette route permet de récuperer la listes des roles
 
 ### Requête HTTP
 
-**<span style="color:rgb(12, 187, 82)">GET</span> /posts/**
+**<span style="color:rgb(12, 187, 82)">GET</span> /roles/**
 
 ### Headers
 
@@ -515,7 +515,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-rid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+rid |  | Permet de modifier le role indiqué
 
 ### Paramètres de requête
 
@@ -580,13 +580,7 @@ Cette route de retourner tous les instruments.
 
 ### Requête HTTP
 
-**<span style="color:rgb(12, 187, 82)">GET</span> /users**
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+**<span style="color:rgb(12, 187, 82)">GET</span> /instruments**
 
 ## Modifier un instrument
 
@@ -606,14 +600,19 @@ Cette route permet de modifier un instrument.
 
 ### Requête HTTP
 
-**<span style="color:rgb(9, 123, 237)">PUT</span> /users**
+**<span style="color:rgb(9, 123, 237)">PUT</span> /instruments/{iid}**
 
-### Paramètres de requête
+### Headers
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+authToken |  | Token d'identification de l'utilisateur
 
+### Paramètres d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+label |  | l'identifiant de l'instrument
 
 ## Créer un instrument
 
@@ -633,13 +632,13 @@ Cette route permet de créer un instrument.
 
 ### Requête HTTP
 
-**<span style="color:rgb(255, 180, 0)">POST</span> /users**
+**<span style="color:rgb(255, 180, 0)">POST</span> /instruments**
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+label |  | Nom de l'instrument
 
 # Achievements 
 
@@ -661,7 +660,7 @@ Cette route de retourner tous les achievements.
 
 ### Requête HTTP
 
-**<span style="color:rgb(12, 187, 82)">GET</span> /users**
+**<span style="color:rgb(12, 187, 82)">GET</span> /achievements**
 
 ### Paramètres de requête
 
@@ -687,14 +686,25 @@ Cette route permet de modifier un achievement.
 
 ### Requête HTTP
 
-**<span style="color:rgb(9, 123, 237)">PUT</span> /users**
+**<span style="color:rgb(9, 123, 237)">PUT</span> /achievement/{achivid}**
 
-### Paramètres de requête
+### Headers
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-iid *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le role indiqué
+authToken |  | Token d'identification de l'utilisateur
 
+### Paramètres d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+achivid |  | l'identifiant de l'achievement
+
+### Paramètres de rêquete
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+label |  | Titre de l'achievement
 
 ## Créer un achievement
 

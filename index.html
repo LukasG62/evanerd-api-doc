@@ -1029,8 +1029,22 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </span></code></pre></div>
 <p>Cette route permet de récuperer une liste de rôle</p>
 <h3 id='requete-http-10'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /users</strong></p>
-<h3 id='parametres-de-requete-9'>Paramètres de requête</h3>
+<p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /roles/{rid}</strong></p>
+<h3 id='headers-6'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h3 id='parametres-d-39-url-4'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1044,6 +1058,25 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <td>Permet de modifier le role indiqué</td>
 </tr>
 </tbody></table>
+<h3 id='parametres-de-requete-9'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td></td>
+<td>Permet de modifier le nom du role</td>
+</tr>
+<tr>
+<td>acitve <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td>1</td>
+<td>Si le role est active</td>
+</tr>
+</tbody></table>
 <h2 id='creer-un-role'>Créer un rôle</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -1055,7 +1088,21 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </span></code></pre></div>
 <p>Cette route permet de créer un rôle</p>
 <h3 id='requete-http-11'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /users</strong></p>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /roles</strong></p>
+<h3 id='headers-7'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
 <h3 id='parametres-de-requete-10'>Paramètres de requête</h3>
 <table><thead>
 <tr>
@@ -1065,9 +1112,14 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </tr>
 </thead><tbody>
 <tr>
-<td>rid <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td>label</td>
 <td></td>
-<td>Permet de modifier le role indiqué</td>
+<td>Permet de modifier le nom du role</td>
+</tr>
+<tr>
+<td>acitve <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td>1</td>
+<td>Si le role est active</td>
 </tr>
 </tbody></table>
 <h1 id='instruments'>Instruments</h1><h2 id='retourner-tous-les-instruments'>Retourner tous les instruments</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1253,7 +1305,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <p>Cette route permet de récuperer la listes des conversations d&#39;un utilisateur</p>
 <h3 id='requete-http-18'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
-<h3 id='headers-6'>Headers</h3>
+<h3 id='headers-8'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1290,7 +1342,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <p>Cette route permet de récuperer la listes des permissions d&#39;un groupe</p>
 <h3 id='requete-http-19'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/permissions/</strong></p>
-<h3 id='headers-7'>Headers</h3>
+<h3 id='headers-9'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1344,7 +1396,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <p>Cette route permet de récuperer la listes des messages envoyés dans le groupe</p>
 <h3 id='requete-http-20'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages</strong></p>
-<h3 id='headers-8'>Headers</h3>
+<h3 id='headers-10'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1358,7 +1410,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-4'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-5'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1398,7 +1450,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <p>Cette route permet de récuperer la listes des reactions d&#39;un message de le groupe</p>
 <h3 id='requete-http-21'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}</strong></p>
-<h3 id='headers-9'>Headers</h3>
+<h3 id='headers-11'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1412,7 +1464,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-5'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1447,7 +1499,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <p>Cette route permet de créer un groupe pour l&#39;utilisateur connecté</p>
 <h3 id='requete-http-22'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups</strong></p>
-<h3 id='headers-10'>Headers</h3>
+<h3 id='headers-12'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1503,7 +1555,7 @@ L'utilisateur connecté est directement ajouté au groupe créé
 <p>Cette route permet d&#39;ajouter un utilisateur au groupe</p>
 <h3 id='requete-http-23'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/users/{uid}</strong></p>
-<h3 id='headers-11'>Headers</h3>
+<h3 id='headers-13'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1559,7 +1611,7 @@ L'utilisateur connécté doit appartenir au groupe pour pouvoir ajouter un utili
 <p>Cette route permet d&#39;envoyer un message dans le groupe</p>
 <h3 id='requete-http-24'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/messages</strong></p>
-<h3 id='headers-12'>Headers</h3>
+<h3 id='headers-14'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1644,7 +1696,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de récuperer la listes des postes </p>
 <h3 id='requete-http-25'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/</strong></p>
-<h3 id='headers-13'>Headers</h3>
+<h3 id='headers-15'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1685,7 +1737,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de récuperer la listes des postes </p>
 <h3 id='requete-http-26'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions</strong></p>
-<h3 id='headers-14'>Headers</h3>
+<h3 id='headers-16'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1734,7 +1786,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de récuperer la listes des messages envoyé sur un post</p>
 <h3 id='requete-http-27'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/messages</strong></p>
-<h3 id='headers-15'>Headers</h3>
+<h3 id='headers-17'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1748,7 +1800,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-7'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1784,7 +1836,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de récuperer la listes des calendriers</p>
 <h3 id='requete-http-28'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/</strong></p>
-<h3 id='headers-16'>Headers</h3>
+<h3 id='headers-18'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1827,7 +1879,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de récuperer les événements d&#39;un calendrier</p>
 <h3 id='requete-http-29'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/[aid}/</strong></p>
-<h3 id='headers-17'>Headers</h3>
+<h3 id='headers-19'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1841,7 +1893,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-7'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-8'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1883,7 +1935,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de récuperer les informations concernant l&#39;appel</p>
 <h3 id='requete-http-30'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/event/{eid}/calls</strong></p>
-<h3 id='headers-18'>Headers</h3>
+<h3 id='headers-20'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1897,7 +1949,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-8'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-9'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>

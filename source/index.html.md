@@ -1,5 +1,5 @@
 ---
-title: Documentation API EVANERD
+title: Documentation API EVANERDS
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
@@ -16,12 +16,12 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Evanerd API
+    content: Documentation for the Evanerds API
 ---
 
 # Introduction
 
-Documentation de l'API utilisé lors de la réalisation du développement du Projet PINF : 2022-2023, Groupe Evanerd
+Documentation de l'API utilisé lors de la réalisation du développement du Projet PINF : 2022-2023, Groupe Evanerds
 
 # Authentification
 
@@ -87,7 +87,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 
 ```json
 {
-  "apiname":"EVANERD API",
+  "apiname":"EVANERDS API",
   "version":"1.0",
   "status":200,
   "users:"
@@ -142,7 +142,7 @@ idRole *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de lister tous l
 
 ```json
 {
-  "apiname":"EVANERD API",
+  "apiname":"EVANERDS API",
   "version":"1.0",
   "status":200,
   "user:"
@@ -184,7 +184,7 @@ uid | L'identifiant de l'utilisateur
 
 ```json
 {
-  "apiname":"EVANERD API",
+  "apiname":"EVANERDS API",
   "version":"1.0",
   "status":200,
   "user:"
@@ -428,7 +428,7 @@ rid |  | l'id du role
    Seuls les membres du CA peuvent ajouter un role, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
 </aside>
 
-## Vérifier l'émail d'un utilisateur
+## Vérifier l'Email d'un utilisateur
 
 ```javascript
   //TODO
@@ -443,6 +443,81 @@ rid |  | l'id du role
 ### Requête HTTP
 
 **<span style="rgb(255, 180, 0)">POST</span> /users/verify**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+token |  | token d'activation du compte
+
+## Supprimer un instrument d'un utilisateur
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+```
+
+Cette route de retourner tous les instruments.
+
+### Requête HTTP
+
+**<span style="color:rgb(235, 32, 19)">DEL</span> /users/instruments**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+token |  | token d'activation du compte
+
+## Supprimer un achievement d'un utilisateur
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+```
+
+Cette route de retourner tous les instruments.
+
+### Requête HTTP
+
+**<span style="color:rgb(235, 32, 19)">DEL</span> /users/achievements**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+token |  | token d'activation du compte
+
+## Supprimer un rôle d'un utilisateur
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+```
+
+Cette route de retourner tous les instruments.
+
+### Requête HTTP
+
+**<span style="color:rgb(235, 32, 19)">DEL</span> /users/roles**
 
 ### Paramètres de requête
 
@@ -593,7 +668,6 @@ acitve *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
 > La requête renvoie un JSON sous la forme:
 
 ```json
-// TODO
 ```
 
 Cette route de retourner tous les instruments.
@@ -601,6 +675,13 @@ Cette route de retourner tous les instruments.
 ### Requête HTTP
 
 **<span style="color:rgb(12, 187, 82)">GET</span> /instruments**
+
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+token |  | token d'activation du compte
 
 ## Modifier un instrument
 
@@ -795,7 +876,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-## Lister Les permissions d'un groupe
+## Lister les permissions d'un groupe
 
 ```javascript
 // TODO CODE AJAX
@@ -837,7 +918,7 @@ authToken |  | Token d'identification de l'utilisateur
   Par conséquent tout utilisateur membre peut y être ajouté.
 </aside>
 
-## Lister Les messages d'un groupe de l'utilisateur connecté
+## Lister les messages d'un groupe de l'utilisateur connecté
 
 ```javascript
 
@@ -892,7 +973,7 @@ Parameter | Description
 --------- | -----------
 gid | L'identifiant du groupe
 
-## Lister Les reactions d'un message de groupe
+## Lister les reactions d'un message de groupe
 
 ```javascript
 // TODO CODE AJAX
@@ -1028,7 +1109,7 @@ uid | | L'identifiant du l'utilisateur
 L'utilisateur connécté doit appartenir au groupe pour pouvoir ajouter un utilisateur
 </aside>
 
-## Envoyé un message dans le groupe
+## Envoyer un message dans le groupe
 ```javascript
 
 // TODO CODE AJAX
@@ -1079,7 +1160,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 
 # Posts
 
-## Lister Les postes
+## Lister les postes
 
 ```javascript
 
@@ -1131,7 +1212,7 @@ authToken |  | Token d'identification de l'utilisateur
   La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
 </aside>
 
-## Lister Les reactions d'un post
+## Lister les reactions d'un post
 
 ```javascript
 
@@ -1168,7 +1249,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-## Lister Les messages d'un poste
+## Lister les messages d'un poste
 
 ```javascript
 
@@ -1226,7 +1307,7 @@ pid | L'identifiant du post
 
 # Agendas
 
-## Lister Les calendriers
+## Lister les calendriers
 
 ```javascript
 
@@ -1268,7 +1349,7 @@ authToken |  | Token d'identification de l'utilisateur
   La réponses dépends des permissions de lecture de l'utilisateur
 </aside>
 
-## Lister Les évenements d'un calendrier
+## Lister les évenements d'un calendrier
 
 ```javascript
 

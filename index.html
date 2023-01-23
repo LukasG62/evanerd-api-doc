@@ -458,6 +458,20 @@
               </ul>
           </li>
           <li>
+            <a href="#participations" class="toc-h1 toc-link" data-title="Participations">Participations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lister-les-partcipations" class="toc-h2 toc-link" data-title="Lister les partcipations">Lister les partcipations</a>
+                  </li>
+                  <li>
+                    <a href="#modifier-une-partcipation" class="toc-h2 toc-link" data-title="Modifier une partcipation">Modifier une partcipation</a>
+                  </li>
+                  <li>
+                    <a href="#ajouter-une-partcipation" class="toc-h2 toc-link" data-title="Ajouter une partcipation">Ajouter une partcipation</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1181,7 +1195,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <td>Permet de modifier le nom du role</td>
 </tr>
 <tr>
-<td>acitve <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td>active <em><span style="color:red">[OPTIONNEL]</span></em></td>
 <td>1</td>
 <td>Si le role est active</td>
 </tr>
@@ -1226,7 +1240,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <td>Permet de modifier le nom du role</td>
 </tr>
 <tr>
-<td>acitve <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td>active <em><span style="color:red">[OPTIONNEL]</span></em></td>
 <td>1</td>
 <td>Si le role est active</td>
 </tr>
@@ -2119,6 +2133,124 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 <aside class="notice">
   Seuls les membres du CA peuvent faire l'appel
 </aside>
+<h1 id='participations'>Participations</h1><h2 id='lister-les-partcipations'>Lister les partcipations</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer une liste d&#39;utilisateur d&#39;un événement</p>
+<h3 id='requete-http-35'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations</strong></p>
+<h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>uid</td>
+<td></td>
+<td>Identifiant de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>aeid</td>
+<td></td>
+<td>Identifiant de l&#39;événement dans l&#39;agenda</td>
+</tr>
+</tbody></table>
+<h2 id='modifier-une-partcipation'>Modifier une partcipation</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer une liste d&#39;utilisateur d&#39;un événement</p>
+<h3 id='requete-http-36'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
+<h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>uid</td>
+<td></td>
+<td>Identifiant de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>aeid</td>
+<td></td>
+<td>Identifiant de l&#39;événement dans l&#39;agenda</td>
+</tr>
+<tr>
+<td>participation</td>
+<td> </td>
+<td>Si la personne participe ou non</td>
+</tr>
+</tbody></table>
+<h2 id='ajouter-une-partcipation'>Ajouter une partcipation</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de récuperer une liste d&#39;utilisateur d&#39;un événement</p>
+<h3 id='requete-http-37'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
+<h3 id='parametres-de-requete-21'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>uid</td>
+<td></td>
+<td>Identifiant de l&#39;utilisateur</td>
+</tr>
+<tr>
+<td>aeid</td>
+<td></td>
+<td>Identifiant de l&#39;événement dans l&#39;agenda</td>
+</tr>
+<tr>
+<td>participation</td>
+<td> </td>
+<td>Si la personne participe ou non</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.

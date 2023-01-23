@@ -617,7 +617,7 @@ rid |  | Permet de modifier le role indiqué
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 label *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le nom du role
-acitve *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
+active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
 
 
 
@@ -652,7 +652,7 @@ authToken |  | Token d'identification de l'utilisateur
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 label |  | Permet de modifier le nom du role
-acitve *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
+active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
 
 
 # Instruments 
@@ -1449,3 +1449,90 @@ eid | L'identifiant de l'event
   Seuls les membres du CA peuvent faire l'appel
 </aside>
 
+# Participations
+
+## Lister les partcipations
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+  A DEFINIR
+```
+
+Cette route permet de récuperer une liste d'utilisateur d'un événement
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken  |  | Token d'identification de l'utilisateur
+uid |  | Identifiant de l'utilisateur
+aeid |  | Identifiant de l'événement dans l'agenda
+
+## Modifier une partcipation
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+  A DEFINIR
+```
+
+Cette route permet de récuperer une liste d'utilisateur d'un événement
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken  |  | Token d'identification de l'utilisateur
+uid |  | Identifiant de l'utilisateur
+aeid |  | Identifiant de l'événement dans l'agenda
+participation |  | Si la personne participe ou non
+
+## Ajouter une partcipation
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+  A DEFINIR
+```
+
+Cette route permet de récuperer une liste d'utilisateur d'un événement
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken  |  | Token d'identification de l'utilisateur
+uid |  | Identifiant de l'utilisateur
+aeid |  | Identifiant de l'événement dans l'agenda
+participation |  | Si la personne participe ou non

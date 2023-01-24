@@ -1382,7 +1382,7 @@ Cette route permet de récupérer les événements d'un calendrier
 
 ### Requête HTTP
 
-**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/[aid}/**
+**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/**
 
 ### Headers
 
@@ -1449,6 +1449,97 @@ eid | Identifiant de l'event
 
 <aside class="notice">
   Seuls les membres du CA peuvent faire l'appel
+</aside>
+
+## Créer un calendrier
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "agendas":
+    [
+      {
+      },
+
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de créer un calendrier
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /agendas/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+<aside class="notice">
+  La réponse dépend des permissions de lecture de l'utilisateur
+</aside>
+
+## Créer un événement d'un calendrier
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+  "apiname":"EVANERD API",
+  "version":"1.0",
+  "status":200,
+  "agendas":1,
+  "events":
+    [
+      {
+      },
+      
+      {
+      },
+    ]
+}
+```
+
+Cette route permet de créer un événement d'un calendrier
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /agendas/{aid}/events**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+aid | Identifiant du calendrier
+
+<aside class="notice">
+  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
 </aside>
 
 # Participations

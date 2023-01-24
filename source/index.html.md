@@ -288,10 +288,10 @@ lastname |  | Nom de l'utilisateur
 mail |  | Adresse email de l'utilisateur
 tel |  | Numéro de téléphone de l'utilisateur
 password |  | Mot de passe de l'utilisateur
-age |  | l'age de l'utilisateur
-studies <span style="color:red">[OPTIONNEL]</span> |  | Les etudes de l'utilisateur
-sex <span style="color:red">[OPTIONNEL]</span> |  | le genre de l'utilisateur
-image <span style="color:red">[OPTIONNEL]</span> |  | l'image de profil sous format base64
+age |  | Âge de l'utilisateur
+studies <span style="color:red">[OPTIONNEL]</span> |  | Etudes de l'utilisateur
+sex <span style="color:red">[OPTIONNEL]</span> |  | Genre de l'utilisateur
+image <span style="color:red">[OPTIONNEL]</span> |  | Image de profil sous format base64
 
 
 ## Ajouter un instrument à l'utilisateur
@@ -329,7 +329,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-iid |  | l'id de l'instrument à ajouter
+iid |  | Id de l'instrument à ajouter
 
 <aside class="notice">
    Un instrument ne peut être rajouté qu'une seul fois
@@ -370,7 +370,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-aid |  | l'id de l'achievements
+aid |  | Id de l'achievements
 
 <aside class="notice">
    Un utilisateur ne peut avoir plusieurs fois le même achievements
@@ -381,7 +381,7 @@ aid |  | l'id de l'achievements
    un JSON d'erreur avec comme code de status 403
 </aside>
 
-## Ajout d'un role à un utilisateur
+## Ajout d'un rôle à un utilisateur
 
 ```javascript
 
@@ -416,7 +416,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Parameter | Description
 --------- | -----------
-uid | L'identifiant de l'utilisateur
+uid | Identifiant de l'utilisateur
 
 ### Paramètres de requête
 
@@ -425,7 +425,7 @@ Paramètre | Par défaut | Description
 rid |  | l'id du role
 
 <aside class="notice">
-   Seuls les membres du CA peuvent ajouter un role, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
+   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
 </aside>
 
 ## Vérifier l'Email d'un utilisateur
@@ -448,7 +448,7 @@ rid |  | l'id du role
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-token |  | token d'activation du compte
+token |  | Token d'activation du compte
 
 ## Supprimer un instrument d'un utilisateur
 
@@ -473,7 +473,7 @@ Cette route de retourner tous les instruments.
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-token |  | token d'activation du compte
+token |  | Token d'activation du compte
 
 ## Supprimer un achievement d'un utilisateur
 
@@ -498,7 +498,7 @@ Cette route de retourner tous les instruments.
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-token |  | token d'activation du compte
+token |  | Token d'activation du compte
 
 ## Supprimer un rôle d'un utilisateur
 
@@ -523,9 +523,9 @@ Cette route de retourner tous les instruments.
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-token |  | token d'activation du compte
+token |  | Token d'activation du compte
 
-# Roles
+# Rôles
 
 ## Lister les rôles
 
@@ -670,7 +670,7 @@ active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
 ```json
 ```
 
-Cette route de retourner tous les instruments.
+Cette route permet de retourner tous les instruments.
 
 ### Requête HTTP
 
@@ -681,7 +681,7 @@ Cette route de retourner tous les instruments.
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-token |  | token d'activation du compte
+token |  | Token d'activation du compte
 
 ## Modifier un instrument
 
@@ -713,7 +713,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-label |  | l'identifiant de l'instrument
+label |  | Identifiant de l'instrument
 
 ## Créer un instrument
 
@@ -757,7 +757,7 @@ label |  | Nom de l'instrument
 // TODO
 ```
 
-Cette route de retourner tous les achievements.
+Cette route permet de retourner tous les achievements.
 
 ### Requête HTTP
 
@@ -864,7 +864,7 @@ label |  | Nom de l'achievements
 }
 ```
 
-Cette route permet de récuperer la listes des conversations d'un utilisateur
+Cette route permet de récuperer la liste des conversations d'un utilisateur
 
 ### Requête HTTP
 
@@ -901,7 +901,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer la listes des permissions d'un groupe
+Cette route permet de récuperer la liste des permissions d'un groupe
 
 ### Requête HTTP
 
@@ -914,8 +914,8 @@ Paramètre | Par défaut | Description
 authToken |  | Token d'identification de l'utilisateur
 
 <aside class="notice">
-  Si un groupe n'a pas de permissions affecté, alors il n'y a aucune restrictions de role sur le groupe. 
-  Par conséquent tout utilisateur membre peut y être ajouté.
+  Si un groupe n'a pas de permissions affecté, alors il n'y a aucune restriction de rôle sur le groupe. 
+  Par conséquent, tout utilisateur membre peut y être ajouté.
 </aside>
 
 ## Lister les messages d'un groupe de l'utilisateur connecté
@@ -955,7 +955,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer la listes des messages envoyés dans le groupe
+Cette route permet de récuperer la liste des messages envoyés dans le groupe
 
 ### Requête HTTP
 
@@ -971,7 +971,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Parameter | Description
 --------- | -----------
-gid | L'identifiant du groupe
+gid | Identifiant du groupe
 
 ## Lister les reactions d'un message de groupe
 
@@ -1003,7 +1003,7 @@ gid | L'identifiant du groupe
 }
 ```
 
-Cette route permet de récuperer la listes des reactions d'un message de le groupe
+Cette route permet de récuperer la liste des reactions d'un message de groupe
 
 ### Requête HTTP
 
@@ -1020,8 +1020,8 @@ authToken |  | Token d'identification de l'utilisateur
 
 Parameter | Description
 --------- | -----------
-gid | L'identifiant du groupe
-mid | L'identifiant du message
+gid | Identifiant du groupe
+mid | Identifiant du message
 
 ## Créer un groupe pour l'utilisateur connecté
 ```javascript
@@ -1059,8 +1059,8 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-image *<span style="color:red">[OPTIONNEL]</span>* |  | donnée de l'image sous le format base64
-title *<span style="color:red">[OPTIONNEL]</span>*  |  | titre de la discussion
+image *<span style="color:red">[OPTIONNEL]</span>* |  | Donnée de l'image sous le format base64
+title *<span style="color:red">[OPTIONNEL]</span>*  |  | Titre de la discussion
 
 <aside class="notice">
 L'utilisateur connecté est directement ajouté au groupe créé
@@ -1102,8 +1102,8 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-gid | | L'identifiant du groupe
-uid | | L'identifiant du l'utilisateur
+gid | | Identifiant du groupe
+uid | | Identifiant du l'utilisateur
 
 <aside class="notice">
 L'utilisateur connécté doit appartenir au groupe pour pouvoir ajouter un utilisateur
@@ -1152,7 +1152,7 @@ gid | | L'identifiant du groupe
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 content | | Contenu du message
-answerTo <span style="color:red">[OPTIONNEL] |  | L'id du message cible
+answerTo <span style="color:red">[OPTIONNEL] |  | Identifiant du message cible
 
 <aside class="notice">
 L'utilisateur connécté doit appartenir au groupe pour envoyer un message
@@ -1196,7 +1196,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 }
 ```
 
-Cette route permet de récuperer la listes des postes 
+Cette route permet de récuperer la liste des postes 
 
 ### Requête HTTP
 
@@ -1209,10 +1209,10 @@ Paramètre | Par défaut | Description
 authToken |  | Token d'identification de l'utilisateur
 
 <aside class="notice">
-  La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
+  La liste de postes dépend du rôle de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
 </aside>
 
-## Lister les reactions d'un post
+## Lister les réactions d'un post
 
 ```javascript
 
@@ -1237,7 +1237,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer la listes des postes 
+Cette route permet de récuperer la liste des postes 
 
 ### Requête HTTP
 
@@ -1303,7 +1303,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Parameter | Description
 --------- | -----------
-pid | L'identifiant du post
+pid | Identifiant du post
 
 # Agendas
 
@@ -1333,7 +1333,7 @@ pid | L'identifiant du post
 }
 ```
 
-Cette route permet de récuperer la listes des calendriers
+Cette route permet de récuperer la liste des calendriers
 
 ### Requête HTTP
 
@@ -1346,7 +1346,7 @@ Paramètre | Par défaut | Description
 authToken |  | Token d'identification de l'utilisateur
 
 <aside class="notice">
-  La réponses dépends des permissions de lecture de l'utilisateur
+  La réponse dépend des permissions de lecture de l'utilisateur
 </aside>
 
 ## Lister les évenements d'un calendrier
@@ -1376,7 +1376,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer les événements d'un calendrier
+Cette route permet de récupérer les événements d'un calendrier
 
 ### Requête HTTP
 
@@ -1392,10 +1392,10 @@ authToken |  | Token d'identification de l'utilisateur
 
 Parameter | Description
 --------- | -----------
-aid | L'identifiant du calendrier
+aid | Identifiant du calendrier
 
 <aside class="notice">
-  La réponses dépends des permissions de lecture de l'utilisateur sur le calendrier
+  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
 </aside>
 
 ## Lister les membres de l'appel
@@ -1442,8 +1442,8 @@ authToken |  | Token d'identification de l'utilisateur
 
 Parameter | Description
 --------- | -----------
-aid | L'identifiant du calendrier
-eid | L'identifiant de l'event
+aid | Identifiant du calendrier
+eid | Identifiant de l'event
 
 <aside class="notice">
   Seuls les membres du CA peuvent faire l'appel
@@ -1465,7 +1465,7 @@ eid | L'identifiant de l'event
   A DEFINIR
 ```
 
-Cette route permet de récuperer une liste d'utilisateur d'un événement
+Cette route permet de récupérer une liste d'utilisateur d'un événement
 
 ### Requête HTTP
 
@@ -1493,7 +1493,7 @@ aeid |  | Identifiant de l'événement dans l'agenda
   A DEFINIR
 ```
 
-Cette route permet de récuperer une liste d'utilisateur d'un événement
+Cette route permet de modifier la participation d'un utilisateur à un événement
 
 ### Requête HTTP
 
@@ -1522,7 +1522,7 @@ participation |  | Si la personne participe ou non
   A DEFINIR
 ```
 
-Cette route permet de récuperer une liste d'utilisateur d'un événement
+Cette route permet de créer une participation d'un utilisateur à un événement
 
 ### Requête HTTP
 

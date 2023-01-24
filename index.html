@@ -345,7 +345,7 @@
                     <a href="#ajout-d-39-un-achievement-a-l-39-utilisateur" class="toc-h2 toc-link" data-title="Ajout d'un achievement à l'utilisateur">Ajout d'un achievement à l'utilisateur</a>
                   </li>
                   <li>
-                    <a href="#ajout-d-39-un-role-a-un-utilisateur" class="toc-h2 toc-link" data-title="Ajout d'un role à un utilisateur">Ajout d'un role à un utilisateur</a>
+                    <a href="#ajout-d-39-un-role-a-un-utilisateur" class="toc-h2 toc-link" data-title="Ajout d'un rôle à un utilisateur">Ajout d'un rôle à un utilisateur</a>
                   </li>
                   <li>
                     <a href="#verifier-l-39-email-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Vérifier l'Email d'un utilisateur">Vérifier l'Email d'un utilisateur</a>
@@ -362,7 +362,7 @@
               </ul>
           </li>
           <li>
-            <a href="#roles" class="toc-h1 toc-link" data-title="Roles">Roles</a>
+            <a href="#roles" class="toc-h1 toc-link" data-title="Rôles">Rôles</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#lister-les-roles" class="toc-h2 toc-link" data-title="Lister les rôles">Lister les rôles</a>
@@ -436,7 +436,7 @@
                     <a href="#lister-les-postes" class="toc-h2 toc-link" data-title="Lister les postes">Lister les postes</a>
                   </li>
                   <li>
-                    <a href="#lister-les-reactions-d-39-un-post" class="toc-h2 toc-link" data-title="Lister les reactions d'un post">Lister les reactions d'un post</a>
+                    <a href="#lister-les-reactions-d-39-un-post" class="toc-h2 toc-link" data-title="Lister les réactions d'un post">Lister les réactions d'un post</a>
                   </li>
                   <li>
                     <a href="#lister-les-messages-d-39-un-poste" class="toc-h2 toc-link" data-title="Lister les messages d'un poste">Lister les messages d'un poste</a>
@@ -801,22 +801,22 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>age</td>
 <td></td>
-<td>l&#39;age de l&#39;utilisateur</td>
+<td>Âge de l&#39;utilisateur</td>
 </tr>
 <tr>
 <td>studies <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
-<td>Les etudes de l&#39;utilisateur</td>
+<td>Etudes de l&#39;utilisateur</td>
 </tr>
 <tr>
 <td>sex <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
-<td>le genre de l&#39;utilisateur</td>
+<td>Genre de l&#39;utilisateur</td>
 </tr>
 <tr>
 <td>image <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
-<td>l&#39;image de profil sous format base64</td>
+<td>Image de profil sous format base64</td>
 </tr>
 </tbody></table>
 <h2 id='ajouter-un-instrument-a-l-39-utilisateur'>Ajouter un instrument à l&#39;utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -861,7 +861,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>iid</td>
 <td></td>
-<td>l&#39;id de l&#39;instrument à ajouter</td>
+<td>Id de l&#39;instrument à ajouter</td>
 </tr>
 </tbody></table>
 
@@ -910,7 +910,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>aid</td>
 <td></td>
-<td>l&#39;id de l&#39;achievements</td>
+<td>Id de l&#39;achievements</td>
 </tr>
 </tbody></table>
 
@@ -922,7 +922,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
    Il faut que l'utilisateur sastifait les conditions d'obtention de l'achievement pour le recevoir. Sinon la route renvoie
    un JSON d'erreur avec comme code de status 403
 </aside>
-<h2 id='ajout-d-39-un-role-a-un-utilisateur'>Ajout d&#39;un role à un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<h2 id='ajout-d-39-un-role-a-un-utilisateur'>Ajout d&#39;un rôle à un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">//TODO</span>
 
 </code></pre></div>
@@ -962,7 +962,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </thead><tbody>
 <tr>
 <td>uid</td>
-<td>L&#39;identifiant de l&#39;utilisateur</td>
+<td>Identifiant de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
 <h3 id='parametres-de-requete-7'>Paramètres de requête</h3>
@@ -981,7 +981,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </tbody></table>
 
 <aside class="notice">
-   Seuls les membres du CA peuvent ajouter un role, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
+   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
 </aside>
 <h2 id='verifier-l-39-email-d-39-un-utilisateur'>Vérifier l&#39;Email d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>  <span class="c1">//TODO</span>
 </code></pre></div>
@@ -1002,7 +1002,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>token</td>
 <td></td>
-<td>token d&#39;activation du compte</td>
+<td>Token d&#39;activation du compte</td>
 </tr>
 </tbody></table>
 <h2 id='supprimer-un-instrument-d-39-un-utilisateur'>Supprimer un instrument d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1027,7 +1027,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>token</td>
 <td></td>
-<td>token d&#39;activation du compte</td>
+<td>Token d&#39;activation du compte</td>
 </tr>
 </tbody></table>
 <h2 id='supprimer-un-achievement-d-39-un-utilisateur'>Supprimer un achievement d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1052,7 +1052,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>token</td>
 <td></td>
-<td>token d&#39;activation du compte</td>
+<td>Token d&#39;activation du compte</td>
 </tr>
 </tbody></table>
 <h2 id='supprimer-un-role-d-39-un-utilisateur'>Supprimer un rôle d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1077,10 +1077,10 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>token</td>
 <td></td>
-<td>token d&#39;activation du compte</td>
+<td>Token d&#39;activation du compte</td>
 </tr>
 </tbody></table>
-<h1 id='roles'>Roles</h1><h2 id='lister-les-roles'>Lister les rôles</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<h1 id='roles'>Rôles</h1><h2 id='lister-les-roles'>Lister les rôles</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
 </code></pre></div>
@@ -1253,7 +1253,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <p>La requête renvoie un JSON sous la forme:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div>
-<p>Cette route de retourner tous les instruments.</p>
+<p>Cette route permet de retourner tous les instruments.</p>
 <h3 id='requete-http-16'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /instruments</strong></p>
 <h3 id='parametres-de-requete-15'>Paramètres de requête</h3>
@@ -1267,7 +1267,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>token</td>
 <td></td>
-<td>token d&#39;activation du compte</td>
+<td>Token d&#39;activation du compte</td>
 </tr>
 </tbody></table>
 <h2 id='modifier-un-instrument'>Modifier un instrument</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1307,7 +1307,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>label</td>
 <td></td>
-<td>l&#39;identifiant de l&#39;instrument</td>
+<td>Identifiant de l&#39;instrument</td>
 </tr>
 </tbody></table>
 <h2 id='creer-un-instrument'>Créer un instrument</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1345,7 +1345,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">TODO</span><span class="w">
 </span></code></pre></div>
-<p>Cette route de retourner tous les achievements.</p>
+<p>Cette route permet de retourner tous les achievements.</p>
 <h3 id='requete-http-19'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /achievements</strong></p>
 <h2 id='modifier-un-achievement'>Modifier un achievement</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1466,7 +1466,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la listes des conversations d&#39;un utilisateur</p>
+<p>Cette route permet de récuperer la liste des conversations d&#39;un utilisateur</p>
 <h3 id='requete-http-22'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
 <h3 id='headers-11'>Headers</h3>
@@ -1503,7 +1503,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la listes des permissions d&#39;un groupe</p>
+<p>Cette route permet de récuperer la liste des permissions d&#39;un groupe</p>
 <h3 id='requete-http-23'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/permissions/</strong></p>
 <h3 id='headers-12'>Headers</h3>
@@ -1522,8 +1522,8 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </tbody></table>
 
 <aside class="notice">
-  Si un groupe n'a pas de permissions affecté, alors il n'y a aucune restrictions de role sur le groupe. 
-  Par conséquent tout utilisateur membre peut y être ajouté.
+  Si un groupe n'a pas de permissions affecté, alors il n'y a aucune restriction de rôle sur le groupe. 
+  Par conséquent, tout utilisateur membre peut y être ajouté.
 </aside>
 <h2 id='lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte'>Lister les messages d&#39;un groupe de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
@@ -1557,7 +1557,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la listes des messages envoyés dans le groupe</p>
+<p>Cette route permet de récuperer la liste des messages envoyés dans le groupe</p>
 <h3 id='requete-http-24'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages</strong></p>
 <h3 id='headers-13'>Headers</h3>
@@ -1583,7 +1583,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </thead><tbody>
 <tr>
 <td>gid</td>
-<td>L&#39;identifiant du groupe</td>
+<td>Identifiant du groupe</td>
 </tr>
 </tbody></table>
 <h2 id='lister-les-reactions-d-39-un-message-de-groupe'>Lister les reactions d&#39;un message de groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// TODO CODE AJAX</span>
@@ -1611,7 +1611,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la listes des reactions d&#39;un message de le groupe</p>
+<p>Cette route permet de récuperer la liste des reactions d&#39;un message de groupe</p>
 <h3 id='requete-http-25'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}</strong></p>
 <h3 id='headers-14'>Headers</h3>
@@ -1637,11 +1637,11 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </thead><tbody>
 <tr>
 <td>gid</td>
-<td>L&#39;identifiant du groupe</td>
+<td>Identifiant du groupe</td>
 </tr>
 <tr>
 <td>mid</td>
-<td>L&#39;identifiant du message</td>
+<td>Identifiant du message</td>
 </tr>
 </tbody></table>
 <h2 id='creer-un-groupe-pour-l-39-utilisateur-connecte'>Créer un groupe pour l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1688,12 +1688,12 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <tr>
 <td>image <em><span style="color:red">[OPTIONNEL]</span></em></td>
 <td></td>
-<td>donnée de l&#39;image sous le format base64</td>
+<td>Donnée de l&#39;image sous le format base64</td>
 </tr>
 <tr>
 <td>title <em><span style="color:red">[OPTIONNEL]</span></em></td>
 <td></td>
-<td>titre de la discussion</td>
+<td>Titre de la discussion</td>
 </tr>
 </tbody></table>
 
@@ -1744,12 +1744,12 @@ L'utilisateur connecté est directement ajouté au groupe créé
 <tr>
 <td>gid</td>
 <td></td>
-<td>L&#39;identifiant du groupe</td>
+<td>Identifiant du groupe</td>
 </tr>
 <tr>
 <td>uid</td>
 <td></td>
-<td>L&#39;identifiant du l&#39;utilisateur</td>
+<td>Identifiant du l&#39;utilisateur</td>
 </tr>
 </tbody></table>
 
@@ -1819,7 +1819,7 @@ L'utilisateur connécté doit appartenir au groupe pour pouvoir ajouter un utili
 <tr>
 <td>answerTo <span style="color:red">[OPTIONNEL]</td>
 <td></td>
-<td>L&#39;id du message cible</td>
+<td>Identifiant du message cible</td>
 </tr>
 </tbody></table>
 
@@ -1857,7 +1857,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la listes des postes </p>
+<p>Cette route permet de récuperer la liste des postes </p>
 <h3 id='requete-http-29'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/</strong></p>
 <h3 id='headers-18'>Headers</h3>
@@ -1876,9 +1876,9 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </tbody></table>
 
 <aside class="notice">
-  La listes de postes dépends du role de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
+  La liste de postes dépend du rôle de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
 </aside>
-<h2 id='lister-les-reactions-d-39-un-post'>Lister les reactions d&#39;un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<h2 id='lister-les-reactions-d-39-un-post'>Lister les réactions d&#39;un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
 </code></pre></div>
@@ -1898,7 +1898,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la listes des postes </p>
+<p>Cette route permet de récuperer la liste des postes </p>
 <h3 id='requete-http-30'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions</strong></p>
 <h3 id='headers-19'>Headers</h3>
@@ -1973,7 +1973,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </thead><tbody>
 <tr>
 <td>pid</td>
-<td>L&#39;identifiant du post</td>
+<td>Identifiant du post</td>
 </tr>
 </tbody></table>
 <h1 id='agendas'>Agendas</h1><h2 id='lister-les-calendriers'>Lister les calendriers</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
@@ -1997,7 +1997,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la listes des calendriers</p>
+<p>Cette route permet de récuperer la liste des calendriers</p>
 <h3 id='requete-http-32'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/</strong></p>
 <h3 id='headers-21'>Headers</h3>
@@ -2016,7 +2016,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </tbody></table>
 
 <aside class="notice">
-  La réponses dépends des permissions de lecture de l'utilisateur
+  La réponse dépend des permissions de lecture de l'utilisateur
 </aside>
 <h2 id='lister-les-evenements-d-39-un-calendrier'>Lister les évenements d&#39;un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
@@ -2040,7 +2040,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer les événements d&#39;un calendrier</p>
+<p>Cette route permet de récupérer les événements d&#39;un calendrier</p>
 <h3 id='requete-http-33'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/[aid}/</strong></p>
 <h3 id='headers-22'>Headers</h3>
@@ -2066,12 +2066,12 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </thead><tbody>
 <tr>
 <td>aid</td>
-<td>L&#39;identifiant du calendrier</td>
+<td>Identifiant du calendrier</td>
 </tr>
 </tbody></table>
 
 <aside class="notice">
-  La réponses dépends des permissions de lecture de l'utilisateur sur le calendrier
+  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
 </aside>
 <h2 id='lister-les-membres-de-l-39-appel'>Lister les membres de l&#39;appel</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
@@ -2122,11 +2122,11 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </thead><tbody>
 <tr>
 <td>aid</td>
-<td>L&#39;identifiant du calendrier</td>
+<td>Identifiant du calendrier</td>
 </tr>
 <tr>
 <td>eid</td>
-<td>L&#39;identifiant de l&#39;event</td>
+<td>Identifiant de l&#39;event</td>
 </tr>
 </tbody></table>
 
@@ -2142,7 +2142,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer une liste d&#39;utilisateur d&#39;un événement</p>
+<p>Cette route permet de récupérer une liste d&#39;utilisateur d&#39;un événement</p>
 <h3 id='requete-http-35'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations</strong></p>
 <h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
@@ -2178,7 +2178,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer une liste d&#39;utilisateur d&#39;un événement</p>
+<p>Cette route permet de modifier la participation d&#39;un utilisateur à un événement</p>
 <h3 id='requete-http-36'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
 <h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
@@ -2219,7 +2219,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer une liste d&#39;utilisateur d&#39;un événement</p>
+<p>Cette route permet de créer une participation d&#39;un utilisateur à un événement</p>
 <h3 id='requete-http-37'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
 <h3 id='parametres-de-requete-21'>Paramètres de requête</h3>

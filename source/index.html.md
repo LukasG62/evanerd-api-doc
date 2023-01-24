@@ -25,12 +25,12 @@ Documentation de l'API utilisé lors de la réalisation du développement du Pro
 
 # Authentification
 
-## Récupèrer le token d'authentification
+## Récupérer le token d'authentification
 
 ```javascript
 ```
 
-> Lors de l'authentification, la réponses JSON fournira un token permettant d'utiliser certaines fonctionalités de l'API
+> Lors de l'authentification, la réponse JSON fournira un token permettant d'utiliser certaines fonctionalités de l'API
 
 ```json
 {
@@ -118,7 +118,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 }
 ```
 
-Cette route permet de récuperer une liste d'utilisateur
+Cette route permet de récupérer une liste d'utilisateur
 
 ### Requête HTTP
 
@@ -128,7 +128,7 @@ Cette route permet de récuperer une liste d'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-idRole *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de lister tous les utilisateurs possédant le role indiqué
+idRole *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de lister tous les utilisateurs possédant le rôle indiqué
 
 ## Récupérer un utilisateur
 
@@ -370,14 +370,14 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-aid |  | Id de l'achievements
+aid |  | Id de l'achievement
 
 <aside class="notice">
    Un utilisateur ne peut avoir plusieurs fois le même achievements
 </aside>
 
 <aside class="warning">
-   Il faut que l'utilisateur sastifait les conditions d'obtention de l'achievement pour le recevoir. Sinon la route renvoie
+   Il faut que l'utilisateur satisfasse les conditions d'obtention de l'achievement pour le recevoir. Sinon la route renvoie
    un JSON d'erreur avec comme code de status 403
 </aside>
 
@@ -389,7 +389,7 @@ aid |  | Id de l'achievements
 
 ```
 
-> La requête renvoie un JSON avec l'id de l'utilisateur et le role ajouté
+> La requête renvoie un JSON avec l'id de l'utilisateur et le rôle ajouté
 
 ```json
 {
@@ -400,7 +400,7 @@ aid |  | Id de l'achievements
 }
 ```
 
-Cette route permet d'ajouter un role à l'utilisateur
+Cette route permet d'ajouter un rôle à l'utilisateur
 
 ### Requête HTTP
 
@@ -414,7 +414,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 uid | Identifiant de l'utilisateur
 
@@ -422,13 +422,13 @@ uid | Identifiant de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-rid |  | l'id du role
+rid |  | Id du rôle
 
 <aside class="notice">
    Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
 </aside>
 
-## Vérifier l'Email d'un utilisateur
+## Vérifier l'email d'un utilisateur
 
 ```javascript
   //TODO
@@ -439,6 +439,8 @@ rid |  | l'id du role
 ```json
 //TODO
 ```
+
+Cette route permet de vérifier l'email d'un utilisateur
 
 ### Requête HTTP
 
@@ -463,7 +465,7 @@ token |  | Token d'activation du compte
 ```json
 ```
 
-Cette route de retourner tous les instruments.
+Cette route de supprimer un instrument d'un utilisateur.
 
 ### Requête HTTP
 
@@ -488,7 +490,7 @@ token |  | Token d'activation du compte
 ```json
 ```
 
-Cette route de retourner tous les instruments.
+Cette route permet de supprimer un achievement d'un utilisateur.
 
 ### Requête HTTP
 
@@ -513,7 +515,7 @@ token |  | Token d'activation du compte
 ```json
 ```
 
-Cette route de retourner tous les instruments.
+Cette route permet de supprimer un rôle d'un utilisateur.
 
 ### Requête HTTP
 
@@ -562,7 +564,7 @@ token |  | Token d'activation du compte
 }
 ```
 
-Cette route permet de récuperer la listes des roles
+Cette route permet de récuperer la listes des rôles.
 
 ### Requête HTTP
 
@@ -578,7 +580,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-active | "both" | Permet de préciser : 0=les roles inactifs, 1=les roles actifs "both"=Les deux
+active | "both" | Permet de préciser : 0 = Rôles inactifs; 1 = Rôles actifs; "both" = Les deux;
 
 ## Modifier un rôle
 
@@ -594,7 +596,7 @@ active | "both" | Permet de préciser : 0=les roles inactifs, 1=les roles actifs
 // TODO
 ```
 
-Cette route permet de récuperer une liste de rôle
+Cette route permet de récupérer une liste de rôles
 
 ### Requête HTTP
 
@@ -610,14 +612,14 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-rid |  | Permet de modifier le role indiqué
+rid |  | Permet de modifier le rôle indiqué
 
 ### Paramètres de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-label *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le nom du role
-active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
+label *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de modifier le nom du rôle
+active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le rôle est actif
 
 
 
@@ -635,7 +637,7 @@ active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
 // TODO
 ```
 
-Cette route permet de créer un rôle
+Cette route permet de créer un rôle.
 
 ### Requête HTTP
 
@@ -651,8 +653,8 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-label |  | Permet de modifier le nom du role
-active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le role est active
+label |  | Permet de modifier le nom du rôle
+active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le rôle est actif
 
 
 # Instruments 
@@ -793,7 +795,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-achivid |  | l'identifiant de l'achievement
+achivid |  | Identifiant de l'achievement
 
 ### Paramètres de rêquete
 
@@ -831,7 +833,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-label |  | Nom de l'achievements
+label |  | Nom de l'achievement
 
 # Groups
 
@@ -864,7 +866,7 @@ label |  | Nom de l'achievements
 }
 ```
 
-Cette route permet de récuperer la liste des conversations d'un utilisateur
+Cette route permet de récupérer la liste des conversations d'un utilisateur
 
 ### Requête HTTP
 
@@ -901,7 +903,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer la liste des permissions d'un groupe
+Cette route permet de récupérer la liste des permissions d'un groupe
 
 ### Requête HTTP
 
@@ -973,7 +975,7 @@ Parameter | Description
 --------- | -----------
 gid | Identifiant du groupe
 
-## Lister les reactions d'un message de groupe
+## Lister les réactions d'un message de groupe
 
 ```javascript
 // TODO CODE AJAX
@@ -1003,7 +1005,7 @@ gid | Identifiant du groupe
 }
 ```
 
-Cette route permet de récuperer la liste des reactions d'un message de groupe
+Cette route permet de récupérer la liste des réactions d'un message de groupe
 
 ### Requête HTTP
 
@@ -1106,7 +1108,7 @@ gid | | Identifiant du groupe
 uid | | Identifiant du l'utilisateur
 
 <aside class="notice">
-L'utilisateur connécté doit appartenir au groupe pour pouvoir ajouter un utilisateur
+L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilisateur
 </aside>
 
 ## Envoyer un message dans le groupe
@@ -1155,12 +1157,12 @@ content | | Contenu du message
 answerTo <span style="color:red">[OPTIONNEL] |  | Identifiant du message cible
 
 <aside class="notice">
-L'utilisateur connécté doit appartenir au groupe pour envoyer un message
+L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </aside>
 
 # Posts
 
-## Lister les postes
+## Lister les posts
 
 ```javascript
 
@@ -1196,7 +1198,7 @@ L'utilisateur connécté doit appartenir au groupe pour envoyer un message
 }
 ```
 
-Cette route permet de récuperer la liste des postes 
+Cette route permet de récuperer la liste des posts 
 
 ### Requête HTTP
 
@@ -1209,7 +1211,7 @@ Paramètre | Par défaut | Description
 authToken |  | Token d'identification de l'utilisateur
 
 <aside class="notice">
-  La liste de postes dépend du rôle de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les postes avec l'attribut visible à 1.
+  La liste de posts dépend du rôle de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les posts avec l'attribut visible à 1.
 </aside>
 
 ## Lister les réactions d'un post
@@ -1237,7 +1239,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer la liste des postes 
+Cette route permet de récupérer la liste des posts 
 
 ### Requête HTTP
 
@@ -1286,7 +1288,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer la listes des messages envoyé sur un post
+Cette route permet de récuperer la liste des messages envoyé sur un post
 
 ### Requête HTTP
 
@@ -1333,7 +1335,7 @@ pid | Identifiant du post
 }
 ```
 
-Cette route permet de récuperer la liste des calendriers
+Cette route permet de récupérer la liste des calendriers
 
 ### Requête HTTP
 
@@ -1349,7 +1351,7 @@ authToken |  | Token d'identification de l'utilisateur
   La réponse dépend des permissions de lecture de l'utilisateur
 </aside>
 
-## Lister les évenements d'un calendrier
+## Lister les événements d'un calendrier
 
 ```javascript
 
@@ -1426,7 +1428,7 @@ aid | Identifiant du calendrier
 }
 ```
 
-Cette route permet de récuperer les informations concernant l'appel
+Cette route permet de récupérer les informations concernant l'appel
 
 ### Requête HTTP
 
@@ -1451,7 +1453,7 @@ eid | Identifiant de l'event
 
 # Participations
 
-## Lister les partcipations
+## Lister les participations
 
 ```javascript
 
@@ -1479,7 +1481,7 @@ authToken  |  | Token d'identification de l'utilisateur
 uid |  | Identifiant de l'utilisateur
 aeid |  | Identifiant de l'événement dans l'agenda
 
-## Modifier une partcipation
+## Modifier une participation
 
 ```javascript
 
@@ -1508,7 +1510,7 @@ uid |  | Identifiant de l'utilisateur
 aeid |  | Identifiant de l'événement dans l'agenda
 participation |  | Si la personne participe ou non
 
-## Ajouter une partcipation
+## Ajouter une participation
 
 ```javascript
 

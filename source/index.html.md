@@ -226,7 +226,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 mail <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son adresse mail
 tel <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifer son numéro de téléphone
-age <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son age
+age <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son âge
 studies <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier ses études
 image <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier l'image sous le format base64
 password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son mot de passe
@@ -332,7 +332,7 @@ Paramètre | Par défaut | Description
 iid |  | Id de l'instrument à ajouter
 
 <aside class="notice">
-   Un instrument ne peut être rajouté qu'une seul fois
+   Un instrument ne peut être rajouté qu'une seule fois
 </aside>
 
 ## Ajout d'un achievement à l'utilisateur
@@ -373,7 +373,7 @@ Paramètre | Par défaut | Description
 aid |  | Id de l'achievement
 
 <aside class="notice">
-   Un utilisateur ne peut avoir plusieurs fois le même achievements
+   Un utilisateur ne peut avoir plusieurs fois le même achievement
 </aside>
 
 <aside class="warning">
@@ -465,7 +465,7 @@ token |  | Token d'activation du compte
 ```json
 ```
 
-Cette route de supprimer un instrument d'un utilisateur.
+Cette route permet de supprimer un instrument d'un utilisateur.
 
 ### Requête HTTP
 
@@ -564,7 +564,7 @@ token |  | Token d'activation du compte
 }
 ```
 
-Cette route permet de récuperer la listes des rôles.
+Cette route permet de récuperer la liste des rôles.
 
 ### Requête HTTP
 
@@ -916,7 +916,7 @@ Paramètre | Par défaut | Description
 authToken |  | Token d'identification de l'utilisateur
 
 <aside class="notice">
-  Si un groupe n'a pas de permissions affecté, alors il n'y a aucune restriction de rôle sur le groupe. 
+  Si un groupe n'a pas de permissions affectées, alors il n'y a aucune restriction de rôle sur le groupe. 
   Par conséquent, tout utilisateur membre peut y être ajouté.
 </aside>
 
@@ -1198,7 +1198,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 }
 ```
 
-Cette route permet de récuperer la liste des posts 
+Cette route permet de récupérer la liste des posts 
 
 ### Requête HTTP
 
@@ -1288,7 +1288,7 @@ authToken |  | Token d'identification de l'utilisateur
 }
 ```
 
-Cette route permet de récuperer la liste des messages envoyé sur un post
+Cette route permet de récupérer la liste des messages envoyé sur un post
 
 ### Requête HTTP
 
@@ -1508,7 +1508,7 @@ Paramètre | Par défaut | Description
 authToken  |  | Token d'identification de l'utilisateur
 uid |  | Identifiant de l'utilisateur
 aeid |  | Identifiant de l'événement dans l'agenda
-participation |  | Si la personne participe ou non
+participation |  | Si la personne participe ou non
 
 ## Ajouter une participation
 
@@ -1537,4 +1537,4 @@ Paramètre | Par défaut | Description
 authToken  |  | Token d'identification de l'utilisateur
 uid |  | Identifiant de l'utilisateur
 aeid |  | Identifiant de l'événement dans l'agenda
-participation |  | Si la personne participe ou non
+participation |  | Si la personne participe ou non

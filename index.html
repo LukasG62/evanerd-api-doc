@@ -455,6 +455,12 @@
                   <li>
                     <a href="#lister-les-membres-de-l-39-appel" class="toc-h2 toc-link" data-title="Lister les membres de l'appel">Lister les membres de l'appel</a>
                   </li>
+                  <li>
+                    <a href="#creer-un-calendrier" class="toc-h2 toc-link" data-title="Créer un calendrier">Créer un calendrier</a>
+                  </li>
+                  <li>
+                    <a href="#creer-un-evenement-d-39-un-calendrier" class="toc-h2 toc-link" data-title="Créer un événement d'un calendrier">Créer un événement d'un calendrier</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2044,7 +2050,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span></code></pre></div>
 <p>Cette route permet de récupérer les événements d&#39;un calendrier</p>
 <h3 id='requete-http-33'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/[aid}/</strong></p>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/</strong></p>
 <h3 id='headers-22'>Headers</h3>
 <table><thead>
 <tr>
@@ -2135,6 +2141,103 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <aside class="notice">
   Seuls les membres du CA peuvent faire l'appel
 </aside>
+<h2 id='creer-un-calendrier'>Créer un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de créer un calendrier</p>
+<h3 id='requete-http-35'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/</strong></p>
+<h3 id='headers-24'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  La réponse dépend des permissions de lecture de l'utilisateur
+</aside>
+<h2 id='creer-un-evenement-d-39-un-calendrier'>Créer un événement d&#39;un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// TODO CODE AJAX</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"events"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+
+      </span><span class="p">{</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de créer un événement d&#39;un calendrier</p>
+<h3 id='requete-http-36'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/{aid}/events</strong></p>
+<h3 id='headers-25'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h3 id='parametres-d-39-url-12'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>aid</td>
+<td>Identifiant du calendrier</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
+</aside>
 <h1 id='participations'>Participations</h1><h2 id='lister-les-participations'>Lister les participations</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -2145,7 +2248,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer une liste d&#39;utilisateur d&#39;un événement</p>
-<h3 id='requete-http-35'>Requête HTTP</h3>
+<h3 id='requete-http-37'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations</strong></p>
 <h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
 <table><thead>
@@ -2181,7 +2284,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de modifier la participation d&#39;un utilisateur à un événement</p>
-<h3 id='requete-http-36'>Requête HTTP</h3>
+<h3 id='requete-http-38'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
 <h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
 <table><thead>
@@ -2222,7 +2325,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer une participation d&#39;un utilisateur à un événement</p>
-<h3 id='requete-http-37'>Requête HTTP</h3>
+<h3 id='requete-http-39'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
 <h3 id='parametres-de-requete-21'>Paramètres de requête</h3>
 <table><thead>

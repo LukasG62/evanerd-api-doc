@@ -90,13 +90,12 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
   "apiname":"EVANERDS API",
   "version":"1.0",
   "status":200,
-  "users:"
+  "users":
     [
       {
         "id": 1,
         "firstName": "Maurice",
         "lastName": "Monticule",
-        "mail":"momo@gmail.com",
         "tel":"",
         "sex": 0,
         "age": 19,
@@ -107,7 +106,6 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
         "id": 2,
         "firstName": "Fluffums",
         "lastName": "calico",
-        "mail":"fufu@gmail.com",
         "tel":"",
         "sex": 1,
         "age": 69,
@@ -171,6 +169,10 @@ Cette route permet de récupérer un utilisateur selon son id
 Parameter | Description
 --------- | -----------
 uid | L'identifiant de l'utilisateur
+
+<aside class="notice">
+  Dans le cas ou l'id utilisateur est celui de l'utilisateur connecté, la réponses envoie l'email et le numéro de téléphone du l'utilisateur
+</aside>
 
 ## Modifier un utilisateur
 
@@ -306,10 +308,12 @@ image <span style="color:red">[OPTIONNEL]</span> |  | Image de profil sous forma
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":201,
-
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "instrument": {
+        "id": 2,
+        "label": "Flute à bec !"
+    }
 }
 ```
 
@@ -393,10 +397,23 @@ aid |  | Id de l'achievement
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":201,
-
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 1,
+        "firstName": "Lukas",
+        "lastName": "Grando",
+        "sex": 1,
+        "age": 19,
+        "studies": "IG2I",
+        "photo": "http://localhost/ressources/users/1/default.png",
+        "activation": 1
+    },
+    "role": {
+        "id": 1,
+        "label": "trésorier",
+        "active": 0
+    }
 }
 ```
 
@@ -437,7 +454,20 @@ rid |  | Id du rôle
 > Cette route renvoie un JSON sous la forme 
 
 ```json
-//TODO
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 1,
+        "firstName": "Lukas",
+        "lastName": "Grando",
+        "sex": 1,
+        "age": 19,
+        "studies": "IG2I",
+        "photo": "http://localhost/ressources/users/1/default.png",
+        "activation": 1
+    }
+}
 ```
 
 Cette route permet de vérifier l'email d'un utilisateur
@@ -541,25 +571,24 @@ token |  | Token d'activation du compte
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "roles":
-    [
-      {
-        "id":1,
-        "label":0,
-        "active":0,
-      },
-      {
-        "id":1,
-        "content":,
-        "banner":,
-        "banner":,
-        "pinned":,
-        "visible":,
-      {
-      },
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "roles": [
+        {
+            "id": 1,
+            "label": "Trésorier",
+            "active": 1
+        },
+        {
+            "id": 2,
+            "label": "Membre du CA",
+            "active": 1
+        },
+        {
+            "id": 3,
+            "label": "Membre du CA 2020",
+            "active": 0
+        }
     ]
 }
 ```
@@ -593,7 +622,15 @@ active | "both" | Permet de préciser : 0 = Rôles inactifs; 1 = Rôles actifs; 
 > La requête renvoie un JSON sous la forme:
 
 ```json
-// TODO
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "role": {
+        "id": 1,
+        "label": "Trésorier 2020",
+        "active": 0
+    }
+}
 ```
 
 Cette route permet de récupérer une liste de rôles
@@ -670,6 +707,28 @@ active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le rôle est actif
 > La requête renvoie un JSON sous la forme:
 
 ```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "instruments": [
+        {
+            "id": 1,
+            "label": "Flute à bec"
+        },
+        {
+            "id": 2,
+            "label": "Piano"
+        },
+        {
+            "id": 3,
+            "label": "Violoncelle"
+        },
+        {
+            "id": 4,
+            "label": "Guitare"
+        },
+    ]
+}
 ```
 
 Cette route permet de retourner tous les instruments.
@@ -696,7 +755,15 @@ token |  | Token d'activation du compte
 > La requête renvoie un JSON sous la forme:
 
 ```json
-// TODO
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "instrument":
+        {
+            "id": 1,
+            "label": "Flute à bec"
+        },
+}
 ```
 
 Cette route permet de modifier un instrument.
@@ -728,7 +795,15 @@ label |  | Identifiant de l'instrument
 > La requête renvoie un JSON sous la forme:
 
 ```json
-// TODO
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "instrument":
+        {
+            "id": 7,
+            "label": "Trombone"
+        },
+}
 ```
 
 Cette route permet de créer un instrument.
@@ -849,19 +924,19 @@ label |  | Nom de l'achievement
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "groups:"
-    [
-      {
-        "id": 1,
-        "titre":"La conv des bgs"
-      },
-      {
-        "id": 2,
-        "titre":"Maurice, Jean-Pierre"
-      }
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "groups": [
+        {
+            "id": 1,
+            "titre": "Le fun",
+            "image": "http://localhost/ressources/groups/1/image.png"
+        },
+        {
+            "id": 2,
+            "titre": "Lukas Grando, Tomas Treny",
+            "image": null
+        }
     ]
 }
 ```
@@ -984,25 +1059,6 @@ gid | Identifiant du groupe
 > La requête renvoie un JSON sous la forme:
 
 ```json
-{
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "groupeId":3,
-  "messageId":1,
-  "reactions:"
-    [
-      {
-        "id":,
-        "mid":,
-        "gid":,
-        "uid":,
-        "emoji":
-      },
-      {
-      },
-    ]
-}
 ```
 
 Cette route permet de récupérer la liste des réactions d'un message de groupe

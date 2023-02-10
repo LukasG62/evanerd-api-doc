@@ -713,20 +713,16 @@ active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le rôle est actif
     "instruments": [
         {
             "id": 1,
-            "label": "Flute à bec"
+            "label": "Flute"
         },
         {
             "id": 2,
-            "label": "Piano"
+            "label": "Banjo"
         },
         {
             "id": 3,
-            "label": "Violoncelle"
-        },
-        {
-            "id": 4,
             "label": "Guitare"
-        },
+        }
     ]
 }
 ```
@@ -758,11 +754,10 @@ token |  | Token d'activation du compte
 {
     "apiname": "EVANERD API",
     "version": "1.0",
-    "instrument":
-        {
-            "id": 1,
-            "label": "Flute à bec"
-        },
+    "instrument": {
+        "id": 1,
+        "label": "Flute à bec"
+    }
 }
 ```
 
@@ -831,7 +826,20 @@ label |  | Nom de l'instrument
 > La requête renvoie un JSON sous la forme:
 
 ```json
-// TODO
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "achievements": [
+        {
+            "id": 1,
+            "label": "Légende"
+        },
+        {
+            "id": 2,
+            "label": "Blablateur"
+        }
+    ]
+}
 ```
 
 Cette route permet de retourner tous les achievements.
@@ -929,13 +937,13 @@ label |  | Nom de l'achievement
     "groups": [
         {
             "id": 1,
-            "titre": "Le fun",
-            "image": "http://localhost/ressources/groups/1/image.png"
+            "titre": "Makakou",
+            "image": "http://localhost/EvaNerd/Back Evanerd/ressources/groups/1/default.png"
         },
         {
-            "id": 2,
-            "titre": "Lukas Grando, Tomas Treny",
-            "image": null
+            "id": 5,
+            "titre": "Constante de Planck",
+            "image": "http://localhost/EvaNerd/Back Evanerd/ressources/groups/5/default.png"
         }
     ]
 }
@@ -1007,27 +1015,22 @@ authToken |  | Token d'identification de l'utilisateur
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "groupeId":3,
-  "messages:"
-    [
-      {
-        "id": 1,
-        "uid":2,
-        "gid":3,
-        "pinned":1,
-        "content":"La basse c'est super cool",
-      },
-      {
-        "id": 2,
-        "uid":1,
-        "gid":3,
-        "pinned":0,
-        "content":"ratio",
-        "answerTo":1
-      },
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "groupId": 4,
+    "messages": [
+        {
+            "id": 1,
+            "author": {
+                "id": 2,
+                "firstName": "Pedro",
+                "lastName": "Lito",
+                "photo": "http://localhost/EvaNerd/Back Evanerd/ressources/users/2/default.png"
+            },
+            "content": "Salut les copains !!",
+            "pinned": 1,
+            "answerTo": null
+        }
     ]
 }
 ```
@@ -1092,11 +1095,12 @@ mid | Identifiant du message
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "groupe":
-    {
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "group": {
+        "id": 6,
+        "titre": "Les Copines d\\'Abord",
+        "image": "http://localhost/EvaNerd/Back Evanerd/ressources/groups/6/default.png"
     }
 }
 ```
@@ -1135,11 +1139,17 @@ L'utilisateur connecté est directement ajouté au groupe créé
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "groupe":
-    {
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 1,
+        "firstName": "Tomas",
+        "lastName": "Salvado Robalo",
+        "sex": 0,
+        "age": 666,
+        "studies": "IG2I, Centrale Lille",
+        "photo": "http://localhost/EvaNerd/Back Evanerd/ressources/users/1/default.png",
+        "activation": 1
     }
 }
 ```
@@ -1230,26 +1240,22 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "posts":
-    [
-      {
-        "id":1,
-        "content":"",
-        "banner":"",
-        "pinned":0,
-        "visible":1:
-
-      },
-      {
-        "id":2,
-        "content":"",
-        "banner":"www.example.com/posts/2/image.png",
-        "pinned":1,
-        "visible":0,
-      },
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "posts": [
+        {
+            "id": 1,
+            "author": {
+                "id": 2,
+                "firstName": "Pedro",
+                "lastName": "Lito",
+                "photo": "http://localhost/EvaNerd/Back Evanerd/ressources/users/2/default.png"
+            },
+            "content": "J'annonce mon arrivé au sein de CA !!\n\n",
+            "pinned": 1,
+            "visible": 1,
+            "banner": null
+        }
     ]
 }
 ```
@@ -1307,7 +1313,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-## Lister les messages d'un poste
+## Lister les messages d'un post
 
 ```javascript
 
@@ -1319,27 +1325,34 @@ authToken |  | Token d'identification de l'utilisateur
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "postId":3,
-  "messages:"
-    [
-      {
-        "id": 1,
-        "uid":2,
-        "pid":3,
-        "pinned":1,
-        "content":"La basse c'est super cool",
-      },
-      {
-        "id": 2,
-        "uid":1,
-        "pid":3,
-        "pinned":0,
-        "content":"ratio",
-        "answerTo":1
-      },
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "idPost": 5,
+    "comments": [
+        {
+            "id": 1,
+            "author": {
+                "id": 2,
+                "firstName": "Pedro",
+                "lastName": "Lito",
+                "photo": "http://localhost/EvaNerd/Back Evanerd/ressources/users/2/default.png"
+            },
+            "content": "salut",
+            "pinned": 0,
+            "answerTo": null
+        },
+        {
+            "id": 2,
+            "author": {
+                "id": 2,
+                "firstName": "Pedro",
+                "lastName": "Lito",
+                "photo": "http://localhost/EvaNerd/Back Evanerd/ressources/users/2/default.png"
+            },
+            "content": "ça va ?",
+            "pinned": 0,
+            "answerTo": 1
+        }
     ]
 }
 ```
@@ -1356,6 +1369,79 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+pid | Identifiant du post
+
+## Poster un post
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+    {
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "post": {
+        "id": 9,
+        "author": 1,
+        "content": "C'est un trop un bon post",
+        "banner": "image.png",
+        "pinned": 0,
+        "visible": 1
+    }
+}
+}
+```
+
+Cette route permet de poster un post
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /posts**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+## Poster un like sur un post
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+    
+}
+```
+
+Cette route permet de liker un post
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /posts**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 

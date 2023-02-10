@@ -793,11 +793,10 @@ label |  | Identifiant de l'instrument
 {
     "apiname": "EVANERD API",
     "version": "1.0",
-    "instrument":
-        {
-            "id": 7,
-            "label": "Trombone"
-        },
+    "instrument": {
+        "id": "11",
+        "label": "Flute"
+    }
 }
 ```
 
@@ -1427,7 +1426,8 @@ authToken |  | Token d'identification de l'utilisateur
 
 ```json
 {
-    
+    "apiname": "EVANERD API",
+    "version": "1.0",
 }
 ```
 
@@ -1435,13 +1435,99 @@ Cette route permet de liker un post
 
 ### Requête HTTP
 
-**<span style="color:rgb(255, 180, 0)">POST</span> /posts**
+**<span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/liked**
 
 ### Headers
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+liked |  | Booléen qui définit s'il est like ou non
+
+## Poster une épingle sur un post
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+}
+```
+
+Cette route permet d'epingler un post
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/pinned**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pinned |  | Booléen qui définit s'il est pin ou non
+
+### Paramètres d'URL
+
+Parameter | Description
+--------- | -----------
+pid | Identifiant du post
+
+<aside class="notice">
+
+   Les membres du CA peuvent épingler les posts des utilisateurs. Un autre membre du CA peut desépingler les posts.
+</aside>
+
+## Poster une réaction sur un post 
+
+```javascript
+
+// TODO CODE AJAX
+
+```
+
+> La requête renvoie un JSON sous la forme:
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+}
+```
+
+Cette route permet d'ajouter une réaction un post
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/pinned**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pinned |  | Booléen qui définit s'il est pin ou non
 
 ### Paramètres d'URL
 

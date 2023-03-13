@@ -21,40 +21,50 @@ meta:
 
 # Introduction
 
-Documentation de l'API utilisé lors de la réalisation du développement du Projet PINF : 2022-2023, Groupe Evanerds
+Documentation de l'API utilisé lors de la réalisation du développement du Projet PINF pour l'Orchestre Etudiant de Toulouse, lors de la deuxième année à l'IG2I, Ecole de Génie Industriel et Informatique. 
+
+2022-2023, Groupe Evanerd.
 
 # Authentification
 
 ## Récupérer le token d'authentification
 
 ```javascript
+var settings = {
+  "url": "https://evanerds.fr/api/v1/auth?tel=0256696969&password=ecayon",
+  "method": "POST",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > Lors de l'authentification, la réponse JSON fournira un token permettant d'utiliser certaines fonctionalités de l'API
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":202,
-  "authToken":"f7c4464eed5ba3ae5a40bb6b3e40d2a5"
-  "user:"
-    {
-      "id": 1,
-      "firstName": "Maurice",
-      "lastName": "Monticule",
-      "mail":"momo@gmail.com",
-      "tel":"",
-      "sex": 0,
-      "age": 19,
-      "studies":"Centrale Lille IG2I",
-      "photo":"www.example/users/1/image.png"
-    },
-
-
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "authToken": "9834b0496e636d98d8623ed5de8d1692",
+    "user": {
+        "id": 2,
+        "firstName": "Pedro",
+        "lastName": "Lito",
+        "sex": 1,
+        "age": 2,
+        "studies": "Déscolarisé",
+        "photo": "https://evanerds.fr/api/ressources/users/2/image.png",
+        "activation": 1,
+        "tel": "0256696969",
+        "mail": "pedrolito@orange.fr",
+        "admin": 1,
+        "noMember": 0
+    }
 }
 ```
-### Requête HTTP
+### Requête HTTP :
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /auth/**
 
@@ -63,10 +73,10 @@ Documentation de l'API utilisé lors de la réalisation du développement du Pro
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 tel |  | Numéro de téléphone de l'utilisateur
-password | Mot de passe de l'utilisateur
+password | | Mot de passe de l'utilisateur
 
 <aside class="notice">
-Lors de la connexion, un nouveau token est généré, rendant l'ancien inutilisable
+Lors de la connexion, un nouveau token est généré, rendant l'ancien inutilisable.
 </aside>
 
 <aside class="warning">
@@ -78,45 +88,49 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 ## Lister les utilisateurs
 
 ```javascript
+var settings = {
+  "url": "https://evanerds.fr/api/v1/users?idRole=1",
+  "method": "GET",
+  "timeout": 0,
+};
 
-// TODO CODE AJAX
-
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > La requête renvoie un JSON sous la forme:
 
 ```json
 {
-  "apiname":"EVANERDS API",
-  "version":"1.0",
-  "status":200,
-  "users":
-    [
-      {
-        "id": 1,
-        "firstName": "Maurice",
-        "lastName": "Monticule",
-        "tel":"",
-        "sex": 0,
-        "age": 19,
-        "studies":"Centrale Lille IG2I",
-        "photo":"www.example/users/1/image.png"
-      },
-      {
-        "id": 2,
-        "firstName": "Fluffums",
-        "lastName": "calico",
-        "tel":"",
-        "sex": 1,
-        "age": 69,
-        "studies":"Ecole du rire",
-        "photo":"www.example/users/2/image.png"
-      }
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "users": [
+        {
+            "id": 2,
+            "firstName": "Pedro",
+            "lastName": "Lito",
+            "sex": 1,
+            "age": 2,
+            "studies": "Déscolarisé",
+            "photo": "https://evanerds.fr/api/ressources/users/2/image.png",
+            "activation": 1
+        },
+        {
+            "id": 6,
+            "firstName": "Pablo",
+            "lastName": "Lito",
+            "sex": 0,
+            "age": 19,
+            "studies": "IG2I, Centrale Lille",
+            "photo": "https://evanerds.fr/api/ressources/users/6/default.png",
+            "activation": 1
+        }
     ]
 }
 ```
 
-Cette route permet de récupérer une liste d'utilisateur
+Cette route permet de récupérer une liste d'utilisateur. On peut ajouter des paramètres pour complémenter la recherche, comme l'id du rôle en question ou le nom ou prénom de l'utilisateur.
 
 ### Requête HTTP
 
@@ -127,38 +141,52 @@ Cette route permet de récupérer une liste d'utilisateur
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 idRole *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de lister tous les utilisateurs possédant le rôle indiqué
+name *<span style="color:red">[OPTIONNEL]</span>* |  | Permet de lister tous les utilisateurs possédant le nom ou le prénom indiqué
+
+
+<aside class="notice">
+Les deux paramètres peuvent être mis en place lors de la requête. Si la donnée n'existe pas, la requête renvoit un JSON vide.
+</aside>
 
 ## Récupérer un utilisateur
 
 ```javascript
-
-//TODO
-
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 2,
+        "firstName": "Pedro",
+        "lastName": "Lito",
+        "sex": 1,
+        "age": 2,
+        "studies": "Déscolarisé",
+        "photo": "https://evanerds.fr/api/ressources/users/2/image.png",
+        "activation": 1
+    }
+}
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "apiname":"EVANERDS API",
-  "version":"1.0",
-  "status":200,
-  "user:"
-    {
-      "id": 1,
-      "firstName": "Maurice",
-      "lastName": "Monticule",
-      "mail":"momo@gmail.com",
-      "tel":"",
-      "sex": 0,
-      "age": 19,
-      "studies":"Centrale Lille IG2I",
-      "photo":"www.example/users/1/image.png"
-    },
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 2,
+        "firstName": "Pedro",
+        "lastName": "Lito",
+        "sex": 1,
+        "age": 2,
+        "studies": "Déscolarisé",
+        "photo": "https://evanerds.fr/api/ressources/users/2/image.png",
+        "activation": 1
+    }
 }
 ```
 
-Cette route permet de récupérer un utilisateur selon son id
+Cette route permet de récupérer un seul utilisateur selon son id.
 
 ### Requête HTTP
 
@@ -171,40 +199,55 @@ Parameter | Description
 uid | L'identifiant de l'utilisateur
 
 <aside class="notice">
-  Dans le cas ou l'id utilisateur est celui de l'utilisateur connecté, la réponses envoie l'email et le numéro de téléphone du l'utilisateur
+  Dans le cas ou l'uid utilisateur est celui de l'utilisateur connecté, la réponse envoie l'email et le numéro de téléphone de l'utilisateur.
 </aside>
 
 ## Modifier un utilisateur
 
 ```javascript
+var form = new FormData();
+var settings = {
+  "url": "https://evanerds.fr/api/v1/users/6",
+  "method": "PUT",
+  "timeout": 0,
+  "headers": {
+    "authToken": "2f25b70605b9e8fc308d2e879b662767"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
 
-//TODO
-
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > La requête renvoie un JSON de l'utilisateur modifié sous la forme:
 
 ```json
 {
-  "apiname":"EVANERDS API",
-  "version":"1.0",
-  "status":200,
-  "user:"
-    {
-      "id": 1,
-      "firstName": "Maurice",
-      "lastName": "Monticule",
-      "mail":"momo@gmail.com",
-      "tel":"",
-      "sex": 0,
-      "age": 19,
-      "studies":"Centrale Lille IG2I",
-      "photo":"www.example/users/1/image.png"
-    },
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": [
+        {
+            "id": 6,
+            "firstName": "Pablo",
+            "lastName": "Lito",
+            "sex": 0,
+            "age": 12,
+            "studies": "Diplômé",
+            "photo": "https://evanerds.fr/api/ressources/users/6/default.png",
+            "activation": 1,
+            "tel": "0202030405",
+            "mail": "test@youhou.fr"
+        }
+    ]
 }
 ```
 
-Cette route permet de modifier les informations d'un utilisateur présent dans la base de donnée
+Cette route permet de modifier les informations( mail, numéro de téléphone...) d'un utilisateur présent dans la base de donnée.
 
 ### Requête HTTP
 
@@ -226,16 +269,21 @@ authToken |  | Token d'identification de l'utilisateur
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-mail <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son adresse mail
-tel <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifer son numéro de téléphone
+firstName <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son prénom
+lastName <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifer son nom
 age <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son âge
-studies <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier ses études
-image <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier l'image sous le format base64
+sex <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son sexe
+mail <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son mail
+tel <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son numéro de téléphone
+studies <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier ses l'intitulé de ses études
 password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son mot de passe
 
 <aside class="notice">
+  Les membres du CA peuvent modifier les informations de tous les utilisateurs. Un utilisateur ne peut modifier que ses propres informations.
+</aside>
 
-   Les membres du CA peuvent modifier les informations de tous les utilisateurs. Un utilisateur ne peut modifier que ses propres informations.
+<aside class="warning">
+  Cette route ne permet pas de modifier l'image d'un utilisateur.
 </aside>
 
 <aside class="warning">

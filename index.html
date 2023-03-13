@@ -501,32 +501,42 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Documentation de l&#39;API utilisé lors de la réalisation du développement du Projet PINF : 2022-2023, Groupe Evanerds</p>
-<h1 id='authentification'>Authentification</h1><h2 id='recuperer-le-token-d-39-authentification'>Récupérer le token d&#39;authentification</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code></code></pre></div>
+<p>Documentation de l&#39;API utilisé lors de la réalisation du développement du Projet PINF pour l&#39;Orchestre Etudiant de Toulouse, lors de la deuxième année à l&#39;IG2I, Ecole de Génie Industriel et Informatique. </p>
+
+<p>2022-2023, Groupe Evanerd.</p>
+<h1 id='authentification'>Authentification</h1><h2 id='recuperer-le-token-d-39-authentification'>Récupérer le token d&#39;authentification</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/auth?tel=0256696969&amp;password=ecayon</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <blockquote>
 <p>Lors de l&#39;authentification, la réponse JSON fournira un token permettant d&#39;utiliser certaines fonctionalités de l&#39;API</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">202</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"authToken"</span><span class="p">:</span><span class="s2">"f7c4464eed5ba3ae5a40bb6b3e40d2a5"</span><span class="w">
-  </span><span class="s2">"user:"</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maurice"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monticule"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"mail"</span><span class="p">:</span><span class="s2">"momo@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-
-
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"authToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9834b0496e636d98d8623ed5de8d1692"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pedro"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Déscolarisé"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/2/image.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"activation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0256696969"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pedrolito@orange.fr"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"admin"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"noMember"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='requete-http'>Requête HTTP</h3>
+</span></code></pre></div><h3 id='requete-http'>Requête HTTP :</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /auth/</strong></p>
 <h3 id='parametres-de-requete'>Paramètres de requête</h3>
 <table><thead>
@@ -543,55 +553,59 @@
 </tr>
 <tr>
 <td>password</td>
-<td>Mot de passe de l&#39;utilisateur</td>
 <td></td>
+<td>Mot de passe de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
 
 <aside class="notice">
-Lors de la connexion, un nouveau token est généré, rendant l'ancien inutilisable
+Lors de la connexion, un nouveau token est généré, rendant l'ancien inutilisable.
 </aside>
 
 <aside class="warning">
 L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </aside>
-<h1 id='users'>Users</h1><h2 id='lister-les-utilisateurs'>Lister les utilisateurs</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<h1 id='users'>Users</h1><h2 id='lister-les-utilisateurs'>Lister les utilisateurs</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/users?idRole=1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">};</span>
 
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>La requête renvoie un JSON sous la forme:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERDS API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"users"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maurice"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monticule"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Ecole du rire"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/2/image.png"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pedro"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Déscolarisé"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/2/image.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"activation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pablo"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IG2I, Centrale Lille"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/6/default.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"activation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer une liste d&#39;utilisateur</p>
+<p>Cette route permet de récupérer une liste d&#39;utilisateur. On peut ajouter des paramètres pour complémenter la recherche, comme l&#39;id du rôle en question ou le nom ou prénom de l&#39;utilisateur.</p>
 <h3 id='requete-http-2'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users</strong></p>
 <h3 id='parametres-de-requete-2'>Paramètres de requête</h3>
@@ -607,33 +621,50 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <td></td>
 <td>Permet de lister tous les utilisateurs possédant le rôle indiqué</td>
 </tr>
+<tr>
+<td>name <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td></td>
+<td>Permet de lister tous les utilisateurs possédant le nom ou le prénom indiqué</td>
+</tr>
 </tbody></table>
-<h2 id='recuperer-un-utilisateur'>Récupérer un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">//TODO</span>
 
+<aside class="notice">
+Les deux paramètres peuvent être mis en place lors de la requête. Si la donnée n'existe pas, la requête renvoit un JSON vide.
+</aside>
+<h2 id='recuperer-un-utilisateur'>Récupérer un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">apiname</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">EVANERD API</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1.0</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Pedro</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">lastName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lito</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">sex</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">studies</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Déscolarisé</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">photo</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/ressources/users/2/image.png</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">activation</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERDS API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user:"</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maurice"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monticule"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"mail"</span><span class="p">:</span><span class="s2">"momo@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pedro"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Déscolarisé"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/2/image.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"activation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer un utilisateur selon son id</p>
+<p>Cette route permet de récupérer un seul utilisateur selon son id.</p>
 <h3 id='requete-http-3'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}</strong></p>
 <h3 id='parametres-d-39-url'>Paramètres d&#39;URL</h3>
@@ -650,34 +681,49 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </tbody></table>
 
 <aside class="notice">
-  Dans le cas ou l'id utilisateur est celui de l'utilisateur connecté, la réponses envoie l'email et le numéro de téléphone du l'utilisateur
+  Dans le cas ou l'uid utilisateur est celui de l'utilisateur connecté, la réponse envoie l'email et le numéro de téléphone de l'utilisateur.
 </aside>
-<h2 id='modifier-un-utilisateur'>Modifier un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">//TODO</span>
+<h2 id='modifier-un-utilisateur'>Modifier un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/users/6</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PUT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2f25b70605b9e8fc308d2e879b662767</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">processData</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">mimeType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">multipart/form-data</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">contentType</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="nx">form</span>
+<span class="p">};</span>
 
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>La requête renvoie un JSON de l&#39;utilisateur modifié sous la forme:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERDS API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user:"</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maurice"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monticule"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"mail"</span><span class="p">:</span><span class="s2">"momo@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"studies"</span><span class="p">:</span><span class="s2">"Centrale Lille IG2I"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"photo"</span><span class="p">:</span><span class="s2">"www.example/users/1/image.png"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pablo"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diplômé"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/6/default.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"activation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0202030405"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@youhou.fr"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de modifier les informations d&#39;un utilisateur présent dans la base de donnée</p>
+<p>Cette route permet de modifier les informations( mail, numéro de téléphone...) d&#39;un utilisateur présent dans la base de donnée.</p>
 <h3 id='requete-http-4'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /users/{uid}</strong></p>
 <h3 id='parametres-d-39-url-2'>Paramètres d&#39;URL</h3>
@@ -715,14 +761,14 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </tr>
 </thead><tbody>
 <tr>
-<td>mail <span style="color:red">[OPTIONNEL]</span></td>
+<td>firstName <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
-<td>Permet de modifier son adresse mail</td>
+<td>Permet de modifier son prénom</td>
 </tr>
 <tr>
-<td>tel <span style="color:red">[OPTIONNEL]</span></td>
+<td>lastName <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
-<td>Permet de modifer son numéro de téléphone</td>
+<td>Permet de modifer son nom</td>
 </tr>
 <tr>
 <td>age <span style="color:red">[OPTIONNEL]</span></td>
@@ -730,14 +776,24 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <td>Permet de modifier son âge</td>
 </tr>
 <tr>
-<td>studies <span style="color:red">[OPTIONNEL]</span></td>
+<td>sex <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
-<td>Permet de modifier ses études</td>
+<td>Permet de modifier son sexe</td>
 </tr>
 <tr>
-<td>image <span style="color:red">[OPTIONNEL]</span></td>
+<td>mail <span style="color:red">[OPTIONNEL]</span></td>
 <td></td>
-<td>Permet de modifier l&#39;image sous le format base64</td>
+<td>Permet de modifier son mail</td>
+</tr>
+<tr>
+<td>tel <span style="color:red">[OPTIONNEL]</span></td>
+<td></td>
+<td>Permet de modifier son numéro de téléphone</td>
+</tr>
+<tr>
+<td>studies <span style="color:red">[OPTIONNEL]</span></td>
+<td></td>
+<td>Permet de modifier ses l&#39;intitulé de ses études</td>
 </tr>
 <tr>
 <td>password <span style="color:red">[OPTIONNEL]</span></td>
@@ -747,8 +803,11 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 </tbody></table>
 
 <aside class="notice">
+  Les membres du CA peuvent modifier les informations de tous les utilisateurs. Un utilisateur ne peut modifier que ses propres informations.
+</aside>
 
-   Les membres du CA peuvent modifier les informations de tous les utilisateurs. Un utilisateur ne peut modifier que ses propres informations.
+<aside class="warning">
+  Cette route ne permet pas de modifier l'image d'un utilisateur.
 </aside>
 
 <aside class="warning">

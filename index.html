@@ -350,15 +350,6 @@
                   <li>
                     <a href="#verifier-l-39-email-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Vérifier l'email d'un utilisateur">Vérifier l'email d'un utilisateur</a>
                   </li>
-                  <li>
-                    <a href="#supprimer-un-instrument-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Supprimer un instrument d'un utilisateur">Supprimer un instrument d'un utilisateur</a>
-                  </li>
-                  <li>
-                    <a href="#supprimer-un-achievement-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Supprimer un achievement d'un utilisateur">Supprimer un achievement d'un utilisateur</a>
-                  </li>
-                  <li>
-                    <a href="#supprimer-un-role-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Supprimer un rôle d'un utilisateur">Supprimer un rôle d'un utilisateur</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -397,9 +388,6 @@
                   </li>
                   <li>
                     <a href="#modifier-un-achievement" class="toc-h2 toc-link" data-title="Modifier un achievement">Modifier un achievement</a>
-                  </li>
-                  <li>
-                    <a href="#creer-un-achievement" class="toc-h2 toc-link" data-title="Créer un achievement">Créer un achievement</a>
                   </li>
               </ul>
           </li>
@@ -814,7 +802,19 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
   Si l'utilisateur n'a pas les permissions pour modifier un utilisateur alors la route enverra un JSON d'erreur avec un status code 403.
 </aside>
 <h2 id='creer-un-utilisateur'>Créer un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">//TODO</span>
+<span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/users?firstName=Super&amp;lastName=LePinf&amp;age=19&amp;sex=0&amp;mail=osettes2t@yopmail.com&amp;tel=0790652329&amp;studies=IG2I, Centrale Lille&amp;password=pi13456&amp;iid=iid[]=1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0202030405</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">processData</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">mimeType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">multipart/form-data</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">contentType</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="nx">form</span>
+<span class="p">};</span>
 
 </code></pre></div>
 <blockquote>
@@ -827,8 +827,8 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
   </span><span class="s2">"user:"</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toto"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basse"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Namu"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Litos"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"mail"</span><span class="p">:</span><span class="s2">"totobasse@gmail.com"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"tel"</span><span class="p">:</span><span class="s2">"0102030405"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -898,8 +898,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Image de profil sous format base64</td>
 </tr>
 </tbody></table>
-<h2 id='ajouter-un-instrument-a-l-39-utilisateur'>Ajouter un instrument à l&#39;utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">//TODO</span>
+<h2 id='ajouter-un-instrument-a-l-39-utilisateur'>Ajouter un instrument à l&#39;utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/users/instruments?iid=1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">815d7d4197afb6b9d3df8d744d0a8bd5</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -909,8 +919,8 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"instrument"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flute à bec !"</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flute"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1004,7 +1014,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
    un JSON d'erreur avec comme code de status 403
 </aside>
 <h2 id='ajout-d-39-un-role-a-un-utilisateur'>Ajout d&#39;un rôle à un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">//TODO</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/users/4/roles?rid=1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3bdc80f6ed463940c4cc4a9fb78704a3</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1014,19 +1035,19 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lukas"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grando"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitch.tv/NamuFoxyy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IG2I"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost/ressources/users/1/default.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IG2I, Centrale Lille"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/4/default.png"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"activation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trésorier"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Membre du CA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1099,7 +1120,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </span></code></pre></div>
 <p>Cette route permet de vérifier l&#39;email d&#39;un utilisateur</p>
 <h3 id='requete-http-9'>Requête HTTP</h3>
-<p><strong><span style="rgb(255, 180, 0)">POST</span> /users/verify</strong></p>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /users/verify</strong></p>
 <h3 id='parametres-de-requete-8'>Paramètres de requête</h3>
 <table><thead>
 <tr>
@@ -1114,83 +1135,16 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Token d&#39;activation du compte</td>
 </tr>
 </tbody></table>
-<h2 id='supprimer-un-instrument-d-39-un-utilisateur'>Supprimer un instrument d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div>
-<p>Cette route permet de supprimer un instrument d&#39;un utilisateur.</p>
-<h3 id='requete-http-10'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(235, 32, 19)">DEL</span> /users/instruments</strong></p>
-<h3 id='parametres-de-requete-9'>Paramètres de requête</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>token</td>
-<td></td>
-<td>Token d&#39;activation du compte</td>
-</tr>
-</tbody></table>
-<h2 id='supprimer-un-achievement-d-39-un-utilisateur'>Supprimer un achievement d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div>
-<p>Cette route permet de supprimer un achievement d&#39;un utilisateur.</p>
-<h3 id='requete-http-11'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(235, 32, 19)">DEL</span> /users/achievements</strong></p>
-<h3 id='parametres-de-requete-10'>Paramètres de requête</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>token</td>
-<td></td>
-<td>Token d&#39;activation du compte</td>
-</tr>
-</tbody></table>
-<h2 id='supprimer-un-role-d-39-un-utilisateur'>Supprimer un rôle d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div>
-<p>Cette route permet de supprimer un rôle d&#39;un utilisateur.</p>
-<h3 id='requete-http-12'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(235, 32, 19)">DEL</span> /users/roles</strong></p>
-<h3 id='parametres-de-requete-11'>Paramètres de requête</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>token</td>
-<td></td>
-<td>Token d&#39;activation du compte</td>
-</tr>
-</tbody></table>
 <h1 id='roles'>Rôles</h1><h2 id='lister-les-roles'>Lister les rôles</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/roles</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1219,7 +1173,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la liste des rôles.</p>
-<h3 id='requete-http-13'>Requête HTTP</h3>
+<h3 id='requete-http-10'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /roles/</strong></p>
 <h3 id='headers-5'>Headers</h3>
 <table><thead>
@@ -1235,7 +1189,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-12'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-9'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1250,7 +1204,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tr>
 </tbody></table>
 <h2 id='modifier-un-role'>Modifier un rôle</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/roles/1?label=Membre du CA 2024</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PUT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3bdc80f6ed463940c4cc4a9fb78704a3</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1261,13 +1226,13 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trésorier 2020"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Membre du CA 2024"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer une liste de rôles</p>
-<h3 id='requete-http-14'>Requête HTTP</h3>
+<h3 id='requete-http-11'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /roles/{rid}</strong></p>
 <h3 id='headers-6'>Headers</h3>
 <table><thead>
@@ -1297,7 +1262,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Permet de modifier le rôle indiqué</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-13'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-10'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1326,7 +1291,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">TODO</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer un rôle.</p>
-<h3 id='requete-http-15'>Requête HTTP</h3>
+<h3 id='requete-http-12'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /roles</strong></p>
 <h3 id='headers-7'>Headers</h3>
 <table><thead>
@@ -1342,7 +1307,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-14'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-11'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1362,7 +1327,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tr>
 </tbody></table>
 <h1 id='instruments'>Instruments</h1><h2 id='retourner-tous-les-instruments'>Retourner tous les instruments</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/instruments</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3bdc80f6ed463940c4cc4a9fb78704a3</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1388,9 +1364,9 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de retourner tous les instruments.</p>
-<h3 id='requete-http-16'>Requête HTTP</h3>
+<h3 id='requete-http-13'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /instruments</strong></p>
-<h3 id='parametres-de-requete-15'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-12'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1405,7 +1381,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tr>
 </tbody></table>
 <h2 id='modifier-un-instrument'>Modifier un instrument</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/instruments/7?label=Flûte</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PUT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">3bdc80f6ed463940c4cc4a9fb78704a3</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1415,13 +1402,13 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"instrument"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flute à bec"</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flûte"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de modifier un instrument.</p>
-<h3 id='requete-http-17'>Requête HTTP</h3>
+<h3 id='requete-http-14'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /instruments/{iid}</strong></p>
 <h3 id='headers-8'>Headers</h3>
 <table><thead>
@@ -1452,7 +1439,15 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tr>
 </tbody></table>
 <h2 id='creer-un-instrument'>Créer un instrument</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/instruments?label=Saxophone</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">36d4e93d57c3118083dbc27e0a04f8be</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
 
 </code></pre></div>
 <blockquote>
@@ -1463,14 +1458,14 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"instrument"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flute"</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saxophone"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer un instrument.</p>
-<h3 id='requete-http-18'>Requête HTTP</h3>
+<h3 id='requete-http-15'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /instruments</strong></p>
-<h3 id='parametres-de-requete-16'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-13'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1485,7 +1480,15 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tr>
 </tbody></table>
 <h1 id='achievements'>Achievements</h1><h2 id='lister-tous-les-achievements'>Lister tous les achievements</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/achievements</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1496,18 +1499,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"achievements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Légende"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bavard"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blablateur"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loquace"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de retourner tous les achievements.</p>
-<h3 id='requete-http-19'>Requête HTTP</h3>
+<h3 id='requete-http-16'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /achievements</strong></p>
 <h2 id='modifier-un-achievement'>Modifier un achievement</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
@@ -1519,7 +1522,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">TODO</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de modifier un achievement.</p>
-<h3 id='requete-http-20'>Requête HTTP</h3>
+<h3 id='requete-http-17'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /achievement/{achivid}</strong></p>
 <h3 id='headers-9'>Headers</h3>
 <table><thead>
@@ -1549,7 +1552,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Identifiant de l&#39;achievement</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-17'>Paramètres de rêquete</h3>
+<h3 id='parametres-de-requete-14'>Paramètres de rêquete</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1563,48 +1566,19 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Titre de l&#39;achievement</td>
 </tr>
 </tbody></table>
-<h2 id='creer-un-achievement'>Créer un achievement</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">TODO</span><span class="w">
-</span></code></pre></div><h3 id='requete-http-21'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /achievements</strong></p>
-<h3 id='headers-10'>Headers</h3>
-<p>Cette route permet de créer un achievement.</p>
-
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>authToken</td>
-<td></td>
-<td>Token d&#39;identification de l&#39;utilisateur</td>
-</tr>
-</tbody></table>
-<h3 id='parametres-de-requete-18'>Paramètres de requête</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>label</td>
-<td></td>
-<td>Nom de l&#39;achievement</td>
-</tr>
-</tbody></table>
 <h1 id='groups'>Groups</h1><h2 id='lister-les-groupes-de-l-39-utilisateur-connecte'>Lister les groupes de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/groups</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2b42eb74498038880b5c533854c626ea</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1616,21 +1590,21 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"titre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Makakou"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost/EvaNerd/Back Evanerd/ressources/groups/1/default.png"</span><span class="w">
+            </span><span class="nl">"titre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conersation Sympa"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/groups/1/image.jpg"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"titre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Constante de Planck"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost/EvaNerd/Back Evanerd/ressources/groups/5/default.png"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"titre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copains d'Abord"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/groups/21/default.png"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer la liste des conversations d&#39;un utilisateur</p>
-<h3 id='requete-http-22'>Requête HTTP</h3>
+<h3 id='requete-http-18'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
-<h3 id='headers-11'>Headers</h3>
+<h3 id='headers-10'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1665,9 +1639,9 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer la liste des permissions d&#39;un groupe</p>
-<h3 id='requete-http-23'>Requête HTTP</h3>
+<h3 id='requete-http-19'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/permissions/</strong></p>
-<h3 id='headers-12'>Headers</h3>
+<h3 id='headers-11'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1687,7 +1661,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
   Par conséquent, tout utilisateur membre peut y être ajouté.
 </aside>
 <h2 id='lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte'>Lister les messages d&#39;un groupe de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/groups/2/messages</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2b42eb74498038880b5c533854c626ea</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -1696,27 +1681,39 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
             </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pedro"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost/EvaNerd/Back Evanerd/ressources/users/2/default.png"</span><span class="w">
+                </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/2/image.png"</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salut les copains !!"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="nl">"answerTo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">167</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pedro"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/2/image.png"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hey"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"answerTo"</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récuperer la liste des messages envoyés dans le groupe</p>
-<h3 id='requete-http-24'>Requête HTTP</h3>
+<h3 id='requete-http-20'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages</strong></p>
-<h3 id='headers-13'>Headers</h3>
+<h3 id='headers-12'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1749,9 +1746,9 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div>
 <p>Cette route permet de récupérer la liste des réactions d&#39;un message de groupe</p>
-<h3 id='requete-http-25'>Requête HTTP</h3>
+<h3 id='requete-http-21'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}</strong></p>
-<h3 id='headers-14'>Headers</h3>
+<h3 id='headers-13'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1799,9 +1796,9 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer un groupe pour l&#39;utilisateur connecté</p>
-<h3 id='requete-http-26'>Requête HTTP</h3>
+<h3 id='requete-http-22'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups</strong></p>
-<h3 id='headers-15'>Headers</h3>
+<h3 id='headers-14'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1861,9 +1858,9 @@ L'utilisateur connecté est directement ajouté au groupe créé
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter un utilisateur au groupe</p>
-<h3 id='requete-http-27'>Requête HTTP</h3>
+<h3 id='requete-http-23'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/users/{uid}</strong></p>
-<h3 id='headers-16'>Headers</h3>
+<h3 id='headers-15'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1917,9 +1914,9 @@ L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilis
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;envoyer un message dans le groupe</p>
-<h3 id='requete-http-28'>Requête HTTP</h3>
+<h3 id='requete-http-24'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/messages</strong></p>
-<h3 id='headers-17'>Headers</h3>
+<h3 id='headers-16'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1998,9 +1995,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer la liste des posts </p>
-<h3 id='requete-http-29'>Requête HTTP</h3>
+<h3 id='requete-http-25'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/</strong></p>
-<h3 id='headers-18'>Headers</h3>
+<h3 id='headers-17'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2039,9 +2036,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer la liste des posts </p>
-<h3 id='requete-http-30'>Requête HTTP</h3>
+<h3 id='requete-http-26'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions</strong></p>
-<h3 id='headers-19'>Headers</h3>
+<h3 id='headers-18'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2095,9 +2092,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer la liste des messages envoyé sur un post</p>
-<h3 id='requete-http-31'>Requête HTTP</h3>
+<h3 id='requete-http-27'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/messages</strong></p>
-<h3 id='headers-20'>Headers</h3>
+<h3 id='headers-19'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2146,9 +2143,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de poster un post</p>
-<h3 id='requete-http-32'>Requête HTTP</h3>
+<h3 id='requete-http-28'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts</strong></p>
-<h3 id='headers-21'>Headers</h3>
+<h3 id='headers-20'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2175,9 +2172,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de liker un post</p>
-<h3 id='requete-http-33'>Requête HTTP</h3>
+<h3 id='requete-http-29'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/liked</strong></p>
-<h3 id='headers-22'>Headers</h3>
+<h3 id='headers-21'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2191,7 +2188,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-15'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2218,9 +2215,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;epingler un post</p>
-<h3 id='requete-http-34'>Requête HTTP</h3>
+<h3 id='requete-http-30'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/pinned</strong></p>
-<h3 id='headers-23'>Headers</h3>
+<h3 id='headers-22'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2234,7 +2231,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-16'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2278,9 +2275,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet d&#39;ajouter une réaction un post</p>
-<h3 id='requete-http-35'>Requête HTTP</h3>
+<h3 id='requete-http-31'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/pinned</strong></p>
-<h3 id='headers-24'>Headers</h3>
+<h3 id='headers-23'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2294,7 +2291,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-21'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-17'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2342,9 +2339,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer la liste des calendriers</p>
-<h3 id='requete-http-36'>Requête HTTP</h3>
+<h3 id='requete-http-32'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/</strong></p>
-<h3 id='headers-25'>Headers</h3>
+<h3 id='headers-24'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2385,9 +2382,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer les événements d&#39;un calendrier</p>
-<h3 id='requete-http-37'>Requête HTTP</h3>
+<h3 id='requete-http-33'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/</strong></p>
-<h3 id='headers-26'>Headers</h3>
+<h3 id='headers-25'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2441,9 +2438,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer les informations concernant l&#39;appel</p>
-<h3 id='requete-http-38'>Requête HTTP</h3>
+<h3 id='requete-http-34'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/event/{eid}/calls</strong></p>
-<h3 id='headers-27'>Headers</h3>
+<h3 id='headers-26'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2499,9 +2496,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer un calendrier</p>
-<h3 id='requete-http-39'>Requête HTTP</h3>
+<h3 id='requete-http-35'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/</strong></p>
-<h3 id='headers-28'>Headers</h3>
+<h3 id='headers-27'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2542,9 +2539,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer un événement d&#39;un calendrier</p>
-<h3 id='requete-http-40'>Requête HTTP</h3>
+<h3 id='requete-http-36'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/{aid}/events</strong></p>
-<h3 id='headers-29'>Headers</h3>
+<h3 id='headers-28'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2584,9 +2581,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer une liste d&#39;utilisateur d&#39;un événement</p>
-<h3 id='requete-http-41'>Requête HTTP</h3>
+<h3 id='requete-http-37'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations</strong></p>
-<h3 id='parametres-de-requete-22'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-18'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2620,9 +2617,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de modifier la participation d&#39;un utilisateur à un événement</p>
-<h3 id='requete-http-42'>Requête HTTP</h3>
+<h3 id='requete-http-38'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
-<h3 id='parametres-de-requete-23'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2661,9 +2658,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer une participation d&#39;un utilisateur à un événement</p>
-<h3 id='requete-http-43'>Requête HTTP</h3>
+<h3 id='requete-http-39'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
-<h3 id='parametres-de-requete-24'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>

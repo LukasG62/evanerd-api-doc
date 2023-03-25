@@ -294,7 +294,19 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
 
 ```javascript
 
-//TODO
+var form = new FormData();
+var settings = {
+  "url": "https://evanerds.fr/api/v1/users?firstName=Super&lastName=LePinf&age=19&sex=0&mail=osettes2t@yopmail.com&tel=0790652329&studies=IG2I, Centrale Lille&password=pi13456&iid=iid[]=1",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "0202030405"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
 
 ```
 
@@ -308,8 +320,8 @@ password <span style="color:red">[OPTIONNEL]</span> |  | Permet de modifier son 
   "user:"
     {
       "id": 3,
-      "firstName": "Toto",
-      "lastName": "Basse",
+      "firstName": "Namu",
+      "lastName": "Litos",
       "mail":"totobasse@gmail.com",
       "tel":"0102030405",
       "sex": 1,
@@ -347,8 +359,18 @@ image <span style="color:red">[OPTIONNEL]</span> |  | Image de profil sous forma
 ## Ajouter un instrument à l'utilisateur
 
 ```javascript
+var settings = {
+  "url": "https://evanerds.fr/api/v1/users/instruments?iid=1",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "815d7d4197afb6b9d3df8d744d0a8bd5"
+  },
+};
 
-//TODO
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -359,8 +381,8 @@ image <span style="color:red">[OPTIONNEL]</span> |  | Image de profil sous forma
     "apiname": "EVANERD API",
     "version": "1.0",
     "instrument": {
-        "id": 2,
-        "label": "Flute à bec !"
+        "id": 1,
+        "label": "Flute"
     }
 }
 ```
@@ -437,7 +459,18 @@ aid |  | Id de l'achievement
 
 ```javascript
 
-//TODO
+var settings = {
+  "url": "https://evanerds.fr/api/v1/users/4/roles?rid=1",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "3bdc80f6ed463940c4cc4a9fb78704a3"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -448,19 +481,19 @@ aid |  | Id de l'achievement
     "apiname": "EVANERD API",
     "version": "1.0",
     "user": {
-        "id": 1,
-        "firstName": "Lukas",
-        "lastName": "Grando",
-        "sex": 1,
+        "id": 4,
+        "firstName": "N",
+        "lastName": "twitch.tv/NamuFoxyy",
+        "sex": 0,
         "age": 19,
-        "studies": "IG2I",
-        "photo": "http://localhost/ressources/users/1/default.png",
+        "studies": "IG2I, Centrale Lille",
+        "photo": "https://evanerds.fr/api/ressources/users/4/default.png",
         "activation": 1
     },
     "role": {
         "id": 1,
-        "label": "trésorier",
-        "active": 0
+        "label": "Membre du CA",
+        "active": 1
     }
 }
 ```
@@ -522,82 +555,7 @@ Cette route permet de vérifier l'email d'un utilisateur
 
 ### Requête HTTP
 
-**<span style="rgb(255, 180, 0)">POST</span> /users/verify**
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-token |  | Token d'activation du compte
-
-## Supprimer un instrument d'un utilisateur
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-```
-
-Cette route permet de supprimer un instrument d'un utilisateur.
-
-### Requête HTTP
-
-**<span style="color:rgb(235, 32, 19)">DEL</span> /users/instruments**
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-token |  | Token d'activation du compte
-
-## Supprimer un achievement d'un utilisateur
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-```
-
-Cette route permet de supprimer un achievement d'un utilisateur.
-
-### Requête HTTP
-
-**<span style="color:rgb(235, 32, 19)">DEL</span> /users/achievements**
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-token |  | Token d'activation du compte
-
-## Supprimer un rôle d'un utilisateur
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-```
-
-Cette route permet de supprimer un rôle d'un utilisateur.
-
-### Requête HTTP
-
-**<span style="color:rgb(235, 32, 19)">DEL</span> /users/roles**
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/verify**
 
 ### Paramètres de requête
 
@@ -611,7 +569,15 @@ token |  | Token d'activation du compte
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/roles",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -663,7 +629,18 @@ active | "both" | Permet de préciser : 0 = Rôles inactifs; 1 = Rôles actifs; 
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/roles/1?label=Membre du CA 2024",
+  "method": "PUT",
+  "timeout": 0,
+  "headers": {
+    "authToken": "3bdc80f6ed463940c4cc4a9fb78704a3"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -675,8 +652,8 @@ active | "both" | Permet de préciser : 0 = Rôles inactifs; 1 = Rôles actifs; 
     "version": "1.0",
     "role": {
         "id": 1,
-        "label": "Trésorier 2020",
-        "active": 0
+        "label": "Membre du CA 2024",
+        "active": 1
     }
 }
 ```
@@ -748,7 +725,18 @@ active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le rôle est actif
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/instruments",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "3bdc80f6ed463940c4cc4a9fb78704a3"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -792,7 +780,18 @@ token |  | Token d'activation du compte
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/instruments/7?label=Flûte",
+  "method": "PUT",
+  "timeout": 0,
+  "headers": {
+    "authToken": "3bdc80f6ed463940c4cc4a9fb78704a3"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -803,8 +802,8 @@ token |  | Token d'activation du compte
     "apiname": "EVANERD API",
     "version": "1.0",
     "instrument": {
-        "id": 1,
-        "label": "Flute à bec"
+        "id": 7,
+        "label": "Flûte"
     }
 }
 ```
@@ -831,7 +830,15 @@ label |  | Identifiant de l'instrument
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/instruments?label=Saxophone",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "36d4e93d57c3118083dbc27e0a04f8be"
+  },
+};
+
 
 ```
 
@@ -843,7 +850,7 @@ label |  | Identifiant de l'instrument
     "version": "1.0",
     "instrument": {
         "id": "11",
-        "label": "Flute"
+        "label": "Saxophone"
     }
 }
 ```
@@ -866,7 +873,15 @@ label |  | Nom de l'instrument
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/achievements",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -878,12 +893,12 @@ label |  | Nom de l'instrument
     "version": "1.0",
     "achievements": [
         {
-            "id": 1,
-            "label": "Légende"
+            "id": 10,
+            "label": "Bavard"
         },
         {
-            "id": 2,
-            "label": "Blablateur"
+            "id": 11,
+            "label": "Loquace"
         }
     ]
 }
@@ -933,45 +948,24 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 label |  | Titre de l'achievement
 
-## Créer un achievement
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-// TODO
-```
-
-### Requête HTTP
-
-**<span style="color:rgb(255, 180, 0)">POST</span> /achievements**
-
-### Headers
-
-Cette route permet de créer un achievement.
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-label |  | Nom de l'achievement
-
 # Groups
 
 ## Lister les groupes de l'utilisateur connecté
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "2b42eb74498038880b5c533854c626ea"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -984,13 +978,13 @@ label |  | Nom de l'achievement
     "groups": [
         {
             "id": 1,
-            "titre": "Makakou",
-            "image": "http://localhost/EvaNerd/Back Evanerd/ressources/groups/1/default.png"
+            "titre": "Conersation Sympa",
+            "image": "https://evanerds.fr/api/ressources/groups/1/image.jpg"
         },
         {
-            "id": 5,
-            "titre": "Constante de Planck",
-            "image": "http://localhost/EvaNerd/Back Evanerd/ressources/groups/5/default.png"
+            "id": 21,
+            "titre": "Copains d'Abord",
+            "image": "https://evanerds.fr/api/ressources/groups/21/default.png"
         }
     ]
 }
@@ -1054,7 +1048,18 @@ authToken |  | Token d'identification de l'utilisateur
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups/2/messages",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "2b42eb74498038880b5c533854c626ea"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -1064,19 +1069,31 @@ authToken |  | Token d'identification de l'utilisateur
 {
     "apiname": "EVANERD API",
     "version": "1.0",
-    "groupId": 4,
+    "groupId": 2,
     "messages": [
         {
-            "id": 1,
+            "id": 32,
             "author": {
                 "id": 2,
                 "firstName": "Pedro",
                 "lastName": "Lito",
-                "photo": "http://localhost/EvaNerd/Back Evanerd/ressources/users/2/default.png"
+                "photo": "https://evanerds.fr/api/ressources/users/2/image.png"
             },
-            "content": "Salut les copains !!",
-            "pinned": 1,
+            "content": "44",
+            "pinned": 0,
             "answerTo": null
+        },
+        {
+            "id": 167,
+            "author": {
+                "id": 2,
+                "firstName": "Pedro",
+                "lastName": "Lito",
+                "photo": "https://evanerds.fr/api/ressources/users/2/image.png"
+            },
+            "content": "hey",
+            "pinned": 0,
+            "answerTo": 165
         }
     ]
 }

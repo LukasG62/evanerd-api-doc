@@ -1282,13 +1282,32 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tr>
 </tbody></table>
 <h2 id='creer-un-role'>Créer un rôle</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/roles?label=test&amp;active=0</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">025e69eca5d7ba55d84e6f7222bb290e</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
 <p>La requête renvoie un JSON sous la forme:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">TODO</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de créer un rôle.</p>
 <h3 id='requete-http-12'>Requête HTTP</h3>
@@ -1968,7 +1987,18 @@ L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilis
 L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </aside>
 <h1 id='posts'>Posts</h1><h2 id='lister-les-posts'>Lister les posts</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/posts</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">025e69eca5d7ba55d84e6f7222bb290e</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -2016,26 +2046,40 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
   La liste de posts dépend du rôle de l'utilisateur, si l'utilisateur connecté est un non-membre alors il verra que les posts avec l'attribut visible à 1.
 </aside>
 <h2 id='lister-les-reactions-d-39-un-post'>Lister les réactions d&#39;un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/posts/1/reactions</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">025e69eca5d7ba55d84e6f7222bb290e</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
 <p>La requête renvoie un JSON sous la forme:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"posts"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"🤓"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pedro"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/2/image.png"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer la liste des posts </p>
+<p>Cette route permet de récupérer les réactions sur un post.</p>
 <h3 id='requete-http-26'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions</strong></p>
 <h3 id='headers-18'>Headers</h3>
@@ -2052,8 +2096,23 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
+
+<aside class="warning">
+  Parfois, l'emoji ne passe pas.
+</aside>
 <h2 id='lister-les-messages-d-39-un-post'>Lister les messages d&#39;un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/posts/1/messages</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">025e69eca5d7ba55d84e6f7222bb290e</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
@@ -2121,25 +2180,41 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </tr>
 </tbody></table>
 <h2 id='poster-un-post'>Poster un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">banner</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">etudiants2016.jpg</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/posts?visible=1&amp;content=Bon mardi&amp;pinned=1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">025e69eca5d7ba55d84e6f7222bb290e</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">processData</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">mimeType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">multipart/form-data</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">contentType</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="nx">form</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
 <p>La requête renvoie un JSON sous la forme:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"post"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C'est un trop un bon post"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"banner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bon mardi"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"banner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de poster un post</p>
@@ -2149,16 +2224,49 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Paramètre</th>
-<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>authToken</td>
-<td></td>
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
+<h3 id='parametres-d-39-url-10'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td></td>
+<td>Contenu du post</td>
+</tr>
+<tr>
+<td>visible</td>
+<td></td>
+<td>Pour définir si le post est visible pour tout le monde ou non</td>
+</tr>
+</tbody></table>
+<h3 id='form-data'>Form data</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>banner</td>
+<td>Image du post</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  ll faut obligatoirement fournir une image pour la réalisation de la requête.
+</aside>
 <h2 id='poster-un-like-sur-un-post'>Poster un like sur un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -2245,7 +2353,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Booléen qui définit s&#39;il est pin ou non</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-10'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-11'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2305,7 +2413,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Booléen qui définit s&#39;il est pin ou non</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-11'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-12'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2398,7 +2506,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-12'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-13'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2454,7 +2562,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-13'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-14'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2555,7 +2663,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-14'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-15'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>

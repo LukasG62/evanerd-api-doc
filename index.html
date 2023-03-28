@@ -370,7 +370,7 @@
             <a href="#instruments" class="toc-h1 toc-link" data-title="Instruments">Instruments</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#retourner-tous-les-instruments" class="toc-h2 toc-link" data-title="Retourner tous les instruments">Retourner tous les instruments</a>
+                    <a href="#lister-tous-les-instruments" class="toc-h2 toc-link" data-title="Lister tous les instruments">Lister tous les instruments</a>
                   </li>
                   <li>
                     <a href="#modifier-un-instrument" class="toc-h2 toc-link" data-title="Modifier un instrument">Modifier un instrument</a>
@@ -436,7 +436,7 @@
                     <a href="#poster-un-like-sur-un-post" class="toc-h2 toc-link" data-title="Poster un like sur un post">Poster un like sur un post</a>
                   </li>
                   <li>
-                    <a href="#poster-une-epingle-sur-un-post" class="toc-h2 toc-link" data-title="Poster une épingle sur un post">Poster une épingle sur un post</a>
+                    <a href="#epingler-un-post" class="toc-h2 toc-link" data-title="Epingler un post">Epingler un post</a>
                   </li>
                   <li>
                     <a href="#poster-une-reaction-sur-un-post" class="toc-h2 toc-link" data-title="Poster une réaction sur un post">Poster une réaction sur un post</a>
@@ -659,11 +659,13 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>uid</td>
+<td></td>
 <td>L&#39;identifiant de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
@@ -711,18 +713,20 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de modifier les informations( mail, numéro de téléphone...) d&#39;un utilisateur présent dans la base de donnée.</p>
+<p>Cette route permet de modifier les informations (mail, numéro de téléphone...) d&#39;un utilisateur présent dans la base de donnée.</p>
 <h3 id='requete-http-4'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /users/{uid}</strong></p>
 <h3 id='parametres-d-39-url-2'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>uid</td>
+<td></td>
 <td>L&#39;identifiant de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
@@ -1072,11 +1076,13 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <table><thead>
 <tr>
 <th>Paramètre</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>uid</td>
+<td></td>
 <td>Identifiant de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
@@ -1096,7 +1102,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tbody></table>
 
 <aside class="notice">
-   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
+   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme statut 403
 </aside>
 <h2 id='verifier-l-39-email-d-39-un-utilisateur'>Vérifier l&#39;email d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>  <span class="c1">//TODO</span>
 </code></pre></div>
@@ -1231,7 +1237,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer une liste de rôles</p>
+<p>Cette route permet de modifier les paramètres d&#39;un rôle (label, actif).</p>
 <h3 id='requete-http-11'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /roles/{rid}</strong></p>
 <h3 id='headers-6'>Headers</h3>
@@ -1345,7 +1351,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Si le rôle est actif</td>
 </tr>
 </tbody></table>
-<h1 id='instruments'>Instruments</h1><h2 id='retourner-tous-les-instruments'>Retourner tous les instruments</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<h1 id='instruments'>Instruments</h1><h2 id='lister-tous-les-instruments'>Lister tous les instruments</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/instruments</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
@@ -1531,6 +1537,20 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <p>Cette route permet de retourner tous les achievements.</p>
 <h3 id='requete-http-16'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /achievements</strong></p>
+<h3 id='parametres-de-requete-14'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td></td>
+<td>Token d&#39;activation du compte</td>
+</tr>
+</tbody></table>
 <h2 id='modifier-un-achievement'>Modifier un achievement</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
@@ -1571,7 +1591,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Identifiant de l&#39;achievement</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-14'>Paramètres de rêquete</h3>
+<h3 id='parametres-de-requete-15'>Paramètres de rêquete</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1750,11 +1770,13 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>gid</td>
+<td></td>
 <td>Identifiant du groupe</td>
 </tr>
 </tbody></table>
@@ -1785,15 +1807,18 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>gid</td>
+<td></td>
 <td>Identifiant du groupe</td>
 </tr>
 <tr>
 <td>mid</td>
+<td></td>
 <td>Identifiant du message</td>
 </tr>
 </tbody></table>
@@ -2171,11 +2196,13 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>pid</td>
+<td></td>
 <td>Identifiant du post</td>
 </tr>
 </tbody></table>
@@ -2217,18 +2244,20 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de poster un post</p>
+<p>Cette route permet de créer un post</p>
 <h3 id='requete-http-28'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts</strong></p>
 <h3 id='headers-20'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>authToken</td>
+<td></td>
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
@@ -2255,11 +2284,13 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Paramètre</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>banner</td>
+<td></td>
 <td>Image du post</td>
 </tr>
 </tbody></table>
@@ -2296,7 +2327,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-15'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-16'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2310,7 +2341,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Booléen qui définit s&#39;il est like ou non</td>
 </tr>
 </tbody></table>
-<h2 id='poster-une-epingle-sur-un-post'>Poster une épingle sur un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<h2 id='epingler-un-post'>Epingler un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
 </code></pre></div>
@@ -2339,7 +2370,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-16'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-17'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2357,11 +2388,13 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>pid</td>
+<td></td>
 <td>Identifiant du post</td>
 </tr>
 </tbody></table>
@@ -2399,7 +2432,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-de-requete-17'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-18'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2417,11 +2450,13 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>pid</td>
+<td></td>
 <td>Identifiant du post</td>
 </tr>
 </tbody></table>
@@ -2510,11 +2545,13 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>aid</td>
+<td></td>
 <td>Identifiant du calendrier</td>
 </tr>
 </tbody></table>
@@ -2566,15 +2603,18 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>aid</td>
+<td></td>
 <td>Identifiant du calendrier</td>
 </tr>
 <tr>
 <td>eid</td>
+<td></td>
 <td>Identifiant de l&#39;event</td>
 </tr>
 </tbody></table>
@@ -2667,11 +2707,13 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>aid</td>
+<td></td>
 <td>Identifiant du calendrier</td>
 </tr>
 </tbody></table>
@@ -2691,7 +2733,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de récupérer une liste d&#39;utilisateur d&#39;un événement</p>
 <h3 id='requete-http-37'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations</strong></p>
-<h3 id='parametres-de-requete-18'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2727,7 +2769,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de modifier la participation d&#39;un utilisateur à un événement</p>
 <h3 id='requete-http-38'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
-<h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2768,7 +2810,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <p>Cette route permet de créer une participation d&#39;un utilisateur à un événement</p>
 <h3 id='requete-http-39'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
-<h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-21'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>

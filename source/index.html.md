@@ -689,14 +689,33 @@ active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le rôle est actif
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/roles?label=test&active=0",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "025e69eca5d7ba55d84e6f7222bb290e"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
 > La requête renvoie un JSON sous la forme:
 
 ```json
-// TODO
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "role": {
+        "id": 7,
+        "label": "test",
+        "active": 0
+    }
+}
 ```
 
 Cette route permet de créer un rôle.
@@ -1296,7 +1315,18 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "025e69eca5d7ba55d84e6f7222bb290e"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -1344,7 +1374,18 @@ authToken |  | Token d'identification de l'utilisateur
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/reactions",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "025e69eca5d7ba55d84e6f7222bb290e"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -1352,20 +1393,23 @@ authToken |  | Token d'identification de l'utilisateur
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "posts":
-    [
-      {
-      },
-      {
-      },
-    ]
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "postId": 1,
+    "reactions": {
+        "🤓": [
+            {
+                "uid": 2,
+                "firstName": "Pedro",
+                "lastName": "Lito",
+                "photo": "https://evanerds.fr/api/ressources/users/2/image.png"
+            }
+        ]
+    }
 }
 ```
 
-Cette route permet de récupérer la liste des posts 
+Cette route permet de récupérer les réactions sur un post.
 
 ### Requête HTTP
 
@@ -1377,11 +1421,26 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
+<aside class="warning">
+  Parfois, l'emoji ne passe pas.
+</aside>
+
 ## Lister les messages d'un post
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/messages",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "025e69eca5d7ba55d84e6f7222bb290e"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -1444,7 +1503,25 @@ pid | Identifiant du post
 
 ```javascript
 
-// TODO CODE AJAX
+var form = new FormData();
+form.append("banner", fileInput.files[0], "etudiants2016.jpg");
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts?visible=1&content=Bon mardi&pinned=1",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "025e69eca5d7ba55d84e6f7222bb290e"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
@@ -1452,18 +1529,16 @@ pid | Identifiant du post
 
 ```json
 {
-    {
     "apiname": "EVANERD API",
     "version": "1.0",
     "post": {
-        "id": 9,
-        "author": 1,
-        "content": "C'est un trop un bon post",
-        "banner": "image.png",
-        "pinned": 0,
+        "id": 34,
+        "author": 6,
+        "content": "Bon mardi",
+        "banner": "image.jpg",
+        "pinned": 1,
         "visible": 1
     }
-}
 }
 ```
 
@@ -1475,9 +1550,26 @@ Cette route permet de poster un post
 
 ### Headers
 
+Paramètre | Description
+--------- | -----------
+authToken |  Token d'identification de l'utilisateur
+
+### Paramètres d'URL
+
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
+content |  | Contenu du post
+visible | | Pour définir si le post est visible pour tout le monde ou non
+
+### Form data
+
+Paramètre |  Description
+--------- |  -----------
+banner | Image du post
+
+<aside class="notice">
+  ll faut obligatoirement fournir une image pour la réalisation de la requête.
+</aside>
 
 ## Poster un like sur un post
 

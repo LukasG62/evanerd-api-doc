@@ -194,9 +194,9 @@ Cette route permet de récupérer un seul utilisateur selon son id.
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-uid | L'identifiant de l'utilisateur
+Parameter | Par défaut| Description
+--------- | ----------- | -----------
+uid | | L'identifiant de l'utilisateur
 
 <aside class="notice">
   Dans le cas ou l'uid utilisateur est celui de l'utilisateur connecté, la réponse envoie l'email et le numéro de téléphone de l'utilisateur.
@@ -247,7 +247,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de modifier les informations( mail, numéro de téléphone...) d'un utilisateur présent dans la base de donnée.
+Cette route permet de modifier les informations (mail, numéro de téléphone...) d'un utilisateur présent dans la base de donnée.
 
 ### Requête HTTP
 
@@ -255,9 +255,9 @@ Cette route permet de modifier les informations( mail, numéro de téléphone...
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-uid | L'identifiant de l'utilisateur
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+uid | | L'identifiant de l'utilisateur
 
 ### Headers
 
@@ -512,9 +512,9 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Paramètre | Description
---------- | -----------
-uid | Identifiant de l'utilisateur
+Paramètre | Par défaut | Description
+--------- | ----------- | -----------
+uid | | Identifiant de l'utilisateur
 
 ### Paramètres de requête
 
@@ -523,7 +523,7 @@ Paramètre | Par défaut | Description
 rid |  | Id du rôle
 
 <aside class="notice">
-   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme status 403
+   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme statut 403
 </aside>
 
 ## Vérifier l'email d'un utilisateur
@@ -562,6 +562,7 @@ Cette route permet de vérifier l'email d'un utilisateur
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 token |  | Token d'activation du compte
+
 
 # Rôles
 
@@ -658,7 +659,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de récupérer une liste de rôles
+Cette route permet de modifier les paramètres d'un rôle (label, actif).
 
 ### Requête HTTP
 
@@ -740,7 +741,7 @@ active *<span style="color:red">[OPTIONNEL]</span>* | 1 | Si le rôle est actif
 
 # Instruments 
 
-## Retourner tous les instruments
+## Lister tous les instruments
 
 ```javascript
 
@@ -928,6 +929,12 @@ Cette route permet de retourner tous les achievements.
 ### Requête HTTP
 
 **<span style="color:rgb(12, 187, 82)">GET</span> /achievements**
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+token |  | Token d'activation du compte
 
 ## Modifier un achievement
 
@@ -1132,9 +1139,9 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-gid | Identifiant du groupe
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+gid | | Identifiant du groupe
 
 ## Lister les réactions d'un message de groupe
 
@@ -1162,10 +1169,10 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-gid | Identifiant du groupe
-mid | Identifiant du message
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+gid | | Identifiant du groupe
+mid | | Identifiant du message
 
 ## Créer un groupe pour l'utilisateur connecté
 ```javascript
@@ -1495,9 +1502,9 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-pid | Identifiant du post
+Parameter |Par défaut | Description
+--------- | ------- | -----------
+pid | | Identifiant du post
 
 ## Poster un post
 
@@ -1542,7 +1549,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de poster un post
+Cette route permet de créer un post
 
 ### Requête HTTP
 
@@ -1550,9 +1557,9 @@ Cette route permet de poster un post
 
 ### Headers
 
-Paramètre | Description
---------- | -----------
-authToken |  Token d'identification de l'utilisateur
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken | | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
@@ -1563,9 +1570,9 @@ visible | | Pour définir si le post est visible pour tout le monde ou non
 
 ### Form data
 
-Paramètre |  Description
---------- |  -----------
-banner | Image du post
+Paramètre |  Par défaut | Description
+--------- | ------- | -----------
+banner | | Image du post
 
 <aside class="notice">
   ll faut obligatoirement fournir une image pour la réalisation de la requête.
@@ -1606,7 +1613,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 liked |  | Booléen qui définit s'il est like ou non
 
-## Poster une épingle sur un post
+## Epingler un post
 ```javascript
 
 // TODO CODE AJAX
@@ -1642,9 +1649,9 @@ pinned |  | Booléen qui définit s'il est pin ou non
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-pid | Identifiant du post
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+pid | | Identifiant du post
 
 <aside class="notice">
 
@@ -1688,9 +1695,9 @@ pinned |  | Booléen qui définit s'il est pin ou non
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-pid | Identifiant du post
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+pid | | Identifiant du post
 
 # Agendas
 
@@ -1777,9 +1784,9 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-aid | Identifiant du calendrier
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+aid | | Identifiant du calendrier
 
 <aside class="notice">
   La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
@@ -1827,10 +1834,10 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-aid | Identifiant du calendrier
-eid | Identifiant de l'event
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+aid | | Identifiant du calendrier
+eid | | Identifiant de l'event
 
 <aside class="notice">
   Seuls les membres du CA peuvent faire l'appel
@@ -1919,9 +1926,9 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Description
---------- | -----------
-aid | Identifiant du calendrier
+Parameter | Par défaut | Description
+--------- | ------- | -----------
+aid | | Identifiant du calendrier
 
 <aside class="notice">
   La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier

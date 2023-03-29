@@ -41,7 +41,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-> Lors de l'authentification, la réponse JSON fournira un token permettant d'utiliser certaines fonctionalités de l'API
+> Lors de l'authentification, la réponse JSON fournira un token permettant d'utiliser certaines fonctionalités de l'API.
 
 ```json
 {
@@ -99,7 +99,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -194,7 +194,7 @@ Cette route permet de récupérer un seul utilisateur selon son id.
 
 ### Paramètres d'URL
 
-Parameter | Par défaut| Description
+Paramètre | Par défaut| Description
 --------- | ----------- | -----------
 uid | | L'identifiant de l'utilisateur
 
@@ -224,7 +224,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-> La requête renvoie un JSON de l'utilisateur modifié sous la forme:
+> La requête renvoie un JSON de l'utilisateur modifié sous la forme :
 
 ```json
 {
@@ -255,7 +255,7 @@ Cette route permet de modifier les informations (mail, numéro de téléphone...
 
 ### Paramètres d'URL
 
-Parameter | Par défaut | Description
+Paramètre | Par défaut | Description
 --------- | ------- | -----------
 uid | | L'identifiant de l'utilisateur
 
@@ -310,7 +310,7 @@ var settings = {
 
 ```
 
-> La requête renvoie un JSON de l'utilisateur modifié sous la forme:
+> La requête renvoie un JSON de l'utilisateur modifié sous la forme :
 
 ```json
 {
@@ -374,7 +374,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON avec l'id de l'utilisateur et l'instrument ajouté
+> La requête renvoie un JSON avec l'id de l'utilisateur et l'instrument ajouté.
 
 ```json
 {
@@ -387,7 +387,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet d'ajouter un instrument à l'utilisateur connecté
+Cette route permet d'ajouter un instrument à l'utilisateur connecté.
 
 ### Requête HTTP
 
@@ -406,7 +406,7 @@ Paramètre | Par défaut | Description
 iid |  | Id de l'instrument à ajouter
 
 <aside class="notice">
-   Un instrument ne peut être rajouté qu'une seule fois
+   Un instrument ne peut être rajouté qu'une seule fois.
 </aside>
 
 ## Ajout d'un achievement à l'utilisateur
@@ -417,7 +417,7 @@ iid |  | Id de l'instrument à ajouter
 
 ```
 
-> La requête renvoie un JSON avec l'id de l'utilisateur et l'achievement ajouté
+> La requête renvoie un JSON avec l'id de l'utilisateur et l'achievement ajouté.
 
 ```json
 {
@@ -428,7 +428,7 @@ iid |  | Id de l'instrument à ajouter
 }
 ```
 
-Cette route permet d'ajouter un achievement à l'utilisateur connecté
+Cette route permet d'ajouter un achievement à l'utilisateur connecté.
 
 ### Requête HTTP
 
@@ -447,12 +447,12 @@ Paramètre | Par défaut | Description
 aid |  | Id de l'achievement
 
 <aside class="notice">
-   Un utilisateur ne peut avoir plusieurs fois le même achievement
+   Un utilisateur ne peut avoir plusieurs fois le même achievement.
 </aside>
 
 <aside class="warning">
    Il faut que l'utilisateur satisfasse les conditions d'obtention de l'achievement pour le recevoir. Sinon la route renvoie
-   un JSON d'erreur avec comme code de status 403
+   un JSON d'erreur avec comme code de status 403.
 </aside>
 
 ## Ajout d'un rôle à un utilisateur
@@ -474,7 +474,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON avec l'id de l'utilisateur et le rôle ajouté
+> La requête renvoie un JSON avec l'id de l'utilisateur et le rôle ajouté.
 
 ```json
 {
@@ -498,7 +498,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet d'ajouter un rôle à l'utilisateur
+Cette route permet d'ajouter un rôle à l'utilisateur.
 
 ### Requête HTTP
 
@@ -523,7 +523,7 @@ Paramètre | Par défaut | Description
 rid |  | Id du rôle
 
 <aside class="notice">
-   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme statut 403
+   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme statut 403.
 </aside>
 
 ## Vérifier l'email d'un utilisateur
@@ -551,7 +551,7 @@ rid |  | Id du rôle
 }
 ```
 
-Cette route permet de vérifier l'email d'un utilisateur
+Cette route permet de vérifier l'email d'un utilisateur.
 
 ### Requête HTTP
 
@@ -582,7 +582,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -645,7 +645,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -705,7 +705,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -760,7 +760,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -815,7 +815,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -862,7 +862,7 @@ var settings = {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -905,7 +905,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -936,44 +936,6 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 token |  | Token d'activation du compte
 
-## Modifier un achievement
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-// TODO
-```
-
-Cette route permet de modifier un achievement.
-
-### Requête HTTP
-
-**<span style="color:rgb(9, 123, 237)">PUT</span> /achievement/{achivid}**
-
-### Headers
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-### Paramètres d'URL
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-achivid |  | Identifiant de l'achievement
-
-### Paramètres de rêquete
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-label |  | Titre de l'achievement
-
 # Groups
 
 ## Lister les groupes de l'utilisateur connecté
@@ -995,7 +957,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -1016,7 +978,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de récupérer la liste des conversations d'un utilisateur
+Cette route permet de récuperer une liste des conversations de l'utilisateur connecté.
 
 ### Requête HTTP
 
@@ -1031,25 +993,27 @@ authToken |  | Token d'identification de l'utilisateur
 ## Lister les permissions d'un groupe
 
 ```javascript
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups/1/permissions",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "groupeId":3,
-  "permissions:"
-    [
-      {
-
-      },
-      {
-      },
-    ]
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "permissions": []
 }
 ```
 
@@ -1089,7 +1053,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -1125,7 +1089,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de récuperer la liste des messages envoyés dans le groupe
+Cette route permet de récuperer la liste des messages envoyés dans le groupe.
 
 ### Requête HTTP
 
@@ -1139,49 +1103,37 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Par défaut | Description
---------- | ------- | -----------
-gid | | Identifiant du groupe
-
-## Lister les réactions d'un message de groupe
-
-```javascript
-// TODO CODE AJAX
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-```
-
-Cette route permet de récupérer la liste des réactions d'un message de groupe
-
-### Requête HTTP
-
-**<span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}**
-
-### Headers
-
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-
-### Paramètres d'URL
-
-Parameter | Par défaut | Description
---------- | ------- | -----------
 gid | | Identifiant du groupe
-mid | | Identifiant du message
+
 
 ## Créer un groupe pour l'utilisateur connecté
 ```javascript
 
-// TODO CODE AJAX
+var form = new FormData();
+form.append("image", fileInput.files[0], "tux.png");
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups?title=Les Copines d'Abord",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -1195,7 +1147,7 @@ mid | | Identifiant du message
 }
 ```
 
-Cette route permet de créer un groupe pour l'utilisateur connecté
+Cette route permet de créer un groupe pour l'utilisateur connecté.
 
 ### Requête HTTP
 
@@ -1215,36 +1167,47 @@ image *<span style="color:red">[OPTIONNEL]</span>* |  | Donnée de l'image sous 
 title *<span style="color:red">[OPTIONNEL]</span>*  |  | Titre de la discussion
 
 <aside class="notice">
-L'utilisateur connecté est directement ajouté au groupe créé
+L'utilisateur connecté est directement ajouté au groupe créé.
 </aside>
 
 ## Ajouter un utilisateur au groupe
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups/2/users/10",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
     "apiname": "EVANERD API",
     "version": "1.0",
     "user": {
-        "id": 1,
-        "firstName": "Tomas",
-        "lastName": "Salvado Robalo",
+        "id": 10,
+        "firstName": "Alexandre",
+        "lastName": "Fizel",
         "sex": 0,
-        "age": 666,
+        "age": 19,
         "studies": "IG2I, Centrale Lille",
-        "photo": "http://localhost/EvaNerd/Back Evanerd/ressources/users/1/default.png",
+        "photo": "https://evanerds.fr/api/ressources/users/10/image.png",
         "activation": 1
     }
 }
 ```
 
-Cette route permet d'ajouter un utilisateur au groupe
+Cette route permet d'ajouter un utilisateur au groupe.
 
 ### Requête HTTP
 
@@ -1264,30 +1227,43 @@ gid | | Identifiant du groupe
 uid | | Identifiant du l'utilisateur
 
 <aside class="notice">
-L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilisateur
+L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilisateur.
 </aside>
 
 ## Envoyer un message dans le groupe
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups/1/messages?content=Salut !!&answerTo",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "groupe":
-    {
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "message": {
+        "id": "288",
+        "content": "Salut !!",
+        "pinned": 0,
+        "answerTo": null
     }
 }
 ```
 
-Cette route permet d'envoyer un message dans le groupe
+Cette route permet d'envoyer un message dans le groupe.
 
 ### Requête HTTP
 
@@ -1313,7 +1289,7 @@ content | | Contenu du message
 answerTo <span style="color:red">[OPTIONNEL] |  | Identifiant du message cible
 
 <aside class="notice">
-L'utilisateur connecté doit appartenir au groupe pour envoyer un message
+L'utilisateur connecté doit appartenir au groupe pour envoyer un message.
 </aside>
 
 # Posts
@@ -1337,7 +1313,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -1361,7 +1337,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de récupérer la liste des posts 
+Cette route permet de récupérer la liste des posts. 
 
 ### Requête HTTP
 
@@ -1396,7 +1372,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -1451,7 +1427,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -1487,7 +1463,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de récupérer la liste des messages envoyé sur un post
+Cette route permet de récupérer la liste des messages envoyé sur un post.
 
 ### Requête HTTP
 
@@ -1502,7 +1478,7 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter |Par défaut | Description
+Paramètre | Par défaut | Description
 --------- | ------- | -----------
 pid | | Identifiant du post
 
@@ -1532,7 +1508,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
@@ -1549,7 +1525,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de créer un post
+Cette route permet de créer un post.
 
 ### Requête HTTP
 
@@ -1582,20 +1558,36 @@ banner | | Image du post
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/likes",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
     "apiname": "EVANERD API",
     "version": "1.0",
+    "like": {
+        "uid": 6,
+        "pid": 1,
+        "liked": true
+    }
 }
 ```
 
-Cette route permet de liker un post
+Cette route permet d'aimer ou te détester un post.
 
 ### Requête HTTP
 
@@ -1616,24 +1608,43 @@ liked |  | Booléen qui définit s'il est like ou non
 ## Epingler un post
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/pinned?pinned=1",
+  "method": "PUT",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
     "apiname": "EVANERD API",
     "version": "1.0",
+    "post": {
+        "id": 1,
+        "author": 2,
+        "content": "J'annonce mon arrivé au sein de CA !! J'espère vous êtes contents !!\nΣ>―(〃°ω°〃)♡→\n\n",
+        "banner": null,
+        "pinned": 0,
+        "visible": 1
+    }
 }
 ```
 
-Cette route permet d'epingler un post
+Cette route permet d'épingler un post.
 
 ### Requête HTTP
 
-**<span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/pinned**
+**<span style="color:rgb(9, 123, 237)">PUT</span> /posts/{pid}/pinned**
 
 ### Headers
 
@@ -1649,7 +1660,7 @@ pinned |  | Booléen qui définit s'il est pin ou non
 
 ### Paramètres d'URL
 
-Parameter | Par défaut | Description
+Paramètre | Par défaut | Description
 --------- | ------- | -----------
 pid | | Identifiant du post
 
@@ -1662,20 +1673,33 @@ pid | | Identifiant du post
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/reactions?emoji=😋",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
     "apiname": "EVANERD API",
     "version": "1.0",
+    "reaction": "😋",
+    "postId": 1
 }
 ```
 
-Cette route permet d'ajouter une réaction un post
+Cette route permet d'ajouter une réaction un post.
 
 ### Requête HTTP
 
@@ -1695,181 +1719,46 @@ pinned |  | Booléen qui définit s'il est pin ou non
 
 ### Paramètres d'URL
 
-Parameter | Par défaut | Description
+Paramètre | Par défaut | Description
 --------- | ------- | -----------
 pid | | Identifiant du post
 
 # Agendas
 
-## Lister les calendriers
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-{
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "agendas":
-    [
-      {
-      },
-
-      {
-      },
-    ]
-}
-```
-
-Cette route permet de récupérer la liste des calendriers
-
-### Requête HTTP
-
-**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/**
-
-### Headers
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-<aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur
-</aside>
-
-## Lister les événements d'un calendrier
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-{
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "agendas":1,
-  "events":
-    [
-      {
-      },
-      
-      {
-      },
-    ]
-}
-```
-
-Cette route permet de récupérer les événements d'un calendrier
-
-### Requête HTTP
-
-**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/**
-
-### Headers
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-### Paramètres d'URL
-
-Parameter | Par défaut | Description
---------- | ------- | -----------
-aid | | Identifiant du calendrier
-
-<aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
-</aside>
-
-## Lister les membres de l'appel
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme:
-
-```json
-{
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "agendas":1,
-  "event":2,
-  "calls":
-    [
-      {
-      },
-      
-      {
-      },
-    ]
-}
-```
-
-Cette route permet de récupérer les informations concernant l'appel
-
-### Requête HTTP
-
-**<span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/event/{eid}/calls**
-
-### Headers
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-### Paramètres d'URL
-
-Parameter | Par défaut | Description
---------- | ------- | -----------
-aid | | Identifiant du calendrier
-eid | | Identifiant de l'event
-
-<aside class="notice">
-  Seuls les membres du CA peuvent faire l'appel
-</aside>
-
 ## Créer un calendrier
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/agendas/?type=intra&title=test",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "agendas":
-    [
-      {
-      },
-
-      {
-      },
-    ]
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "agenda": {
+        "id": "3",
+        "title": "test",
+        "extra": 0
+    }
 }
 ```
 
-Cette route permet de créer un calendrier
+Cette route permet de créer un calendrier.
 
 ### Requête HTTP
 
@@ -1882,37 +1771,45 @@ Paramètre | Par défaut | Description
 authToken |  | Token d'identification de l'utilisateur
 
 <aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur
+  La réponse dépend des permissions de lecture de l'utilisateur.
 </aside>
 
 ## Créer un événement d'un calendrier
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/agendas/1/events?event=oui&start=2023-05-15 15:22:15&end=2023-05-15 16:18:46&description=c'est un test",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
 {
-  "apiname":"EVANERD API",
-  "version":"1.0",
-  "status":200,
-  "agendas":1,
-  "events":
-    [
-      {
-      },
-      
-      {
-      },
-    ]
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "event": {
+        "id": "25",
+        "event": "oui",
+        "description": "c'est un test",
+        "start": "2023-05-15 15:22:15",
+        "end": "2023-05-15 16:18:46"
+    }
 }
 ```
 
-Cette route permet de créer un événement d'un calendrier
+Cette route permet de créer un événement d'un calendrier.
 
 ### Requête HTTP
 
@@ -1926,13 +1823,238 @@ authToken |  | Token d'identification de l'utilisateur
 
 ### Paramètres d'URL
 
-Parameter | Par défaut | Description
+Paramètre | Par défaut | Description
 --------- | ------- | -----------
 aid | | Identifiant du calendrier
 
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+event  |  | Nom de l'événement
+description | |Description de l'événement
+start | | Date de début de l'événement
+end | | Date de fin de l'événement
+
 <aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
+  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier.
 </aside>
+
+# Events
+
+## Lister les événements
+
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/agendas/?type=intra&title=test",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "events": [
+        {
+            "id": 8,
+            "aid": 2,
+            "startDate": "2023-04-19 22:41:10",
+            "endDate": "2023-04-19 23:45:15",
+            "event": "Saut en parachute",
+            "description": "blablabla"
+        },
+        {
+            "id": 7,
+            "aid": 2,
+            "startDate": "2023-06-08 15:43:26",
+            "endDate": "2023-08-04 15:43:26",
+            "event": "la réunion de fin d'année",
+            "description": "adieu les copains"
+        }
+    ]
+}
+```
+
+Cette route permet de lister les événements.
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /events/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+type  |  | Le type de l'événement
+all | | Si on veut tous les événements
+
+
+<aside class="notice">
+  La réponse dépend des permissions de lecture de l'utilisateur.
+</aside>
+
+## Lister les participations de l'utilisateur
+
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/events/1/participations",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "eventId": 1,
+    "participationsRatio": "0.3636",
+    "participations": {
+        "y": [
+            {
+                "user": {
+                    "id": 2,
+                    "firstName": "Pedro",
+                    "lastName": "Lito",
+                    "photo": "https://evanerds.fr/api/ressources/users/2/image.png"
+                }
+            },
+            {
+                "user": {
+                    "id": 12,
+                    "firstName": "Augustin",
+                    "lastName": "Husson",
+                    "photo": "https://evanerds.fr/api/ressources/users/12/image.png"
+                }
+            }
+        ],
+        "n": [
+            {
+                "user": {
+                    "id": 4,
+                    "firstName": "Leevan",
+                    "lastName": "David",
+                    "photo": "https://evanerds.fr/api/ressources/users/4/default.png"
+                }
+            }
+        ]
+    }
+}
+```
+
+Cette route permet de lister les événements.
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /events/**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+type  |  | Le type de l'événement
+all | | Si on veut tous les événements
+
+
+<aside class="warning">
+  Le ratio est calculé en fonction du nombre de participation. Il se peut qu'il y ait une division par 0, qui renvoie un NaN.
+</aside>
+
+
+## Justifier son absence 
+
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/events/8/calls?present=0&reason=Je suis enrhumé",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "call": {
+        "uid": 6,
+        "present": 0,
+        "eid": 8,
+        "reason_desc": "Je suis enrhumé"
+    }
+}
+```
+
+Cette route permet de justifier son absence
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /events/{eid}/calls**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètres d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+eid | | Identifiant de l'événement
+
+### Paramètres de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+present *<span style="color:red">[OPTIONNEL]</span>* | 0 | Si l'utilisateur est présent ou non
+reason  |  | La raison de l'absence
 
 # Participations
 
@@ -1944,13 +2066,13 @@ aid | | Identifiant du calendrier
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
   A DEFINIR
 ```
 
-Cette route permet de récupérer une liste d'utilisateur d'un événement
+Cette route permet de récupérer une liste d'utilisateur d'un événement.
 
 ### Requête HTTP
 
@@ -1972,13 +2094,13 @@ aeid |  | Identifiant de l'événement dans l'agenda
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
   A DEFINIR
 ```
 
-Cette route permet de modifier la participation d'un utilisateur à un événement
+Cette route permet de modifier la participation d'un utilisateur à un événement.
 
 ### Requête HTTP
 
@@ -1997,17 +2119,38 @@ participation |  | Si la personne participe ou non
 
 ```javascript
 
-// TODO CODE AJAX
+var settings = {
+  "url": "https://evanerds.fr/api/v1/events/8/calls?present=0&reason=Je suis enrhumé",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
 
 ```
 
-> La requête renvoie un JSON sous la forme:
+> La requête renvoie un JSON sous la forme :
 
 ```json
-  A DEFINIR
+  {
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "call": {
+        "uid": 6,
+        "present": 0,
+        "eid": 8,
+        "reason_desc": "Je suis enrhumé"
+    }
+}
 ```
 
-Cette route permet de créer une participation d'un utilisateur à un événement
+Cette route permet de créer une participation d'un utilisateur à un événement.
 
 ### Requête HTTP
 
@@ -2021,3 +2164,4 @@ authToken  |  | Token d'identification de l'utilisateur
 uid |  | Identifiant de l'utilisateur
 aeid |  | Identifiant de l'événement dans l'agenda
 participation |  | Si la personne participe ou non
+

@@ -386,9 +386,6 @@
                   <li>
                     <a href="#lister-tous-les-achievements" class="toc-h2 toc-link" data-title="Lister tous les achievements">Lister tous les achievements</a>
                   </li>
-                  <li>
-                    <a href="#modifier-un-achievement" class="toc-h2 toc-link" data-title="Modifier un achievement">Modifier un achievement</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -402,9 +399,6 @@
                   </li>
                   <li>
                     <a href="#lister-les-messages-d-39-un-groupe-de-l-39-utilisateur-connecte" class="toc-h2 toc-link" data-title="Lister les messages d'un groupe de l'utilisateur connecté">Lister les messages d'un groupe de l'utilisateur connecté</a>
-                  </li>
-                  <li>
-                    <a href="#lister-les-reactions-d-39-un-message-de-groupe" class="toc-h2 toc-link" data-title="Lister les réactions d'un message de groupe">Lister les réactions d'un message de groupe</a>
                   </li>
                   <li>
                     <a href="#creer-un-groupe-pour-l-39-utilisateur-connecte" class="toc-h2 toc-link" data-title="Créer un groupe pour l'utilisateur connecté">Créer un groupe pour l'utilisateur connecté</a>
@@ -447,19 +441,24 @@
             <a href="#agendas" class="toc-h1 toc-link" data-title="Agendas">Agendas</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#lister-les-calendriers" class="toc-h2 toc-link" data-title="Lister les calendriers">Lister les calendriers</a>
-                  </li>
-                  <li>
-                    <a href="#lister-les-evenements-d-39-un-calendrier" class="toc-h2 toc-link" data-title="Lister les événements d'un calendrier">Lister les événements d'un calendrier</a>
-                  </li>
-                  <li>
-                    <a href="#lister-les-membres-de-l-39-appel" class="toc-h2 toc-link" data-title="Lister les membres de l'appel">Lister les membres de l'appel</a>
-                  </li>
-                  <li>
                     <a href="#creer-un-calendrier" class="toc-h2 toc-link" data-title="Créer un calendrier">Créer un calendrier</a>
                   </li>
                   <li>
                     <a href="#creer-un-evenement-d-39-un-calendrier" class="toc-h2 toc-link" data-title="Créer un événement d'un calendrier">Créer un événement d'un calendrier</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#events" class="toc-h1 toc-link" data-title="Events">Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lister-les-evenements" class="toc-h2 toc-link" data-title="Lister les événements">Lister les événements</a>
+                  </li>
+                  <li>
+                    <a href="#lister-les-participations-de-l-39-utilisateur" class="toc-h2 toc-link" data-title="Lister les participations de l'utilisateur">Lister les participations de l'utilisateur</a>
+                  </li>
+                  <li>
+                    <a href="#justifier-son-absence" class="toc-h2 toc-link" data-title="Justifier son absence">Justifier son absence</a>
                   </li>
               </ul>
           </li>
@@ -503,7 +502,7 @@
 <span class="p">});</span>
 </code></pre></div>
 <blockquote>
-<p>Lors de l&#39;authentification, la réponse JSON fournira un token permettant d&#39;utiliser certaines fonctionalités de l&#39;API</p>
+<p>Lors de l&#39;authentification, la réponse JSON fournira un token permettant d&#39;utiliser certaines fonctionalités de l&#39;API.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -564,7 +563,7 @@ L'utilisateur doit avoir un compte activé (compte vérifié par email).
 <span class="p">});</span>
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -658,7 +657,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <h3 id='parametres-d-39-url'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
 <th>Par défaut</th>
 <th>Description</th>
 </tr>
@@ -692,7 +691,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <span class="p">});</span>
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON de l&#39;utilisateur modifié sous la forme:</p>
+<p>La requête renvoie un JSON de l&#39;utilisateur modifié sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -719,7 +718,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <h3 id='parametres-d-39-url-2'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
 <th>Par défaut</th>
 <th>Description</th>
 </tr>
@@ -822,7 +821,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON de l&#39;utilisateur modifié sous la forme:</p>
+<p>La requête renvoie un JSON de l&#39;utilisateur modifié sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -917,7 +916,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et l&#39;instrument ajouté</p>
+<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et l&#39;instrument ajouté.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -928,7 +927,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;ajouter un instrument à l&#39;utilisateur connecté</p>
+<p>Cette route permet d&#39;ajouter un instrument à l&#39;utilisateur connecté.</p>
 <h3 id='requete-http-6'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /users/instruments</strong></p>
 <h3 id='headers-2'>Headers</h3>
@@ -961,14 +960,14 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tbody></table>
 
 <aside class="notice">
-   Un instrument ne peut être rajouté qu'une seule fois
+   Un instrument ne peut être rajouté qu'une seule fois.
 </aside>
 <h2 id='ajout-d-39-un-achievement-a-l-39-utilisateur'>Ajout d&#39;un achievement à l&#39;utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">//TODO</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et l&#39;achievement ajouté</p>
+<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et l&#39;achievement ajouté.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -977,7 +976,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;ajouter un achievement à l&#39;utilisateur connecté</p>
+<p>Cette route permet d&#39;ajouter un achievement à l&#39;utilisateur connecté.</p>
 <h3 id='requete-http-7'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /users/achievements</strong></p>
 <h3 id='headers-3'>Headers</h3>
@@ -1010,12 +1009,12 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tbody></table>
 
 <aside class="notice">
-   Un utilisateur ne peut avoir plusieurs fois le même achievement
+   Un utilisateur ne peut avoir plusieurs fois le même achievement.
 </aside>
 
 <aside class="warning">
    Il faut que l'utilisateur satisfasse les conditions d'obtention de l'achievement pour le recevoir. Sinon la route renvoie
-   un JSON d'erreur avec comme code de status 403
+   un JSON d'erreur avec comme code de status 403.
 </aside>
 <h2 id='ajout-d-39-un-role-a-un-utilisateur'>Ajout d&#39;un rôle à un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
@@ -1033,7 +1032,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et le rôle ajouté</p>
+<p>La requête renvoie un JSON avec l&#39;id de l&#39;utilisateur et le rôle ajouté.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1055,7 +1054,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;ajouter un rôle à l&#39;utilisateur</p>
+<p>Cette route permet d&#39;ajouter un rôle à l&#39;utilisateur.</p>
 <h3 id='requete-http-8'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /users/{uid}/roles</strong></p>
 <h3 id='headers-4'>Headers</h3>
@@ -1102,7 +1101,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tbody></table>
 
 <aside class="notice">
-   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme statut 403
+   Seuls les membres du CA peuvent ajouter un rôle, dans les autres cas, la route renverra un JSON d'erreur avec comme statut 403.
 </aside>
 <h2 id='verifier-l-39-email-d-39-un-utilisateur'>Vérifier l&#39;email d&#39;un utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>  <span class="c1">//TODO</span>
 </code></pre></div>
@@ -1124,7 +1123,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de vérifier l&#39;email d&#39;un utilisateur</p>
+<p>Cette route permet de vérifier l&#39;email d&#39;un utilisateur.</p>
 <h3 id='requete-http-9'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /users/verify</strong></p>
 <h3 id='parametres-de-requete-8'>Paramètres de requête</h3>
@@ -1154,7 +1153,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1225,7 +1224,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1303,7 +1302,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1367,7 +1366,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1421,7 +1420,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1476,7 +1475,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1517,7 +1516,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1551,60 +1550,6 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Token d&#39;activation du compte</td>
 </tr>
 </tbody></table>
-<h2 id='modifier-un-achievement'>Modifier un achievement</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">TODO</span><span class="w">
-</span></code></pre></div>
-<p>Cette route permet de modifier un achievement.</p>
-<h3 id='requete-http-17'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /achievement/{achivid}</strong></p>
-<h3 id='headers-9'>Headers</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>authToken</td>
-<td></td>
-<td>Token d&#39;identification de l&#39;utilisateur</td>
-</tr>
-</tbody></table>
-<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>achivid</td>
-<td></td>
-<td>Identifiant de l&#39;achievement</td>
-</tr>
-</tbody></table>
-<h3 id='parametres-de-requete-15'>Paramètres de rêquete</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>label</td>
-<td></td>
-<td>Titre de l&#39;achievement</td>
-</tr>
-</tbody></table>
 <h1 id='groups'>Groups</h1><h2 id='lister-les-groupes-de-l-39-utilisateur-connecte'>Lister les groupes de l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/groups</span><span class="dl">"</span><span class="p">,</span>
@@ -1621,7 +1566,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1640,10 +1585,10 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer la liste des conversations d&#39;un utilisateur</p>
-<h3 id='requete-http-18'>Requête HTTP</h3>
+<p>Cette route permet de récuperer une liste des conversations de l&#39;utilisateur connecté.</p>
+<h3 id='requete-http-17'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups</strong></p>
-<h3 id='headers-10'>Headers</h3>
+<h3 id='headers-9'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1657,30 +1602,32 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h2 id='lister-les-permissions-d-39-un-groupe'>Lister les permissions d&#39;un groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// TODO CODE AJAX</span>
+<h2 id='lister-les-permissions-d-39-un-groupe'>Lister les permissions d&#39;un groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/groups/1/permissions</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"groupeId"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"permissions:"</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer la liste des permissions d&#39;un groupe</p>
-<h3 id='requete-http-19'>Requête HTTP</h3>
+<h3 id='requete-http-18'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/permissions/</strong></p>
-<h3 id='headers-11'>Headers</h3>
+<h3 id='headers-10'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1715,7 +1662,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1749,10 +1696,10 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récuperer la liste des messages envoyés dans le groupe</p>
-<h3 id='requete-http-20'>Requête HTTP</h3>
+<p>Cette route permet de récuperer la liste des messages envoyés dans le groupe.</p>
+<h3 id='requete-http-19'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages</strong></p>
-<h3 id='headers-12'>Headers</h3>
+<h3 id='headers-11'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1766,30 +1713,7 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-7'>Paramètres d&#39;URL</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>gid</td>
-<td></td>
-<td>Identifiant du groupe</td>
-</tr>
-</tbody></table>
-<h2 id='lister-les-reactions-d-39-un-message-de-groupe'>Lister les réactions d&#39;un message de groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// TODO CODE AJAX</span>
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div>
-<p>Cette route permet de récupérer la liste des réactions d&#39;un message de groupe</p>
-<h3 id='requete-http-21'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /groups/{gid}/messages/{mid}</strong></p>
-<h3 id='headers-13'>Headers</h3>
+<h3 id='parametres-d-39-url-6'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1798,36 +1722,35 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tr>
 </thead><tbody>
 <tr>
-<td>authToken</td>
-<td></td>
-<td>Token d&#39;identification de l&#39;utilisateur</td>
-</tr>
-</tbody></table>
-<h3 id='parametres-d-39-url-8'>Paramètres d&#39;URL</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
 <td>gid</td>
 <td></td>
 <td>Identifiant du groupe</td>
-</tr>
-<tr>
-<td>mid</td>
-<td></td>
-<td>Identifiant du message</td>
 </tr>
 </tbody></table>
 <h2 id='creer-un-groupe-pour-l-39-utilisateur-connecte'>Créer un groupe pour l&#39;utilisateur connecté</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">image</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">tux.png</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/groups?title=Les Copines d'Abord</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">processData</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">mimeType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">multipart/form-data</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">contentType</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="nx">form</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -1839,10 +1762,10 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de créer un groupe pour l&#39;utilisateur connecté</p>
-<h3 id='requete-http-22'>Requête HTTP</h3>
+<p>Cette route permet de créer un groupe pour l&#39;utilisateur connecté.</p>
+<h3 id='requete-http-20'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups</strong></p>
-<h3 id='headers-14'>Headers</h3>
+<h3 id='headers-12'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1877,34 +1800,45 @@ Les deux paramètres peuvent être mis en place lors de la requête. Si la donn�
 </tbody></table>
 
 <aside class="notice">
-L'utilisateur connecté est directement ajouté au groupe créé
+L'utilisateur connecté est directement ajouté au groupe créé.
 </aside>
 <h2 id='ajouter-un-utilisateur-au-groupe'>Ajouter un utilisateur au groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/groups/2/users/10</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tomas"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salvado Robalo"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alexandre"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fizel"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">666</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
         </span><span class="nl">"studies"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IG2I, Centrale Lille"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost/EvaNerd/Back Evanerd/ressources/users/1/default.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/10/image.png"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"activation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;ajouter un utilisateur au groupe</p>
-<h3 id='requete-http-23'>Requête HTTP</h3>
+<p>Cette route permet d&#39;ajouter un utilisateur au groupe.</p>
+<h3 id='requete-http-21'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/users/{uid}</strong></p>
-<h3 id='headers-15'>Headers</h3>
+<h3 id='headers-13'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -1939,28 +1873,41 @@ L'utilisateur connecté est directement ajouté au groupe créé
 </tbody></table>
 
 <aside class="notice">
-L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilisateur
+L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilisateur.
 </aside>
 <h2 id='envoyer-un-message-dans-le-groupe'>Envoyer un message dans le groupe</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/groups/1/messages?content=Salut !!&amp;answerTo</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"groupe"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"288"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salut !!"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"answerTo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;envoyer un message dans le groupe</p>
-<h3 id='requete-http-24'>Requête HTTP</h3>
+<p>Cette route permet d&#39;envoyer un message dans le groupe.</p>
+<h3 id='requete-http-22'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /groups/{gid}/messages</strong></p>
-<h3 id='headers-16'>Headers</h3>
+<h3 id='headers-14'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2009,7 +1956,7 @@ L'utilisateur connecté doit appartenir au groupe pour pouvoir ajouter un utilis
 </tbody></table>
 
 <aside class="notice">
-L'utilisateur connecté doit appartenir au groupe pour envoyer un message
+L'utilisateur connecté doit appartenir au groupe pour envoyer un message.
 </aside>
 <h1 id='posts'>Posts</h1><h2 id='lister-les-posts'>Lister les posts</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
@@ -2027,7 +1974,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -2049,10 +1996,10 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer la liste des posts </p>
-<h3 id='requete-http-25'>Requête HTTP</h3>
+<p>Cette route permet de récupérer la liste des posts. </p>
+<h3 id='requete-http-23'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/</strong></p>
-<h3 id='headers-17'>Headers</h3>
+<h3 id='headers-15'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2086,7 +2033,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -2105,9 +2052,9 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cette route permet de récupérer les réactions sur un post.</p>
-<h3 id='requete-http-26'>Requête HTTP</h3>
+<h3 id='requete-http-24'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions</strong></p>
-<h3 id='headers-18'>Headers</h3>
+<h3 id='headers-16'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2141,7 +2088,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -2175,10 +2122,10 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer la liste des messages envoyé sur un post</p>
-<h3 id='requete-http-27'>Requête HTTP</h3>
+<p>Cette route permet de récupérer la liste des messages envoyé sur un post.</p>
+<h3 id='requete-http-25'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/messages</strong></p>
-<h3 id='headers-19'>Headers</h3>
+<h3 id='headers-17'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2192,10 +2139,10 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-9'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-7'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
 <th>Par défaut</th>
 <th>Description</th>
 </tr>
@@ -2229,7 +2176,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
@@ -2244,10 +2191,10 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de créer un post</p>
-<h3 id='requete-http-28'>Requête HTTP</h3>
+<p>Cette route permet de créer un post.</p>
+<h3 id='requete-http-26'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts</strong></p>
-<h3 id='headers-20'>Headers</h3>
+<h3 id='headers-18'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2261,7 +2208,7 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-10'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-8'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2299,21 +2246,99 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
   ll faut obligatoirement fournir une image pour la réalisation de la requête.
 </aside>
 <h2 id='poster-un-like-sur-un-post'>Poster un like sur un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/posts/1/likes</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de liker un post</p>
-<h3 id='requete-http-29'>Requête HTTP</h3>
+<p>Cette route permet d&#39;aimer ou te détester un post.</p>
+<h3 id='requete-http-27'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/liked</strong></p>
-<h3 id='headers-21'>Headers</h3>
+<h3 id='headers-19'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+<h3 id='parametres-de-requete-15'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>liked</td>
+<td></td>
+<td>Booléen qui définit s&#39;il est like ou non</td>
+</tr>
+</tbody></table>
+<h2 id='epingler-un-post'>Epingler un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/posts/1/pinned?pinned=1</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PUT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"post"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"J'annonce mon arrivé au sein de CA !! J'espère vous êtes contents !!</span><span class="se">\n</span><span class="s2">Σ&gt;―(〃°ω°〃)♡→</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"banner"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pinned"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet d&#39;épingler un post.</p>
+<h3 id='requete-http-28'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(9, 123, 237)">PUT</span> /posts/{pid}/pinned</strong></p>
+<h3 id='headers-20'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2336,27 +2361,59 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </tr>
 </thead><tbody>
 <tr>
-<td>liked</td>
+<td>pinned</td>
 <td></td>
-<td>Booléen qui définit s&#39;il est like ou non</td>
+<td>Booléen qui définit s&#39;il est pin ou non</td>
 </tr>
 </tbody></table>
-<h2 id='epingler-un-post'>Epingler un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<h3 id='parametres-d-39-url-9'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pid</td>
+<td></td>
+<td>Identifiant du post</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+
+   Les membres du CA peuvent épingler les posts des utilisateurs. Un autre membre du CA peut desépingler les posts.
+</aside>
+<h2 id='poster-une-reaction-sur-un-post'>Poster une réaction sur un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/posts/1/reactions?emoji=😋</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"😋"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;epingler un post</p>
-<h3 id='requete-http-30'>Requête HTTP</h3>
+<p>Cette route permet d&#39;ajouter une réaction un post.</p>
+<h3 id='requete-http-29'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/pinned</strong></p>
-<h3 id='headers-22'>Headers</h3>
+<h3 id='headers-21'>Headers</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2384,10 +2441,10 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Booléen qui définit s&#39;il est pin ou non</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-11'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-10'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
 <th>Par défaut</th>
 <th>Description</th>
 </tr>
@@ -2398,26 +2455,88 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Identifiant du post</td>
 </tr>
 </tbody></table>
+<h1 id='agendas'>Agendas</h1><h2 id='creer-un-calendrier'>Créer un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/agendas/?type=intra&amp;title=test</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
 
-<aside class="notice">
-
-   Les membres du CA peuvent épingler les posts des utilisateurs. Un autre membre du CA peut desépingler les posts.
-</aside>
-<h2 id='poster-une-reaction-sur-un-post'>Poster une réaction sur un post</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"agenda"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet d&#39;ajouter une réaction un post</p>
+<p>Cette route permet de créer un calendrier.</p>
+<h3 id='requete-http-30'>Requête HTTP</h3>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/</strong></p>
+<h3 id='headers-22'>Headers</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authToken</td>
+<td></td>
+<td>Token d&#39;identification de l&#39;utilisateur</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  La réponse dépend des permissions de lecture de l'utilisateur.
+</aside>
+<h2 id='creer-un-evenement-d-39-un-calendrier'>Créer un événement d&#39;un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/agendas/1/events?event=oui&amp;start=2023-05-15 15:22:15&amp;end=2023-05-15 16:18:46&amp;description=c'est un test</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div>
+<blockquote>
+<p>La requête renvoie un JSON sous la forme :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oui"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c'est un test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-05-15 15:22:15"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-05-15 16:18:46"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Cette route permet de créer un événement d&#39;un calendrier.</p>
 <h3 id='requete-http-31'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/pinned</strong></p>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/{aid}/events</strong></p>
 <h3 id='headers-23'>Headers</h3>
 <table><thead>
 <tr>
@@ -2432,6 +2551,20 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
+<h3 id='parametres-d-39-url-11'>Paramètres d&#39;URL</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>aid</td>
+<td></td>
+<td>Identifiant du calendrier</td>
+</tr>
+</tbody></table>
 <h3 id='parametres-de-requete-18'>Paramètres de requête</h3>
 <table><thead>
 <tr>
@@ -2441,49 +2574,74 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </tr>
 </thead><tbody>
 <tr>
-<td>pinned</td>
+<td>event</td>
 <td></td>
-<td>Booléen qui définit s&#39;il est pin ou non</td>
+<td>Nom de l&#39;événement</td>
+</tr>
+<tr>
+<td>description</td>
+<td> </td>
+<td>Description de l&#39;événement</td>
+</tr>
+<tr>
+<td>start</td>
+<td></td>
+<td>Date de début de l&#39;événement</td>
+</tr>
+<tr>
+<td>end</td>
+<td> </td>
+<td>Date de fin de l&#39;événement</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-12'>Paramètres d&#39;URL</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>pid</td>
-<td></td>
-<td>Identifiant du post</td>
-</tr>
-</tbody></table>
-<h1 id='agendas'>Agendas</h1><h2 id='lister-les-calendriers'>Lister les calendriers</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+
+<aside class="notice">
+  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier.
+</aside>
+<h1 id='events'>Events</h1><h2 id='lister-les-evenements'>Lister les événements</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/agendas/?type=intra&amp;title=test</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"aid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-19 22:41:10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-19 23:45:15"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saut en parachute"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blablabla"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"aid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-08 15:43:26"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-08-04 15:43:26"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"la réunion de fin d'année"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adieu les copains"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer la liste des calendriers</p>
+<p>Cette route permet de lister les événements.</p>
 <h3 id='requete-http-32'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/</strong></p>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /events/</strong></p>
 <h3 id='headers-24'>Headers</h3>
 <table><thead>
 <tr>
@@ -2498,35 +2656,87 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
+<h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Par défaut</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td></td>
+<td>Le type de l&#39;événement</td>
+</tr>
+<tr>
+<td>all</td>
+<td> </td>
+<td>Si on veut tous les événements</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur
+  La réponse dépend des permissions de lecture de l'utilisateur.
 </aside>
-<h2 id='lister-les-evenements-d-39-un-calendrier'>Lister les événements d&#39;un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<h2 id='lister-les-participations-de-l-39-utilisateur'>Lister les participations de l&#39;utilisateur</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/events/1/participations</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"events"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"participationsRatio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.3636"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"participations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pedro"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lito"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/2/image.png"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Augustin"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Husson"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/12/image.png"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"n"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leevan"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"David"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://evanerds.fr/api/ressources/users/4/default.png"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer les événements d&#39;un calendrier</p>
+<p>Cette route permet de lister les événements.</p>
 <h3 id='requete-http-33'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/</strong></p>
+<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /events/</strong></p>
 <h3 id='headers-25'>Headers</h3>
 <table><thead>
 <tr>
@@ -2541,50 +2751,61 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-13'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
 <th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>aid</td>
+<td>type</td>
 <td></td>
-<td>Identifiant du calendrier</td>
+<td>Le type de l&#39;événement</td>
+</tr>
+<tr>
+<td>all</td>
+<td> </td>
+<td>Si on veut tous les événements</td>
 </tr>
 </tbody></table>
 
-<aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
+<aside class="warning">
+  Le ratio est calculé en fonction du nombre de participation. Il se peut qu'il y ait une division par 0, qui renvoie un NaN.
 </aside>
-<h2 id='lister-les-membres-de-l-39-appel'>Lister les membres de l&#39;appel</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<h2 id='justifier-son-absence'>Justifier son absence</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/events/8/calls?present=0&amp;reason=Je suis enrhumé</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"event"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"calls"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"eid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reason_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Je suis enrhumé"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer les informations concernant l&#39;appel</p>
+<p>Cette route permet de justifier son absence</p>
 <h3 id='requete-http-34'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(12, 187, 82)">GET</span> /agendas/{aid}/event/{eid}/calls</strong></p>
+<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /events/{eid}/calls</strong></p>
 <h3 id='headers-26'>Headers</h3>
 <table><thead>
 <tr>
@@ -2599,54 +2820,21 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 <td>Token d&#39;identification de l&#39;utilisateur</td>
 </tr>
 </tbody></table>
-<h3 id='parametres-d-39-url-14'>Paramètres d&#39;URL</h3>
+<h3 id='parametres-d-39-url-12'>Paramètres d&#39;URL</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Paramètre</th>
 <th>Par défaut</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>aid</td>
-<td></td>
-<td>Identifiant du calendrier</td>
-</tr>
 <tr>
 <td>eid</td>
 <td></td>
-<td>Identifiant de l&#39;event</td>
+<td>Identifiant de l&#39;événement</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">
-  Seuls les membres du CA peuvent faire l'appel
-</aside>
-<h2 id='creer-un-calendrier'>Créer un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Cette route permet de créer un calendrier</p>
-<h3 id='requete-http-35'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/</strong></p>
-<h3 id='headers-27'>Headers</h3>
+<h3 id='parametres-de-requete-21'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2655,85 +2843,29 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </tr>
 </thead><tbody>
 <tr>
-<td>authToken</td>
+<td>present <em><span style="color:red">[OPTIONNEL]</span></em></td>
+<td>0</td>
+<td>Si l&#39;utilisateur est présent ou non</td>
+</tr>
+<tr>
+<td>reason</td>
 <td></td>
-<td>Token d&#39;identification de l&#39;utilisateur</td>
+<td>La raison de l&#39;absence</td>
 </tr>
 </tbody></table>
-
-<aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur
-</aside>
-<h2 id='creer-un-evenement-d-39-un-calendrier'>Créer un événement d&#39;un calendrier</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
-
-</code></pre></div>
-<blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"apiname"</span><span class="p">:</span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"agendas"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"events"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-
-      </span><span class="p">{</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Cette route permet de créer un événement d&#39;un calendrier</p>
-<h3 id='requete-http-36'>Requête HTTP</h3>
-<p><strong><span style="color:rgb(255, 180, 0)">POST</span> /agendas/{aid}/events</strong></p>
-<h3 id='headers-28'>Headers</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>authToken</td>
-<td></td>
-<td>Token d&#39;identification de l&#39;utilisateur</td>
-</tr>
-</tbody></table>
-<h3 id='parametres-d-39-url-15'>Paramètres d&#39;URL</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Par défaut</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>aid</td>
-<td></td>
-<td>Identifiant du calendrier</td>
-</tr>
-</tbody></table>
-
-<aside class="notice">
-  La réponse dépend des permissions de lecture de l'utilisateur sur le calendrier
-</aside>
 <h1 id='participations'>Participations</h1><h2 id='lister-les-participations'>Lister les participations</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="c1">// TODO CODE AJAX</span>
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de récupérer une liste d&#39;utilisateur d&#39;un événement</p>
-<h3 id='requete-http-37'>Requête HTTP</h3>
+<p>Cette route permet de récupérer une liste d&#39;utilisateur d&#39;un événement.</p>
+<h3 id='requete-http-35'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations</strong></p>
-<h3 id='parametres-de-requete-19'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-22'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2762,14 +2894,14 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de modifier la participation d&#39;un utilisateur à un événement</p>
-<h3 id='requete-http-38'>Requête HTTP</h3>
+<p>Cette route permet de modifier la participation d&#39;un utilisateur à un événement.</p>
+<h3 id='requete-http-36'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
-<h3 id='parametres-de-requete-20'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-23'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>
@@ -2799,18 +2931,39 @@ L'utilisateur connecté doit appartenir au groupe pour envoyer un message
 </tr>
 </tbody></table>
 <h2 id='ajouter-une-participation'>Ajouter une participation</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="c1">// TODO CODE AJAX</span>
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://evanerds.fr/api/v1/events/8/calls?present=0&amp;reason=Je suis enrhumé</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">authToken</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">178b5d5e9c38b626cd02e26ef7974d87</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+
 
 </code></pre></div>
 <blockquote>
-<p>La requête renvoie un JSON sous la forme:</p>
+<p>La requête renvoie un JSON sous la forme :</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">A</span><span class="w"> </span><span class="err">DEFINIR</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"apiname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVANERD API"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"eid"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reason_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Je suis enrhumé"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cette route permet de créer une participation d&#39;un utilisateur à un événement</p>
-<h3 id='requete-http-39'>Requête HTTP</h3>
+<p>Cette route permet de créer une participation d&#39;un utilisateur à un événement.</p>
+<h3 id='requete-http-37'>Requête HTTP</h3>
 <p><strong><span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?</strong></p>
-<h3 id='parametres-de-requete-21'>Paramètres de requête</h3>
+<h3 id='parametres-de-requete-24'>Paramètres de requête</h3>
 <table><thead>
 <tr>
 <th>Paramètre</th>

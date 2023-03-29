@@ -68,7 +68,7 @@ $.ajax(settings).done(function (response) {
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /auth/**
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -136,7 +136,7 @@ Cette route permet de récupérer une liste d'utilisateur. On peut ajouter des p
 
 **<span style="color:rgb(12, 187, 82)">GET</span> /users**
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -192,7 +192,7 @@ Cette route permet de récupérer un seul utilisateur selon son id.
 
 **<span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}**
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut| Description
 --------- | ----------- | -----------
@@ -253,7 +253,7 @@ Cette route permet de modifier les informations (mail, numéro de téléphone...
 
 **<span style="color:rgb(9, 123, 237)">PUT</span> /users/{uid}**
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -265,7 +265,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -341,7 +341,7 @@ Cette route permet de créer un utilisateur.
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /users/**
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -399,7 +399,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -440,7 +440,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -510,13 +510,13 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ----------- | -----------
 uid | | Identifiant de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -557,7 +557,7 @@ Cette route permet de vérifier l'email d'un utilisateur.
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /users/verify**
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -620,7 +620,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -671,13 +671,13 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 rid |  | Permet de modifier le rôle indiqué
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -731,7 +731,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -790,11 +790,11 @@ Cette route permet de retourner tous les instruments.
 **<span style="color:rgb(12, 187, 82)">GET</span> /instruments**
 
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-token |  | Token d'activation du compte
+authToken |  | Token d'identification de l'utilisateur
 
 ## Modifier un instrument
 
@@ -840,11 +840,17 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
-label |  | Identifiant de l'instrument
+iid |  | Identifiant de l'instrument
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+label |  | Nouveau nom de l'instrument
 
 ## Créer un instrument
 
@@ -881,7 +887,7 @@ Cette route permet de créer un instrument.
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /instruments**
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -930,7 +936,7 @@ Cette route permet de retourner tous les achievements.
 
 **<span style="color:rgb(12, 187, 82)">GET</span> /achievements**
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -1029,6 +1035,12 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+gid |  | Identifiant du groupe
+
 <aside class="notice">
   Si un groupe n'a pas de permissions affectées, alors il n'y a aucune restriction de rôle sur le groupe. 
   Par conséquent, tout utilisateur membre peut y être ajouté.
@@ -1101,7 +1113,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -1404,6 +1416,12 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pid |  | Identifiant du post
+
 <aside class="warning">
   Parfois, l'emoji ne passe pas.
 </aside>
@@ -1476,7 +1494,7 @@ Paramètre | Par défaut | Description
 authToken |  | Token d'identification de l'utilisateur
 
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -1537,7 +1555,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken | | Token d'identification de l'utilisateur
 
-### Paramètres d'URL
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -1599,7 +1617,13 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pid |  | Identifiant du post
+
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -1652,17 +1676,18 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pid | | Identifiant du post
+
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 pinned |  | Booléen qui définit s'il est pin ou non
 
-### Paramètres d'URL
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-pid | | Identifiant du post
 
 <aside class="notice">
 
@@ -1711,17 +1736,18 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pid | | Identifiant du post
+
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 pinned |  | Booléen qui définit s'il est pin ou non
 
-### Paramètres d'URL
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-pid | | Identifiant du post
 
 # Agendas
 
@@ -1821,13 +1847,13 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 aid | | Identifiant du calendrier
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -1900,7 +1926,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -1984,7 +2010,7 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -2043,13 +2069,13 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken |  | Token d'identification de l'utilisateur
 
-### Paramètres d'URL
+### Paramètre d'URL
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 eid | | Identifiant de l'événement
 
-### Paramètres de requête
+### Paramètre de requête
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
@@ -2057,63 +2083,6 @@ present *<span style="color:red">[OPTIONNEL]</span>* | 0 | Si l'utilisateur est 
 reason  |  | La raison de l'absence
 
 # Participations
-
-## Lister les participations
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme :
-
-```json
-  A DEFINIR
-```
-
-Cette route permet de récupérer une liste d'utilisateur d'un événement.
-
-### Requête HTTP
-
-**<span style="color:rgb(12, 187, 82)">GET</span> /users/{uid}/agendas/{aeid}/participations**
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken  |  | Token d'identification de l'utilisateur
-uid |  | Identifiant de l'utilisateur
-aeid |  | Identifiant de l'événement dans l'agenda
-
-## Modifier une participation
-
-```javascript
-
-// TODO CODE AJAX
-
-```
-
-> La requête renvoie un JSON sous la forme :
-
-```json
-  A DEFINIR
-```
-
-Cette route permet de modifier la participation d'un utilisateur à un événement.
-
-### Requête HTTP
-
-**<span style="color:rgb(9, 123, 237)">PUT</span> users/{uid}/agendas/{aeid}/participations?participation=?**
-
-### Paramètres de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken  |  | Token d'identification de l'utilisateur
-uid |  | Identifiant de l'utilisateur
-aeid |  | Identifiant de l'événement dans l'agenda
-participation |  | Si la personne participe ou non
 
 ## Ajouter une participation
 
@@ -2156,12 +2125,23 @@ Cette route permet de créer une participation d'un utilisateur à un événemen
 
 **<span style="color:rgb(255, 180, 0)">POST</span> users/{uid}/agendas/{aeid}/participations?participation=?**
 
-### Paramètres de requête
+### Headers
 
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 authToken  |  | Token d'identification de l'utilisateur
+
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
 uid |  | Identifiant de l'utilisateur
 aeid |  | Identifiant de l'événement dans l'agenda
-participation |  | Si la personne participe ou non
 
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+participation |  | Si la personne participe ou non

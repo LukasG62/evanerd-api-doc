@@ -64,7 +64,10 @@ $.ajax(settings).done(function (response) {
     }
 }
 ```
-### Requête HTTP :
+
+Cette route permet la connection, en reseignant les bons champs, de l'utilisateur ciblé.
+
+### Requête HTTP 
 
 **<span style="color:rgb(255, 180, 0)">POST</span> /auth/**
 
@@ -356,6 +359,78 @@ sex <span style="color:red">[OPTIONNEL]</span> |  | Genre de l'utilisateur
 image <span style="color:red">[OPTIONNEL]</span> |  | Image de profil sous format base64
 
 
+## Ajouter une image à un utilisateur
+
+```javascript
+var form = new FormData();
+form.append("image", fileInput.files[0], "chat.jpg");
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/users/1/image",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "e3ea73940b6cef3bd12bb72e3a519468"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 1,
+        "firstName": "Tomas",
+        "lastName": "Salvado Robalo",
+        "sex": 0,
+        "age": 666,
+        "studies": "IG2I, Centrale Lille",
+        "photo": "https://evanerds.fr/api/ressources/users/1/image.jpg",
+        "activation": 1,
+        "tel": "0780647980",
+        "mail": "tomasSR@gmail.com"
+    }
+}
+```
+
+Cette route permet d'ajouter une photo de profil à un utilisateur.
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/{uid}/image**
+
+### Paramètre d'URL
+
+Paramètre | Par défaut| Description
+--------- | ----------- | -----------
+uid | | L'identifiant de l'utilisateur
+
+### Form data
+
+Paramètre | Par défaut| Description
+--------- | ----------- | -----------
+image | | L'image à ajouter
+
+<aside class="notice">
+  L'extension de l'image est obligatoirement un ".png" ou ".jpg" ou ".gif". La taille maximale du fichier est de 25 mB.
+</aside>
+
+<aside class="warning">
+  La taille maximale du fichier est de 25 mB.
+</aside>
+
+
 ## Ajouter un instrument à l'utilisateur
 
 ```javascript
@@ -409,11 +484,11 @@ iid |  | Id de l'instrument à ajouter
    Un instrument ne peut être rajouté qu'une seule fois.
 </aside>
 
-## Ajout d'un achievement à l'utilisateur
+## Ajouter un achievement à l'utilisateur
 
 ```javascript
 
-//TODO
+// TODO
 
 ```
 
@@ -455,7 +530,7 @@ aid |  | Id de l'achievement
    un JSON d'erreur avec comme code de status 403.
 </aside>
 
-## Ajout d'un rôle à un utilisateur
+## Ajouter un rôle à un utilisateur
 
 ```javascript
 
@@ -529,7 +604,15 @@ rid |  | Id du rôle
 ## Vérifier l'email d'un utilisateur
 
 ```javascript
-  //TODO
+  var settings = {
+  "url": "https://evanerds.fr/api/v1/users/verify?token=confirme",
+  "method": "POST",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > Cette route renvoie un JSON sous la forme 
@@ -539,13 +622,13 @@ rid |  | Id du rôle
     "apiname": "EVANERD API",
     "version": "1.0",
     "user": {
-        "id": 1,
-        "firstName": "Lukas",
-        "lastName": "Grando",
-        "sex": 1,
-        "age": 19,
-        "studies": "IG2I",
-        "photo": "http://localhost/ressources/users/1/default.png",
+        "id": 6,
+        "firstName": "Pablo",
+        "lastName": "Lito",
+        "sex": 0,
+        "age": 12,
+        "studies": "Diplômé",
+        "photo": "https://evanerds.fr/api/ressources/users/6/default.png",
         "activation": 1
     }
 }
@@ -562,6 +645,109 @@ Cette route permet de vérifier l'email d'un utilisateur.
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 token |  | Token d'activation du compte
+
+## Réinitialiser son mot de passe
+
+```javascript
+  var settings = {
+  "url": "https://evanerds.fr/api/v1/users/reset?resetToken=test&password=youhou1234",
+  "method": "POST",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> Cette route renvoie un JSON sous la forme 
+
+```json
+  {
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 6,
+        "firstName": "Pablo",
+        "lastName": "Lito",
+        "sex": 0,
+        "age": 12,
+        "studies": "Diplômé",
+        "photo": "https://evanerds.fr/api/ressources/users/6/default.png",
+        "activation": 1,
+        "tel": "0202030405",
+        "mail": "test@youhou.fr"
+    }
+}
+```
+
+Cette route permet de réinitialiser le mot de passe de l'utilisateur.
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/reset**
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+resetToken |  | Token de réinitialisation
+password | | Nouveau mot de passe renseigné
+
+<aside class="warning">
+  Le resetToken est généré à partir des mails. Pour tester cette requête, vous pouvez modifier le resetToken dans la base de donnée.
+</aside>
+
+## Déconnecter l'utilisateur connecté
+
+```javascript
+var settings = {
+  "url": "https://evanerds.fr/api/v1/users/logout",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "e3ea73940b6cef3bd12bb72e3a519468"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> Cette route renvoie un JSON sous la forme 
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "user": {
+        "id": 6,
+        "firstName": "Pablo",
+        "lastName": "Lito",
+        "sex": 0,
+        "age": 12,
+        "studies": "Diplômé",
+        "photo": "https://evanerds.fr/api/ressources/users/6/default.png",
+        "activation": 1,
+        "tel": "0202030405",
+        "mail": "test@youhou.fr"
+    }
+}
+```
+
+Cette route permet de déconnecter l'utilisateur connecté.
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /users/logout**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
 
 
 # Rôles
@@ -984,7 +1170,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de récuperer une liste des conversations de l'utilisateur connecté.
+Cette route permet de récuperer une liste des groupes de l'utilisateur connecté.
 
 ### Requête HTTP
 
@@ -1023,7 +1209,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de récupérer la liste des permissions d'un groupe
+Cette route permet de récupérer la liste des permissions d'un groupe.
 
 ### Requête HTTP
 
@@ -1118,6 +1304,126 @@ authToken |  | Token d'identification de l'utilisateur
 Paramètre | Par défaut | Description
 --------- | ------- | -----------
 gid | | Identifiant du groupe
+
+
+## Epingler un message
+
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups/1/messages/4/pinned",
+  "method": "PUT",
+  "timeout": 0,
+  "headers": {
+    "authToken": "9aa424f9cec0956a0e94640d3bed9c70"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "message": {
+        "id": 4,
+        "uid": 1,
+        "gid": 1,
+        "pinned": 0,
+        "content": "Je suis le message épinglé !",
+        "answerTo": null
+    }
+}
+```
+
+Cette route permet d'épingler un message d'une groupe.
+
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> /groups/{gid}/messages/{mid}/pinned**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+gid | | Identifiant du groupe
+mid | | Identifiant du messages
+
+<aside class="notice">
+  Si le message est épinglé, il sera désépinglé et inversement.
+</aside>
+
+## Modifier le titre d'un groupe
+
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/groups/5?title=trucbidule",
+  "method": "PUT",
+  "timeout": 0,
+  "headers": {
+    "authToken": "9aa424f9cec0956a0e94640d3bed9c70"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "group": {
+        "id": 5,
+        "titre": "trucbidule",
+        "image": "https://evanerds.fr/api/ressources/groups/5/image.webp"
+    }
+}
+```
+
+Cette route permet de modifier le titre d'un groupe.
+
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> /groups/{gid}/messages/{mid}/pinned**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+gid | | Identifiant du groupe
+mid | | Identifiant du messages
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+title | | Nouveau nom du groupe
 
 
 ## Créer un groupe pour l'utilisateur connecté
@@ -1426,6 +1732,69 @@ pid |  | Identifiant du post
   Parfois, l'emoji ne passe pas.
 </aside>
 
+## Lister les "likes" d'un post
+
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/likes",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "authToken": "9aa424f9cec0956a0e94640d3bed9c70"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "postId": 1,
+    "total": 5,
+    "likes": [
+        {
+            "id": 1,
+            "firstName": "Tomas",
+            "lastName": "Salvado Robalo",
+            "photo": "https://evanerds.fr/api/ressources/users/1/image.jpg"
+        },
+        {
+            "id": 6,
+            "firstName": "Pablo",
+            "lastName": "Lito",
+            "photo": "https://evanerds.fr/api/ressources/users/6/default.png"
+        }
+    ]
+}
+```
+
+Cette route permet de récupérer les likes sur un post.
+
+### Requête HTTP
+
+**<span style="color:rgb(12, 187, 82)">GET</span> /posts/{pid}/reactions**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pid |  | Identifiant du post
+
+
 ## Lister les messages d'un post
 
 ```javascript
@@ -1500,7 +1869,73 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 pid | | Identifiant du post
 
-## Poster un post
+## Epingler un post
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/pinned?pinned=1",
+  "method": "PUT",
+  "timeout": 0,
+  "headers": {
+    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "post": {
+        "id": 1,
+        "author": 2,
+        "content": "J'annonce mon arrivé au sein de CA !! J'espère vous êtes contents !!\nΣ>―(〃°ω°〃)♡→\n\n",
+        "banner": null,
+        "pinned": 0,
+        "visible": 1
+    }
+}
+```
+
+Cette route permet d'épingler un post.
+
+### Requête HTTP
+
+**<span style="color:rgb(9, 123, 237)">PUT</span> /posts/{pid}/pinned**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pid | | Identifiant du post
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pinned |  | Booléen qui définit s'il est pin ou non
+
+
+<aside class="notice">
+
+   Les membres du CA peuvent épingler les posts des utilisateurs. Un autre membre du CA peut desépingler les posts.
+</aside>
+
+
+## Créer un post
 
 ```javascript
 
@@ -1572,7 +2007,7 @@ banner | | Image du post
   ll faut obligatoirement fournir une image pour la réalisation de la requête.
 </aside>
 
-## Poster un like sur un post
+## Liker un post
 
 ```javascript
 
@@ -1629,71 +2064,6 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 liked |  | Booléen qui définit s'il est like ou non
 
-## Epingler un post
-```javascript
-
-var settings = {
-  "url": "https://evanerds.fr/api/v1/posts/1/pinned?pinned=1",
-  "method": "PUT",
-  "timeout": 0,
-  "headers": {
-    "authToken": "178b5d5e9c38b626cd02e26ef7974d87"
-  },
-};
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-
-```
-
-> La requête renvoie un JSON sous la forme :
-
-```json
-{
-    "apiname": "EVANERD API",
-    "version": "1.0",
-    "post": {
-        "id": 1,
-        "author": 2,
-        "content": "J'annonce mon arrivé au sein de CA !! J'espère vous êtes contents !!\nΣ>―(〃°ω°〃)♡→\n\n",
-        "banner": null,
-        "pinned": 0,
-        "visible": 1
-    }
-}
-```
-
-Cette route permet d'épingler un post.
-
-### Requête HTTP
-
-**<span style="color:rgb(9, 123, 237)">PUT</span> /posts/{pid}/pinned**
-
-### Headers
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-authToken |  | Token d'identification de l'utilisateur
-
-### Paramètre d'URL
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-pid | | Identifiant du post
-
-### Paramètre de requête
-
-Paramètre | Par défaut | Description
---------- | ------- | -----------
-pinned |  | Booléen qui définit s'il est pin ou non
-
-
-<aside class="notice">
-
-   Les membres du CA peuvent épingler les posts des utilisateurs. Un autre membre du CA peut desépingler les posts.
-</aside>
-
 ## Poster une réaction sur un post 
 
 ```javascript
@@ -1748,6 +2118,63 @@ Paramètre | Par défaut | Description
 --------- | ------- | -----------
 pinned |  | Booléen qui définit s'il est pin ou non
 
+## Poster un commentaire sous un post
+
+```javascript
+
+var settings = {
+  "url": "https://evanerds.fr/api/v1/posts/1/messages?content=Je suis le contenu de réponse !!",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "authToken": "9aa424f9cec0956a0e94640d3bed9c70"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+{
+    "apiname": "EVANERD API",
+    "version": "1.0",
+    "comment": {
+        "id": "98",
+        "content": "Je suis le contenu de réponse !!",
+        "pinned": 0,
+        "answerTo": null
+    }
+}
+```
+
+Cette route permet d'ajouter un commentaire sous un post.
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">POST</span> /posts/{pid}/liked**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken |  | Token d'identification de l'utilisateur
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+pid |  | Identifiant du post
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+content |  | Le contenu du commentaire sous le post
 
 # Agendas
 
@@ -2057,7 +2484,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de justifier son absence
+Cette route permet de justifier son absence.
 
 ### Requête HTTP
 
@@ -2083,6 +2510,50 @@ present *<span style="color:red">[OPTIONNEL]</span>* | 0 | Si l'utilisateur est 
 reason  |  | La raison de l'absence
 
 # Participations
+
+## Modifier la présence d'un utilisateur
+
+```javascript
+
+// TODO
+
+```
+
+> La requête renvoie un JSON sous la forme :
+
+```json
+
+// TODO
+
+```
+
+Cette route permet de créer une participation d'un utilisateur à un événement.
+
+### Requête HTTP
+
+**<span style="color:rgb(255, 180, 0)">PUT</span> users/{uid}/agendas/{aeid}/calls**
+
+### Headers
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+authToken  |  | Token d'identification de l'utilisateur
+
+
+### Paramètre d'URL
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+uid |  | Identifiant de l'utilisateur
+aeid |  | Identifiant de l'événement dans l'agenda
+
+
+### Paramètre de requête
+
+Paramètre | Par défaut | Description
+--------- | ------- | -----------
+present |  | Si l'utilisateur est présent ou non
+reason  *<span style="color:red">[OPTIONNEL]</span>* |  | Ajout d'une raison s'il n'est pas présent
 
 ## Ajouter une participation
 
@@ -2119,7 +2590,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Cette route permet de créer une participation d'un utilisateur à un événement.
+Cette route permet de modifier une participation d'un utilisateur à un événement.
 
 ### Requête HTTP
 

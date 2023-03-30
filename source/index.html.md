@@ -21,7 +21,7 @@ meta:
 
 # Introduction
 
-Documentation de l'API utilisé lors de la réalisation du développement du Projet PINF pour l'Orchestre Etudiant de Toulouse, lors de la deuxième année à l'IG2I, Ecole de Génie Industriel et Informatique. 
+Documentation de l'API utilisé dans le cadre de la réalisation d'un projet informatique, une application faite pour téléphone, pour l'Orchestre Etudiant de Toulouse (OSET), lors de la deuxième année à l'IG2I, Ecole de Génie Industriel et Informatique. 
 
 2022-2023, Groupe Evanerd.
 
